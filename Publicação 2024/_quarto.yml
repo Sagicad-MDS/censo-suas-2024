@@ -1,0 +1,83 @@
+lang: pt   
+
+project:
+  type: book
+
+book:
+  title: "CENSO SUAS 2023"
+  subtitle: ANÁLISE DOS COMPONENTES DA POLÍTICA NACIONAL DE ASSISTÊNCIA SOCIAL
+#  author:
+#    - Secretaria de Avaliação, Gestão da Informação e Cadastro Único
+#    - Secretaria Nacional de Assistência Social
+#    - Ministério do Desenvolvimento e Assistência Social, Família e Combate à Fome
+#  date: "21/06/2024"
+#  search: false
+  cover-image: "CapaCensoSUAS2023imagem 1.png"
+  favicon: "CapaCensoSUAS2023imagem 1.png"
+  repo-url: https://github.com/Sagicad-MDS/Censo-SUAS-2023
+  repo-branch: main
+  repo-subdir: "Publicação 2023"
+  repo-actions: [source, issue]
+  repo-link-target: "_blank"
+  chapters:
+    - index.qmd
+    - apresentacao.qmd
+    - metodologia.qmd
+    - gestao.qmd
+    - unidades.qmd
+    - servicos.qmd
+    - rh.qmd
+    - participacao.qmd
+    - references.qmd
+    - creditos.qmd
+
+bibliography: references.bib
+
+toc: true
+toc-title: Sumário
+
+execute:
+  echo: false
+  message: false
+  warning: false
+  cache: false
+
+crossref:
+  fig-title: Gráfico     # (default is "Figure")
+  tbl-title: Tabela     # (default is "Table")
+#  title-delim: "."   # (default is ":")
+  fig-prefix: Gráfico   # (default is "Figure")
+  tbl-prefix: Tabela    # (default is "Table")
+#  ref-hyperlink: false # (default is true)
+#  chapters: false
+
+format:
+  html: 
+#    css: 
+#      - "govbr/core.min.css"
+#      - "govbr/fontawesome/css/fontawesome.min.css"
+#      - "govbr/fontawesome/css/solid.min.css"
+#    theme: "govbr/gov-br.scss"
+    mainfont: "Rawline, Raleway, sans-serif"
+    fontsize: 14px
+    fontcolor: "#333333"
+    linkcolor: "#1351B4"
+    linestretch: 1.45
+    backgroundcolor: "#ffffff"
+    link-external-icon: true
+    link-external-newwindow: true
+#    include-in-header:
+#      - text: |
+#          <script src="govbr/core-init.js"></script>
+#          <script src="govbr/core.min.js"></script>
+#      - file: govbr/header.html
+#    include-after-body:
+#      - file: govbr/footer.html
+#  pdf:
+#    documentclass: scrreprt
+    include-in-header:
+      - text: |
+          <link href="https://fonts.cdnfonts.com/css/rawline" rel="stylesheet">
+          <script src="responsive-height.js"></script>
+
+editor: visual

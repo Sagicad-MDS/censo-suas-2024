@@ -1,0 +1,17 @@
+# Apresentação {.unnumbered}
+
+Integrante do tripé da Seguridade Social, ao lado das políticas de Saúde e de Previdência Social, a Assistência Social constitui-se como um direito do cidadão e um dever do Estado. Como toda política pública, o SUAS encontra-se em permanente processo de aprimoramento, exigindo atualizações e adequações contínuas diante das transformações sociais e das novas demandas da conjuntura.
+
+O Censo SUAS constitui o retrato mais abrangente, consistente e sistemático da Assistência Social no Brasil. Previsto no Decreto nº 7.334/2010, consolida-se como instrumento essencial de monitoramento e avaliação da política. A publicação anual de seus resultados busca oferecer um conjunto qualificado de análises e reflexões que contribuam para o aprimoramento contínuo e o fortalecimento histórico do SUAS, além de evidenciar avanços, identificar desafios e apontar caminhos para os rumos e pactos que orientam a política de Assistência Social em todo o país.
+
+Chegamos a mais de 30 anos da LOAS (Lei Orgânica da Assistência Social) com uma rede que ultrapassa 31 mil unidades públicas e conta também com a atuação de Organizações da Sociedade Civil (OSCs), reunindo **mais de 410 mil trabalhadores e trabalhadoras**. Trata-se de um sistema federativo e participativo, no qual as responsabilidades são compartilhadas entre os três entes federados, sob a direção e deliberação do controle social. A @tbl-marcos apresenta o marco normativo que institucionaliza e orienta a conformação desta política pública.
+
+| 1988 | 1993 | 2001 | 2003 | 2004 | 2005 | 2006 | 2009 | 2011 | 2012 | 2016 |
+|--------|:------:|:------:|--------|:------:|:------:|:------:|:------:|:------:|:------:|--------|
+| CF | LOAS     | Cadastro Único     | Programa Bolsa Família | PNAS     | NOB/ SUAS | NOB/ RH   | Tipificação dos Serviços | Lei 12.435 SUAS | NOB/ SUAS | II Plano Decenal |
+
+: Marcos legais da Assistência Social no Brasil. {#tbl-marcos}
+
+São referências essenciais que sustentam o debate apresentado nesta edição. O conteúdo desta publicação traz uma linha histórica — em grande parte a partir de 2012 — que evidencia aspectos relacionados à gestão, às unidades do SUAS, aos serviços e benefícios, à gestão do trabalho, ao controle social e à participação. Além disso, inclui elementos metodológicos que demonstram os avanços na construção dessa linha histórica de forma cada vez mais qualificada, com modernização nos processos de análise e tratamento de dados.
+
+Desejamos uma boa leitura e esperamos que esta edição contribua para subsidiar debates qualificados, fortalecendo o aprimoramento contínuo desta política pública.
