@@ -17,7 +17,7 @@ library("readODS")
 library("prismatic")
 library("scales")
 
-color.map.option = "E" #"cividis"
+color.map.option = "F" #"rocket"
 
 gera.graficos.office = FALSE;
 if(gera.graficos.office) {
