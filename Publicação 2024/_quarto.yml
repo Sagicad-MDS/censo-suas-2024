@@ -4,7 +4,7 @@ project:
   type: book
 
 book:
-  title: "CENSO SUAS 2023"
+  title: "CENSO SUAS 2024"
   subtitle: ANÁLISE DOS COMPONENTES DA POLÍTICA NACIONAL DE ASSISTÊNCIA SOCIAL
 #  author:
 #    - Secretaria de Avaliação, Gestão da Informação e Cadastro Único
@@ -14,9 +14,9 @@ book:
 #  search: false
   cover-image: "CapaCensoSUAS2023imagem 1.png"
   favicon: "CapaCensoSUAS2023imagem 1.png"
-  repo-url: https://github.com/Sagicad-MDS/Censo-SUAS-2023
+  repo-url: https://github.com/Sagicad-MDS/censo-suas-2024
   repo-branch: main
-  repo-subdir: "Publicação 2023"
+  repo-subdir: "Publicação 2024"
   repo-actions: [source, issue]
   repo-link-target: "_blank"
   chapters:
@@ -31,7 +31,7 @@ book:
     - references.qmd
     - creditos.qmd
 
-bibliography: references.bib
+# bibliography: references.bib
 
 toc: true
 toc-title: Sumário
