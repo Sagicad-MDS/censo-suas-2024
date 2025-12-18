@@ -44,6 +44,11 @@ ge_2023 <- read_csv2("../Censo SUAS 2023/10 - GESTAO ESTADUAL/Censo_SUAS_2023_Ge
 
 gerh_2023 <- read_csv2("../Censo SUAS 2023/10 - GESTAO ESTADUAL/Censo_SUAS_2023_Gestão_Estadual_RH.csv", locale = locale(encoding = "latin1"))
 
+ge_2024 <- read_excel("../Censo SUAS 2024/10_GESTÃO ESTADUAL/Censo_SUAS_2024_Gestão_Estadual_Dados_Gerais.xlsx")
+
+gerh_2024 <- read_excel("../Censo SUAS 2024/10_GESTÃO ESTADUAL/Censo_SUAS_2024_Gestão_Estadual_RH.xlsx")
+
+
 gm_2010 <- read_excel("../Censo SUAS 2010/Gestão Municipal/Censo SUAS 2010_Gestão Municipal_DIVULGAÇÃO.xlsx", sheet = "Censo SUAS 2010 GestãoMunicipal")
 
 gm_2011 <- read_excel("../Censo SUAS 2011/GESTÃO MUNICIPAL/Censo SUAS 2011_GestãoMunicipal_DIVULGAÇÃO.xlsx", sheet = "Censo SUAS 2011 GestãoMunicipal")
@@ -83,6 +88,11 @@ gmrh_2022 <- read_excel("../Censo SUAS 2022/9 - GESTÃO MUNICIPAL/Censo_SUAS_202
 gm_2023 <- read_csv2("../Censo SUAS 2023/9 - GESTÃO MUNICIPAL/Censo_SUAS_2023_Gestão_Municipal_Dados_Gerais.csv", locale = locale(encoding = "latin1"))
 
 gmrh_2023 <- read_csv2("../Censo SUAS 2023/9 - GESTÃO MUNICIPAL/Censo_SUAS_2023_Gestão_Municipal_RH.csv", locale = locale(encoding = "latin1"))
+
+gm_2024 <- read_excel("../Censo SUAS 2024/9_GESTÃO MUNICIPAL/Censo_SUAS_2024_Gestão_Municipal_Dados_Gerais.xlsx")
+
+gmrh_2024 <- read_excel("../Censo SUAS 2024/9_GESTÃO MUNICIPAL/Censo_SUAS_2024_Gestão_Municipal_RH.xlsx")
+
 
 cras_2007 <- read_excel("../Censo SUAS 2007/Censo SUAS CRAS 2007.xls")
 
@@ -142,6 +152,11 @@ cras_2023 <- read_csv2("../Censo SUAS 2023/1 - CRAS/Censo_SUAS_2023_CRAS_Dados_G
 
 crasrh_2023 <- read_csv2("../Censo SUAS 2023/1 - CRAS/Censo_SUAS_2023_CRAS_RH.csv", locale = locale(encoding = "latin1"))
 
+cras_2024 <- read_csv2("../Censo SUAS 2024/1_CRAS/Censo_SUAS_2024_CRAS_Dados_Gerais.csv", locale = locale(encoding = "latin1"))
+
+crasrh_2024 <- read_csv2("../Censo SUAS 2024/1_CRAS/Censo_SUAS_2024_CRAS_RH.csv", locale = locale(encoding = "latin1"))
+
+
 posto_cadunico_2020 <- read_excel("../Censo SUAS 2020/8_POSTO_CADASTRAMENTO/Censo_SUAS_2020_Postos_Cadastro_Único_Dados_Gerais.xlsx")
 
 posto_cadunicorh_2020 <- read_excel("../Censo SUAS 2020/8_POSTO_CADASTRAMENTO/Censo_SUAS_2020_Postos_Cadastro_Único_RH.xlsx")
@@ -157,6 +172,11 @@ posto_cadunicorh_2022 <- read_excel("../Censo SUAS 2022/8 - POSTO DE CADASTRAMEN
 posto_cadunico_2023 <- read_csv2("../Censo SUAS 2023/8 - POSTO DE CADASTRAMENTO/Censo_SUAS_2023_ Posto_Cadastro_Unico_Dados_Gerais.csv", locale = locale(encoding = "latin1"))
 
 posto_cadunicorh_2023 <- read_csv2("../Censo SUAS 2023/8 - POSTO DE CADASTRAMENTO/Censo_SUAS_2023_ Posto_Cadastro_Unico_RH.csv", locale = locale(encoding = "latin1"))
+
+posto_cadunico_2024 <- read_csv2("../Censo SUAS 2024/8_POSTO DE CADASTRAMENTO/Censo_SUAS_2024_ Posto_Cadastro_Unico_Dados_Gerais.csv", locale = locale(encoding = "latin1"))
+
+posto_cadunicorh_2024 <- read_csv2("../Censo SUAS 2024/8_POSTO DE CADASTRAMENTO/Censo_SUAS_2024_ Posto_Cadastro_Unico_RH.csv", locale = locale(encoding = "latin1"))
+
 
 creas_2009 <- read_excel("../Censo SUAS 2009/CREAS/Censo CREAS 2009_20091117.xls")
 
@@ -212,6 +232,11 @@ creas_2023 <- read_csv2("../Censo SUAS 2023/2 - CREAS/Censo_SUAS_2023_CREAS_Dado
 
 creasrh_2023 <- read_csv2("../Censo SUAS 2023/2 - CREAS/Censo_SUAS_2023_CREAS_RH.csv", locale = locale(encoding = "latin1"))
 
+creas_2024 <- read_csv2("../Censo SUAS 2024/2_CREAS/Censo_SUAS_2024_CREAS_Dados_Gerais.csv", locale = locale(encoding = "latin1"))
+
+creasrh_2024 <- read_csv2("../Censo SUAS 2024/2_CREAS/Censo_SUAS_2024_CREAS_RH.csv", locale = locale(encoding = "latin1"))
+
+
 cest_2010 <- read_excel("../Censo SUAS 2010/Conselho Estadual/Censo SUAS 2010_Conselho Estadual_DIVULGAÇÃO.xlsx", sheet = "Censo SUAS 2010 Cons. Estadual")
 
 cest_2011 <- read_excel("../Censo SUAS 2011/CONSELHOS ESTADUAIS/Censo SUAS 2011_Conselho_Estadual_DIVULGAÇÃO.xlsx", sheet = "Censo SUAS 2011 Cons. Estadual")
@@ -263,6 +288,11 @@ cestrh_2022 <- read_excel("../Censo SUAS 2022/14 - CONSELHO ESTADUAL/Censo_SUAS_
 cest_2023 <- read_csv2("../Censo SUAS 2023/14 - CONSELHO ESTADUAL/Censo_SUAS_2023_Conselho_Estadual_Dados_Gerais.csv", locale = locale(encoding = "latin1"))
 
 cestrh_2023 <- read_csv2("../Censo SUAS 2023/14 - CONSELHO ESTADUAL/Censo_SUAS_2023_Conselho_Estadual_RH.csv", locale = locale(encoding = "latin1"))
+
+cest_2024 <- read_excel("../Censo SUAS 2024/14_CONSELHO ESTADUAL/Censo_SUAS_2024_Conselho_Estadual_Dados_Gerais.xlsx")
+
+cestrh_2024 <- read_excel("../Censo SUAS 2024/14_CONSELHO ESTADUAL/Censo_SUAS_2024_Conselho_Estadual_RH.xlsx")
+
 
 cmun_2010 <- read_excel("../Censo SUAS 2010/Conselho Municipal/Censo SUAS 2010_Conselho Municipal_DIVULGAÇÃO.xlsx", sheet = "Censo SUAS 2010 Cons. Municipal")
 
@@ -319,11 +349,17 @@ cmun_2023 <- read_csv2("../Censo SUAS 2023/13 - CONSELHO MUNICIPAL/Censo_SUAS_20
 
 cmunrh_2023 <- read_csv2("../Censo SUAS 2023/13 - CONSELHO MUNICIPAL/Censo_SUAS_2023_Conselho_Municipal_RH.csv", locale = locale(encoding = "latin1"))
 
+cmun_2024 <- read_excel("../Censo SUAS 2024/13_CONSELHO MUNICIPAL/Censo_SUAS_2024_Conselho_Municipal_Dados_Gerais.xlsx")
+
+cmunrh_2024 <- read_csv2("../Censo SUAS 2024/13_CONSELHO MUNICIPAL/Censo_SUAS_2024_Conselho_Municipal_RH.csv", locale = locale(encoding = "latin1"))
+
+
 rpriv_2010 <- read_excel("../Censo SUAS 2010/Rede Privada/Censo SUAS 2010_Rede privada_DIVULGAÇÃO.xlsx", sheet = "Censo SUAS 2010 Rede Privada")
 
 rpriv_2011 <- read_excel("../Censo SUAS 2011/Rede Privada/Censo SUAS 2011_Rede Privada_DIVULGAÇÃO.xlsx", sheet = "Censo SUAS 2010 Rede Privada")
 
 rpriv_2011 <- read_excel("../Censo SUAS 2011/Rede Privada/Censo SUAS 2011_Rede Privada_DIVULGAÇÃO.xlsx", sheet = "Censo SUAS 2010 Rede Privada")
+
 
 cpop_2011 <- read_excel("../Censo SUAS 2011/CENTRO POP/Censo SUAS 2011_CENTRO_POP_DIVULGAÇÃO.xlsx", sheet = "Censo SUAS 2011 Centro POP")
 
@@ -375,6 +411,11 @@ cpop_2023 <- read_csv2("../Censo SUAS 2023/3 - CENTRO POP/Censo_SUAS_2023_Centro
 
 cpoprh_2023 <- read_csv2("../Censo SUAS 2023/3 - CENTRO POP/Censo_SUAS_2023_Centro_POP_RH.csv", locale = locale(encoding = "latin1"))
 
+cpop_2024 <- read_excel("../Censo SUAS 2024/3_CENTRO POP/Censo_SUAS_2024_Centro_POP_Dados_Gerais.xlsx")
+
+cpoprh_2024 <- read_excel("../Censo SUAS 2024/3_CENTRO POP/Censo_SUAS_2024_Centro_POP_RH.xlsx")
+
+
 unac_2012 <- read_excel("../Censo SUAS 2012/Unidades de Acolhimento/Censo SUAS 2012_Unidades_de_Acolhimento_dadosgerais_divulgação.xlsx")
 
 unacrh_2012 <- read_excel("../Censo SUAS 2012/Unidades de Acolhimento/Censo SUAS 2012_Unidades_de_Acolhimento_RH_divulgação.xlsx", sheet = "CensoSUAS2012 Acolhimento RH")
@@ -423,6 +464,11 @@ unac_2023 <- read_csv2("../Censo SUAS 2023/4 - UNIDADE DE ACOLHIMENTO/Censo_SUAS
 
 unacrh_2023 <- read_csv2("../Censo SUAS 2023/4 - UNIDADE DE ACOLHIMENTO/Censo_SUAS_2023_Unidade_Acolhimento_RH.csv", locale = locale(encoding = "latin1"))
 
+unac_2024 <- read_csv2("../Censo SUAS 2024/4 - UNIDADE DE ACOLHIMENTO/Censo_SUAS_2024_Unidade_Acolhimento_Dados_Gerais.csv", locale = locale(encoding = "latin1"))
+
+unacrh_2024 <- read_csv2("../Censo SUAS 2024/4 - UNIDADE DE ACOLHIMENTO/Censo_SUAS_2024_Unidade_Acolhimento_RH.csv", locale = locale(encoding = "latin1"))
+
+
 ceconv_2014 <- read_excel("../Censo SUAS 2014/Centros de Convivência/Bases de Dados/CensoSUAS2014_Convivência_Divulgação.xlsx", sheet = "Convivência 2014")
 
 ceconv_2015 <- read_excel("../Censo SUAS 2015/Centro de Convivência/CensoSUAS_2015_Convivencia_DadosGerais_divulgacao.xlsx", sheet = "Censo Convivência 2015")
@@ -456,6 +502,11 @@ ceconvrh_2022 <- read_excel("../Censo SUAS 2022/5 - CENTRO DE CONVIVENCIA/Censo_
 ceconv_2023  <- read_csv2("../Censo SUAS 2023/5 - CENTRO DE CONVIVENCIA/Censo_SUAS_2023_Centro_Convivencia_Dados_Gerais.csv", locale = locale(encoding = "latin1"))
 
 ceconvrh2023 <- read_csv2("../Censo SUAS 2023/5 - CENTRO DE CONVIVENCIA/Censo_SUAS_2023_Centro_Convivencia_RH.csv", locale = locale(encoding = "latin1"))
+
+ceconv_2024  <- read_csv2("../Censo SUAS 2024/5 - CENTRO DE CONVIVENCIA/Censo_SUAS_2024_Centro_Convivencia_Dados_Gerais.csv", locale = locale(encoding = "latin1"))
+
+ceconvrh2024 <- read_csv2("../Censo SUAS 2024/5 - CENTRO DE CONVIVENCIA/Censo_SUAS_2024_Centro_Convivencia_RH.csv", locale = locale(encoding = "latin1"))
+
 
 cedia_2015 <- read_excel("../Censo SUAS 2015/Centro DIA/CensoSUAS_2015_CentroDIA_dadosgerais_divulgacao.xlsx", sheet = "Censo SUAS Centro DIA 2015")
 
@@ -493,6 +544,10 @@ cedia_2023 <- read_csv2("../Censo SUAS 2023/6 - CENTRO DIA/Censo_SUAS_2023_Centr
 
 cediarh2023<- read_csv2("../Censo SUAS 2023/6 - CENTRO DIA/Censo_SUAS_2023_Centro_Dia_RH.csv", locale = locale(encoding = "latin1"))
 
+cedia_2024 <- read_excel("../Censo SUAS 2024/6_CENTRO DIA/Censo_SUAS_2024_Centro_Dia_Dados_Gerais.xlsx")
+
+cediarh2024<- read_excel("../Censo SUAS 2024/6_CENTRO DIA/Censo_SUAS_2024_Centro_Dia_RH.xlsx")
+
 
 famacolfam_2017 <- read_excel("../Censo SUAS 2017/Censo SUAS 2017 Família Acolhedora/Censo SUAS 2017_Família Acolhedora_divulgação.xlsx", sheet = "Base de dados")
 
@@ -522,6 +577,11 @@ famacolfam_2023 <- read_excel("../Censo SUAS 2023/7 - FAMILIA ACOLHEDORA/Censo_S
 
 famacolrh_2023 <- read_excel("../Censo SUAS 2023/7 - FAMILIA ACOLHEDORA/Censo_SUAS_2023_Familia_Acolhedora_Equipe_RH.xlsx")
 
+famacolfam_2024 <- read_excel("../Censo SUAS 2024/7_FAMÍLIA ACOLHEDORA/Censo_SUAS_2024_Familia_Acolhedora_Dados_Gerais.xlsx")
+
+famacolrh_2024 <- read_excel("../Censo SUAS 2024/7_FAMÍLIA ACOLHEDORA/Censo_SUAS_2024_Familia_Acolhedora_RH_Equipe.xlsx")
+
+
 feas_2018 <- read_excel("../Censo SUAS 2018/13.Fundo Estadual/Censo_SUAS_2018_Dados_gerais_FE_divulgaç╞o.xlsx")
 
 feas_2019 <- read_excel("../Censo SUAS 2019/Censo_SUAS_2019_Fundo_estadual/Censo_SUAS_2019_Fundo_Estadual_dados_gerais_divulgacao.xlsx")
@@ -539,6 +599,11 @@ feasrh_2022 <- read_excel("../Censo SUAS 2022/12 - FUNDO ESTADUAL/Censo_SUAS_202
 feas_2023 <- read_csv2("../Censo SUAS 2023/12 - FUNDO ESTADUAL/Censo_SUAS_2023_Fundo_Estadual_Dados_Gerais.csv", locale = locale(encoding = "latin1"))
 
 feasrh_2023 <- read_csv2("../Censo SUAS 2023/12 - FUNDO ESTADUAL/Censo_SUAS_2023_Fundo_Estadual_RH.csv", locale = locale(encoding = "latin1"))
+
+feas_2024 <- read_excel("../Censo SUAS 2024/12_FUNDO ESTADUAL/Censo_SUAS_2024_Fundo_Estadual_Dados_Gerais.xlsx")
+
+feasrh_2024 <- read_excel("../Censo SUAS 2024/12_FUNDO ESTADUAL/Censo_SUAS_2024_Fundo_Estadual_RH.xlsx")
+
 
 fmas_2018 <- read_excel("../Censo SUAS 2018/12.Fundo Municipal/Censo_SUAS_2018_FM_Dados_Gerais_divulgaç╞o.xlsx")
 
@@ -564,35 +629,45 @@ fmas_2023 <- read_csv2("../Censo SUAS 2023/11 - FUNDO MUNICIPAL/Censo_SUAS_2023_
 
 fmasRH_2023 <- read_csv2("../Censo SUAS 2023/11 - FUNDO MUNICIPAL/Censo_SUAS_2023_Fundo_Municipal_RH.csv", locale = locale(encoding = "latin1"))
 
+fmas_2024 <- read_excel("../Censo SUAS 2024/11_FUNDO MUNICIPAL/Censo_SUAS_2024_Fundo_Municipal_Dados_Gerais.xlsx")
+
+fmasRH_2024 <- read_excel("../Censo SUAS 2024/11_FUNDO MUNICIPAL/Censo_SUAS_2024_Fundo_Municipal_RH.xlsx")
+
+
 idconselho_2014 <- read_excel("../ID CONSELHO/IDConselho2014_alterado_08-12-2016.xlsx")
 idconselho_2015 <- read_excel("../ID CONSELHO/ID CONSELHO - 2015.xlsx")
-idconselho_2016 <- read_excel("../ID CONSELHO/ID_Conselho_2016.xlsx")
+idconselho_2016 <- read_excel("../ID CONSELHO/ID_Conselho_2016.xlsx", skip=4)
 idconselho_2017 <- read_excel("../ID CONSELHO/ID CONSELHO - 2017.xlsx")
 idconselho_2018 <- read_excel("../ID CONSELHO/ID CONSELHO - 2018.xlsx")
-idconselho_2019 <- read_excel("../ID CONSELHO/IDCONSELHO_2019_divulgacao.xlsx", guess_max=7)
-idconselho_2020 <- read_excel("../ID CONSELHO/IDCONSELHO_2020_divulgacao.xlsx", guess_max=12)
-idconselho_2021 <- read_excel("../ID CONSELHO/IDCONSELHO_2021_divulgacao.xlsx", guess_max=140)
-idconselho_2022 <- read_excel("../ID CONSELHO/IDConselho_Municipal_2022_divulgacao.xlsx")
+idconselho_2019 <- read_excel("../ID CONSELHO/IDCONSELHO_2019_divulgacao.xlsx", skip=4, guess_max=7)
+idconselho_2020 <- read_excel("../ID CONSELHO/IDCONSELHO_2020_divulgacao.xlsx", skip=4, guess_max=12)
+idconselho_2021 <- read_excel("../ID CONSELHO/IDCONSELHO_2021_divulgacao.xlsx", skip=4, guess_max=140)
+idconselho_2022 <- read_excel("../ID CONSELHO/IDConselho_Municipal_2022_divulgacao.xlsx", sheet = "IDConselho_Municipal_2022_divul", skip=4)
+idconselho_2023 <- read_excel("../ID CONSELHO/IDConselho_Municipal_2023_divulgacao.xlsx", skip=4)
+idconselho_2024 <- read_excel("../ID CONSELHO/IDConselho_Municipal_2024_divulgacao(1).xlsx", skip=4)
 
 idcras_2014 <- read_excel("../ID CRAS/NOVO_IDCRAS_2014_divulgação_retificado_07_10_2016.xlsx")
 idcras_2015 <- read_excel("../ID CRAS/NOVO_IDCRAS_2015_divulgação_retificado_07_10_2016.xlsx")
-idcras_2016 <- read_excel("../ID CRAS/IDCRAS_2016_FINAL_(01062017).xlsx")
+idcras_2016 <- read_excel("../ID CRAS/IDCRAS_2016_FINAL_(01062017).xlsx", sheet = "IDCRAS 2016", skip=6)
 idcras_2017 <- read_excel("../ID CRAS/IDCRAS_2017_DIVULGAÇÃO_atualizado__030523.xlsx", sheet = 2, skip=6)
-idcras_2018 <- read_excel("../ID CRAS/IDCRAS_2018_DIVULGAÇÃO_atualizado_280423.xlsx")
-idcras_2019 <- read_excel("../ID CRAS/IDCRAS_2019_DIVULGAÇÃO_atualizado_280423.xlsx")
-idcras_2020 <- read_excel("../ID CRAS/IDCRAS_2020_DIVULGAÇÃO_atualizado_280423(1).xlsx")
-idcras_2021 <- read_excel("../ID CRAS/IDCRAS_2021_DIVULGAÇÃO_atulaizado_280423(1).xlsx")
-idcras_2022 <- read_excel("../ID CRAS/IDCRAS_2022_DIVULGAÇÃO_atualizado_280423(1).xlsx")
+idcras_2018 <- read_excel("../ID CRAS/IDCRAS_2018_DIVULGAÇÃO_atualizado_280423.xlsx", skip=6)
+idcras_2019 <- read_excel("../ID CRAS/IDCRAS_2019_DIVULGAÇÃO_atualizado_280423.xlsx", skip=6)
+idcras_2020 <- read_excel("../ID CRAS/IDCRAS_2020_DIVULGAÇÃO_atualizado_280423(1).xlsx", skip=6)
+idcras_2021 <- read_excel("../ID CRAS/IDCRAS_2021_DIVULGAÇÃO_atulaizado_280423(1).xlsx", skip=6)
+idcras_2022 <- read_excel("../ID CRAS/IDCRAS_2022_DIVULGAÇÃO_atualizado_280423(1).xlsx", skip=6)
+idcras_2023 <- read_excel("../ID CRAS/IDCRAS_2023_DIVULGAÇÃO_retificado EV_260824(1).xlsx", skip=6)
+idcras_2024 <- read_excel("../ID CRAS/IDCRAS_2024_DIVULGAÇÃO(1).xlsx", skip=6)
 
 idcreas_2014 <- read_excel("../ID CREAS/IDCREAS_2014_DIVULGACAO_site.xlsx")
 idcreas_2015 <- read_excel("../ID CREAS/ID_CREAS_2015_divulgacao_site.xlsx")
-idcreas_2016 <- read_excel("../ID CREAS/IDCREAS_2016_DIVULGAÇÃO.xlsx")
-idcreas_2017 <- read_excel("../ID CREAS/IDCREAS_2017_DIVULGAÇÃO.xlsx")
-idcreas_2018 <- read_excel("../ID CREAS/IDCREAS2018_divulgacao(2).xlsx")
-idcreas_2019 <- read_excel("../ID CREAS/IDCREAS2019_divulgacao.xlsx")
-idcreas_2020 <- read_excel("../ID CREAS/IDCREAS2020_divulgacao.xlsx")
-idcreas_2021 <- read_excel("../ID CREAS/IDCREAS2021_divulgacao_retificado191022(1).xlsx")
-idcreas_2022 <- read_excel("../ID CREAS/IDCREAS2022_divulgacao_retificado290124.xlsx")
+idcreas_2016 <- read_excel("../ID CREAS/IDCREAS_2016_DIVULGAÇÃO.xlsx", sheet = "IDCREAS 2016")
+idcreas_2017 <- read_excel("../ID CREAS/IDCREAS_2017_DIVULGAÇÃO.xlsx", skip=6)
+idcreas_2018 <- read_excel("../ID CREAS/IDCREAS2018_divulgacao(2).xlsx", skip=7)
+idcreas_2019 <- read_excel("../ID CREAS/IDCREAS2019_divulgacao.xlsx", skip=7)
+idcreas_2020 <- read_excel("../ID CREAS/IDCREAS2020_divulgacao.xlsx", skip=7)
+idcreas_2021 <- read_excel("../ID CREAS/IDCREAS2021_divulgacao_retificado191022(1).xlsx", skip=7)
+idcreas_2022 <- read_excel("../ID CREAS/IDCREAS2022_divulgacao_retificado290124.xlsx", skip=6)
+idcreas_2023 <- read_excel("../ID CREAS/IDCREAS2023_divulgacao_retificado090824.xlsx", skip=6)
 
 niveis_ID <- c(1, 2, 3, 4, 5)
 
