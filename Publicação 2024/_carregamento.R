@@ -94,7 +94,8 @@ gm_2024 <- read_excel("../Censo SUAS 2024/9_GESTÃO MUNICIPAL/Censo_SUAS_2024_Ge
 gmrh_2024 <- read_excel("../Censo SUAS 2024/9_GESTÃO MUNICIPAL/Censo_SUAS_2024_Gestão_Municipal_RH.xlsx")
 
 
-cras_2007 <- read_excel("../Censo SUAS 2007/Censo SUAS CRAS 2007.xls")
+cras_2007 <- read_excel("../Censo SUAS 2007/Censo SUAS CRAS 2007.xls") %>%
+  filter(!is.na(id_cras))
 
 cras_2008 <- read_excel("../Censo SUAS 2008/Censo SUAS 2008 CRAS.xlsx")
 
