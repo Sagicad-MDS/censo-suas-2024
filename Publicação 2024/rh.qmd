@@ -25,6 +25,7 @@ grafico <- f_quantitativo_regiao_ano(gerh_2018, IBGE, "2018") %>%
   bind_rows(f_quantitativo_regiao_ano(gerh_2021, IBGE, "2021")) %>%
   bind_rows(f_quantitativo_regiao_ano(gerh_2022, IBGE, "2022")) %>%
   bind_rows(f_quantitativo_regiao_ano(gerh_2023, IBGE, "2023")) %>%
+  bind_rows(f_quantitativo_regiao_ano(gerh_2024, IBGE, "2024")) %>%
   
    f_grafico_col_numero_flip_2_x(Região, n, Ano)
 
