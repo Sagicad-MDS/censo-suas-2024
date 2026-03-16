@@ -233,9 +233,9 @@ creas_2023 <- read_csv2("../Censo SUAS 2023/2 - CREAS/Censo_SUAS_2023_CREAS_Dado
 
 creasrh_2023 <- read_csv2("../Censo SUAS 2023/2 - CREAS/Censo_SUAS_2023_CREAS_RH.csv", locale = locale(encoding = "latin1"))
 
-creas_2024 <- read_csv2("../Censo SUAS 2024/2_CREAS/Censo_SUAS_2024_CREAS_Dados_Gerais.csv", locale = locale(encoding = "latin1"))
+creas_2024 <- read_excel("../Censo SUAS 2024/2_CREAS/Censo_SUAS_2024_CREAS_Dados_Gerais.xlsx")
 
-creasrh_2024 <- read_csv2("../Censo SUAS 2024/2_CREAS/Censo_SUAS_2024_CREAS_RH.csv", locale = locale(encoding = "latin1"))
+creasrh_2024 <- read_excel("../Censo SUAS 2024/2_CREAS/Censo_SUAS_2024_CREAS_RH.xlsx")
 
 
 cest_2010 <- read_excel("../Censo SUAS 2010/Conselho Estadual/Censo SUAS 2010_Conselho Estadual_DIVULGAÇÃO.xlsx", sheet = "Censo SUAS 2010 Cons. Estadual")

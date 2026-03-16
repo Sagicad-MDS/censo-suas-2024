@@ -128,6 +128,7 @@ VALUE LABELS
 250' Técnico(a) de nível médio'
 249' Técnico(a) de nível superior'
 254' Outros'
+370'Cadastradora(o)'
 /q47_12
 247' Até 10 horas semanais'
 272' De 11 a 20 horas semanais'
