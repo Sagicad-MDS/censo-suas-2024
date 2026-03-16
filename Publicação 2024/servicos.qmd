@@ -84,7 +84,7 @@ paif_cras= function(df, q, ano, cod_categoria){
 }
 ```
 
-```{r fig-paif_cras_maiores, fig.cap = "Percentual de CRAS que desenvolvem atividades no âmbito do PAIF, atividades com maiores percentuaia em 2023 - Brasil, 2015, 2022 e 2023", fig.footer = "Fonte: MDS, Censo SUAS."}
+```{r fig-paif_cras_maiores, fig.cap = "Percentual de CRAS que desenvolvem atividades no âmbito do PAIF, atividades com maiores percentuaia em 2023 - Brasil, 2015, 2022, 2023 e 2024", fig.footer = "Fonte: MDS, Censo SUAS."}
 # #| fig-height: 30
 
  tabela <- 
@@ -158,12 +158,36 @@ paif_cras= function(df, q, ano, cod_categoria){
 #  bind_rows(paif_cras(cras_2023,q12_18,"2023","23")) %>%
 #  bind_rows(paif_cras(cras_2023,q12_19,"2023","16")) %>%
 #  bind_rows(paif_cras(cras_2023,q12_99,"2023","99")) %>%
+  
+  
+#  bind_rows(paif_cras(cras_2024,q12_1,"2024","1")) %>%
+  bind_rows(paif_cras(cras_2024,q12_2,"2024","2")) %>%
+  bind_rows(paif_cras(cras_2024,q12_3,"2024","5")) %>%
+#  bind_rows(paif_cras(cras_2024,q12_4,"2024","8")) %>%
+#  bind_rows(paif_cras(cras_2024,q12_5,"2024","10")) %>%
+#  bind_rows(paif_cras(cras_2024,q12_6,"2024","11")) %>%
+  bind_rows(paif_cras(cras_2024,q12_7,"2024","9")) %>%
+  bind_rows(paif_cras(cras_2024,q12_8,"2024","8A")) %>%
+  bind_rows(paif_cras(cras_2024,q12_9,"2024","14")) %>%
+  bind_rows(paif_cras(cras_2024,q12_10,"2024","15")) %>%
+  bind_rows(paif_cras(cras_2024,q12_11,"2024","17")) %>%
+  bind_rows(paif_cras(cras_2024,q12_12,"2024","4")) %>%
+  bind_rows(paif_cras(cras_2024,q12_13,"2024","3")) %>%
+#  bind_rows(paif_cras(cras_2024,q12_14,"2024","7")) %>%
+#  bind_rows(paif_cras(cras_2024,q12_15,"2024","18")) %>%
+#  bind_rows(paif_cras(cras_2024,q12_16,"2024","6")) %>%
+  bind_rows(paif_cras(cras_2024,q12_17,"2024","12")) %>%
+#  bind_rows(paif_cras(cras_2024,q12_18,"2024","23")) %>%
+#  bind_rows(paif_cras(cras_2024,q12_19,"2024","16")) %>%
+#  bind_rows(paif_cras(cras_2024,q12_99,"2024","99")) %>%
+
+  
 
   ungroup() %>%
   mutate(Categoria=str_wrap(Categoria,width=62))
 
 ordenado<-tabela %>%
-  filter(Ano == "2023") %>%
+  filter(Ano == "2024") %>%
   arrange(Percentual) %>%
   pull(Categoria)
 
@@ -176,7 +200,7 @@ grafico
 
 Já o @fig-paif_cras-menores mostra as atividades no âmbito do PAIF com os menores percentuais de unidades de CRAS que as desenvolviam em 2023, com destaque para a elaboração do Plano de Acompanhamento Familiar, atividade realizada por 80% das unidades de CRAS, e para o registro em prontuário do acompanhamento das famílias, realizado em 2023 por 92% das unidades de CRAS (aumento de 1 ponto percentual em relação a 2022), sendo que o registro do acompanhamento familiar através de prontuário é obrigatório.
 
-```{r fig-paif_cras-menores, fig.cap = "Percentual de CRAS que desenvolvem atividades no âmbito do PAIF, atividades com menores percentuaia em 2023 - Brasil, 2015, 2022 e 2023", fig.footer = "Fonte: MDS, Censo SUAS."}
+```{r fig-paif_cras-menores, fig.cap = "Percentual de CRAS que desenvolvem atividades no âmbito do PAIF, atividades com menores percentuaia em 2023 - Brasil, 2015, 2022, 2023 e 2024", fig.footer = "Fonte: MDS, Censo SUAS."}
 # #| fig-height: 30
 
  tabela <- 
@@ -250,12 +274,35 @@ Já o @fig-paif_cras-menores mostra as atividades no âmbito do PAIF com os meno
   bind_rows(paif_cras(cras_2023,q12_18,"2023","23")) %>%
   bind_rows(paif_cras(cras_2023,q12_19,"2023","16")) %>%
 #  bind_rows(paif_cras(cras_2023,q12_99,"2023","99")) %>%
+  
+  
+  bind_rows(paif_cras(cras_2024,q12_1,"2024","1")) %>%
+#  bind_rows(paif_cras(cras_2024,q12_2,"2024","2")) %>%
+#  bind_rows(paif_cras(cras_2024,q12_3,"2024","5")) %>%
+  bind_rows(paif_cras(cras_2024,q12_4,"2024","8")) %>%
+  bind_rows(paif_cras(cras_2024,q12_5,"2024","10")) %>%
+  bind_rows(paif_cras(cras_2024,q12_6,"2024","11")) %>%
+#  bind_rows(paif_cras(cras_2024,q12_7,"2024","9")) %>%
+#  bind_rows(paif_cras(cras_2024,q12_8,"2024","8A")) %>%
+#  bind_rows(paif_cras(cras_2024,q12_9,"2024","14")) %>%
+#  bind_rows(paif_cras(cras_2024,q12_10,"2024","15")) %>%
+#  bind_rows(paif_cras(cras_2024,q12_11,"2024","17")) %>%
+#  bind_rows(paif_cras(cras_2024,q12_12,"2024","4")) %>%
+#  bind_rows(paif_cras(cras_2024,q12_13,"2024","3")) %>%
+  bind_rows(paif_cras(cras_2024,q12_14,"2024","7")) %>%
+  bind_rows(paif_cras(cras_2024,q12_15,"2024","18")) %>%
+  bind_rows(paif_cras(cras_2024,q12_16,"2024","6")) %>%
+#  bind_rows(paif_cras(cras_2024,q12_17,"2024","12")) %>%
+  bind_rows(paif_cras(cras_2024,q12_18,"2024","23")) %>%
+  bind_rows(paif_cras(cras_2024,q12_19,"2024","16")) %>%
+#  bind_rows(paif_cras(cras_2024,q12_99,"2024","99")) %>%
+
 
   ungroup() %>%
   mutate(Categoria=str_wrap(Categoria,width=62))
 
 ordenado<-tabela %>%
-  filter(Ano == "2023") %>%
+  filter(Ano == "2024") %>%
   arrange(Percentual) %>%
   pull(Categoria)
 
@@ -293,7 +340,7 @@ No que se refere as regiões, destaca que o Nordeste, Sudeste e Sul registram ma
 
 ```{r CRAS-tradicionais, fig.cap = "Percentual de CRAS que atendem povos e comunidades tradicionais, por grupos , Brasil e grandes regiões, 2022", fig.footer = "Fonte: MDS, Censo SUAS.", eval=FALSE}
 
-# Pergunta mudou em 2023
+# Pergunta mudou em 2023 e 2024
 
 grafico <- f_selecao_regiao_grupo (cras_2022, q65_1_1, "Sim", IBGE, "Povos Indígenas")%>%
     bind_rows(f_selecao_regiao_grupo(cras_2022, q65_2_1, "Sim", IBGE, "Comunidade Quilombola"))%>%
@@ -314,7 +361,7 @@ O Serviço de Convivência e Fortalecimento de Vínculos (SCFV) é tipificado co
 
 O @fig-CRAS-SCFV mostra o percentual de CRAS que executam diretamente os Serviços de Convivência e Fortalecimento de Vínculos. Em 2023 registrou-se a manutenção do percentual de 2022, quando 82% dos CRAS relataram executar diretamente este serviço. Percebe-se na série histórica, começando em 2014, uma tendência de redução gradual do percentual de CRAS que executam diretamente o SCFV, exceto pelos anos de 2021 e 2022, quando houve uma recuperação após uma queda acentuada em 2020, ano da pandemia de COVID-19. Vale lembrar que o SCFV pode também ser ofertado nas Unidades de Centro de Convivência.
 
-```{r fig-CRAS-SCFV, fig.cap = "Percentual de CRAS que executam diretamente os Serviços de Convivência e Fortalecimento de Vínculos - Brasil, 2014 a 2023", fig.footer = "Fonte: MDS, Censo SUAS"}
+```{r fig-CRAS-SCFV, fig.cap = "Percentual de CRAS que executam diretamente os Serviços de Convivência e Fortalecimento de Vínculos - Brasil, 2014 a 2024", fig.footer = "Fonte: MDS, Censo SUAS"}
 
 grafico <- 
   f_sim(cras_2014, q19, "2014") %>%
@@ -327,6 +374,7 @@ grafico <-
   bind_rows(f_sim(cras_2021, q17, "2021")) %>%
   bind_rows(f_sim(cras_2022, q17, "2022")) %>%
   bind_rows(f_sim(cras_2023, q15, "2023")) %>%
+  bind_rows(f_sim(cras_2024, q15, "2024")) %>%
 
   f_grafico_col_percent(Categoria, Percentual)
 
@@ -341,14 +389,15 @@ O Serviço de Proteção Social Básica no Domicílio para Pessoas com Deficiên
 
 O @fig-CRAS-PSB mostra uma redução a partir de 2021 no percentual de CRAS que executam diretamente o Serviço de Proteção Social Básica no Domicílio para Pessoas com Deficiência e Idosas, de 30% entre 2018 e 2020 para 26% em 2023.
 
-```{r fig-CRAS-PSB, fig.cap = "Percentual de CRAS que executam diretamente o Serviço de Proteção Social Básica no Domicílio para Pessoas com Deficiência e Idosas - Brasil, 2018 a 2023", fig.footer = "Fonte: MDS, Censo SUAS"}
+```{r fig-CRAS-PSB, fig.cap = "Percentual de CRAS que executam diretamente o Serviço de Proteção Social Básica no Domicílio para Pessoas com Deficiência e Idosas - Brasil, 2018 a 2024", fig.footer = "Fonte: MDS, Censo SUAS"}
 
 grafico <- f_sim(cras_2018, q_24, "2018") %>%
   bind_rows(f_sim(cras_2019, q23, "2019")) %>%
    bind_rows(f_sim(cras_2020, q24, "2020")) %>%
    bind_rows(f_sim(cras_2021, q24, "2021")) %>%
    bind_rows(f_sim(cras_2022, q24, "2022")) %>%
-  bind_rows(f_sim(cras_2023, q22, "2023")) %>%
+   bind_rows(f_sim(cras_2023, q22, "2023")) %>%
+   bind_rows(f_sim(cras_2024, q34, "2024")) %>%
 
   f_grafico_col_percent(Categoria, Percentual)
 
@@ -423,7 +472,7 @@ paefi_creas= function(df, q, ano, cod_categoria_A, cod_categoria_B){
 }
 ```
 
-```{r fig-paefi_creas, fig.cap = "Percentual de CREAS que realizaram atendimentos do PAEFI segundo situações de riscos e perfil atendido, maiores percentuais em 2023 - Brasil, 2019, 2022 e 2023"}
+```{r fig-paefi_creas, fig.cap = "Percentual de CREAS que realizaram atendimentos do PAEFI segundo situações de riscos e perfil atendido, maiores percentuais em 2023 - Brasil, 2019, 2022, 2023 e 2024"}
 # #| fig-height: 4.5
 
   tabela <- 
@@ -512,12 +561,68 @@ paefi_creas= function(df, q, ano, cod_categoria_A, cod_categoria_B){
 #  bind_rows(paefi_creas(creas_2023,q12_15_2,"2023","15","2")) %>%
 #  bind_rows(paefi_creas(creas_2023,q12_15_3,"2023","15","3")) %>%
 #  bind_rows(paefi_creas(creas_2023,q12_15_4,"2023","15","4")) %>%
+  
+  
+  bind_rows(paefi_creas(creas_2024,q13_1_1,"2024","1","1")) %>%
+  bind_rows(paefi_creas(creas_2024,q13_1_2,"2024","1","2")) %>%
+#  bind_rows(paefi_creas(creas_2024,q12_1_3,"2024","1","3")) %>%
+#  bind_rows(paefi_creas(creas_2024,q12_1_4,"2024","1","4")) %>%
+  bind_rows(paefi_creas(creas_2024,q13_2_1,"2024","2","1")) %>%
+  bind_rows(paefi_creas(creas_2024,q13_2_2,"2024","2","2")) %>%
+#  bind_rows(paefi_creas(creas_2024,q12_2_3,"2024","2","3")) %>%
+  bind_rows(paefi_creas(creas_2024,q13_2_4,"2024","2","4")) %>%
+  bind_rows(paefi_creas(creas_2024,q13_3_1,"2024","3","1")) %>%
+#  bind_rows(paefi_creas(creas_2024,q12_3_2,"2024","3","2")) %>%
+#  bind_rows(paefi_creas(creas_2024,q12_3_3,"2024","3","3")) %>%
+#  bind_rows(paefi_creas(creas_2024,q12_3_4,"2024","3","4")) %>%
+#  bind_rows(paefi_creas(creas_2024,q12_4_1,"2024","4","1")) %>%
+#  bind_rows(paefi_creas(creas_2024,q12_4_2,"2024","4","2")) %>%
+#  bind_rows(paefi_creas(creas_2024,q12_4_3,"2024","4","3")) %>%
+#  bind_rows(paefi_creas(creas_2024,q12_4_4,"2024","4","4")) %>%
+  bind_rows(paefi_creas(creas_2024,q13_5_1,"2024","5","1")) %>%
+  bind_rows(paefi_creas(creas_2024,q13_5_4,"2024","5","4")) %>%
+#  bind_rows(paefi_creas(creas_2024,q12_6_2,"2024","6","2")) %>%
+#  bind_rows(paefi_creas(creas_2024,q12_6_3,"2024","6","3")) %>%
+  bind_rows(paefi_creas(creas_2024,q13_6_4,"2024","6","4")) %>%
+#  bind_rows(paefi_creas(creas_2024,q12_7_1,"2024","7","1")) %>%
+#  bind_rows(paefi_creas(creas_2024,q12_7_2,"2024","7","2")) %>%
+#  bind_rows(paefi_creas(creas_2024,q12_7_3,"2024","7","3")) %>%
+#  bind_rows(paefi_creas(creas_2024,q12_7_4,"2024","7","4")) %>%
+#  bind_rows(paefi_creas(creas_2024,q12_8_1,"2024","8","1")) %>%
+#  bind_rows(paefi_creas(creas_2024,q12_8_2,"2024","8","2")) %>%
+#  bind_rows(paefi_creas(creas_2024,q12_8_3,"2024","8","3")) %>%
+#  bind_rows(paefi_creas(creas_2024,q12_8_4,"2024","8","4")) %>%
+#  bind_rows(paefi_creas(creas_2024,q12_9_1,"2024","9","1")) %>%
+#  bind_rows(paefi_creas(creas_2024,q12_10_1,"2024","10","1")) %>%
+#  bind_rows(paefi_creas(creas_2024,q12_10_2,"2024","10","2")) %>%
+#  bind_rows(paefi_creas(creas_2024,q12_10_3,"2024","10","3")) %>%
+#  bind_rows(paefi_creas(creas_2024,q12_10_4,"2024","10","4")) %>%
+#  bind_rows(paefi_creas(creas_2024,q12_11_1,"2024","11","1")) %>%
+#  bind_rows(paefi_creas(creas_2024,q12_11_2,"2024","11","2")) %>%
+#  bind_rows(paefi_creas(creas_2024,q12_11_3,"2024","11","3")) %>%
+#  bind_rows(paefi_creas(creas_2024,q12_11_4,"2024","11","4")) %>%
+#  bind_rows(paefi_creas(creas_2024,q12_12_1,"2024","12","1")) %>%
+#  bind_rows(paefi_creas(creas_2024,q12_12_2,"2024","12","2")) %>%
+#  bind_rows(paefi_creas(creas_2024,q12_12_3,"2024","12","3")) %>%
+#  bind_rows(paefi_creas(creas_2024,q12_12_4,"2024","12","4")) %>%
+#  bind_rows(paefi_creas(creas_2024,q12_13_1,"2024","13","1")) %>%
+#  bind_rows(paefi_creas(creas_2024,q12_13_2,"2024","13","2")) %>%
+#  bind_rows(paefi_creas(creas_2024,q12_13_3,"2024","13","3")) %>%
+#  bind_rows(paefi_creas(creas_2024,q12_13_4,"2024","13","4")) %>%
+#  bind_rows(paefi_creas(creas_2024,q12_14_1,"2024","14","1")) %>%
+#  bind_rows(paefi_creas(creas_2024,q12_14_2,"2024","14","2")) %>%
+#  bind_rows(paefi_creas(creas_2024,q12_14_3,"2024","14","3")) %>%
+#  bind_rows(paefi_creas(creas_2024,q12_14_4,"2024","14","4")) %>%
+#  bind_rows(paefi_creas(creas_2024,q12_15_1,"2024","15","1")) %>%
+#  bind_rows(paefi_creas(creas_2024,q12_15_2,"2024","15","2")) %>%
+#  bind_rows(paefi_creas(creas_2024,q12_15_3,"2024","15","3")) %>%
+#  bind_rows(paefi_creas(creas_2024,q12_15_4,"2024","15","4")) %>%
 
   ungroup() %>%
   mutate(Categoria=str_wrap(Categoria,width=51))
 
 ordenado<-tabela %>%
-  filter(Ano == "2023") %>%
+  filter(Ano == "2024") %>%
   arrange(Percentual) %>%
   pull(Categoria)
 
@@ -532,7 +637,7 @@ A seguir destacamos algumas situações atendidas no PAEFI que não estão entre
 
 O @fig-paefi2_creas mostra os percentuais de CREAS que realizaram atendimentos do PAEFI em situações de trabalho em condição análoga à escravidão e de trabalho infantil. Os percentuais de CREAS que realizaram atendimentos nestas situações caiu em 2023.
 
-```{r fig-paefi2_creas, fig.cap = "Percentual de CREAS que realizaram atendimentos do PAEFI em situações de trabalho em condição análoga à escravidão e de trabalho infantil - Brasil, 2020, 2022 e 2023", fig.footer = "Fonte: MDS, Censo SUAS."}
+```{r fig-paefi2_creas, fig.cap = "Percentual de CREAS que realizaram atendimentos do PAEFI em situações de trabalho em condição análoga à escravidão e de trabalho infantil - Brasil, 2020, 2022, 2023 e 2024", fig.footer = "Fonte: MDS, Censo SUAS."}
 
 tabela <- 
   paefi_creas(creas_2020,q16_8_1,"2020","8","1") %>%
@@ -552,12 +657,18 @@ tabela <-
   bind_rows(paefi_creas(creas_2023,q12_8_3,"2023","8","3")) %>%
   bind_rows(paefi_creas(creas_2023,q12_8_4,"2023","8","4")) %>%
   bind_rows(paefi_creas(creas_2023,q12_9_1,"2023","9","1")) %>%
+  
+  bind_rows(paefi_creas(creas_2024,q13_8_1,"2024","8","1")) %>%
+  bind_rows(paefi_creas(creas_2024,q13_8_2,"2024","8","2")) %>%
+  bind_rows(paefi_creas(creas_2024,q13_8_3,"2024","8","3")) %>%
+  bind_rows(paefi_creas(creas_2024,q13_8_4,"2024","8","4")) %>%
+  bind_rows(paefi_creas(creas_2024,q13_9_1,"2024","9","1")) %>%
    
   ungroup() %>%
   mutate(Categoria=str_wrap(Categoria,width=45))
 
 ordenado<-tabela %>%
-  filter(Ano == "2023") %>%
+  filter(Ano == "2024") %>%
   arrange(Percentual) %>%
   pull(Categoria)
 
@@ -660,7 +771,7 @@ grafico
 
 Os percentuais de CREAS que realizaram atendimento do PAEFI para pessoas em situação de imigração (internacional) e/ou refúgio reduziram em 2023 em relação a 2022 (@fig-paefi6_creas).
 
-```{r fig-paefi6_creas, fig.cap = "Percentual de CREAS que realizaram atendimentos do PAEFI para pessoas em situação de imigração (internacional) e/ou refúgio - Brasil,  2020, 2022 e 2023", fig.footer = "Fonte: MDS, Censo SUAS."}
+```{r fig-paefi6_creas, fig.cap = "Percentual de CREAS que realizaram atendimentos do PAEFI para pessoas em situação de imigração (internacional) e/ou refúgio - Brasil,  2020, 2022, 2023 e 2024", fig.footer = "Fonte: MDS, Censo SUAS."}
 
  tabela <-
   paefi_creas(creas_2020,q16_14_1,"2020","15","1") %>%
@@ -680,12 +791,21 @@ Os percentuais de CREAS que realizaram atendimento do PAEFI para pessoas em situ
   bind_rows(paefi_creas(creas_2023,q12_15_3,"2023","15","3")) %>%
   bind_rows(paefi_creas(creas_2023,q12_15_4,"2023","15","4")) %>%
   bind_rows(paefi_creas(creas_2023,q12_15_0,"2023","15","0")) %>%
+  
+  bind_rows(paefi_creas(creas_2024,q13_15_1,"2024","15","1")) %>%
+  bind_rows(paefi_creas(creas_2024,q13_15_2,"2024","15","2")) %>%
+  bind_rows(paefi_creas(creas_2024,q13_15_3,"2024","15","3")) %>%
+  bind_rows(paefi_creas(creas_2024,q13_15_4,"2024","15","4")) %>%
+  bind_rows(paefi_creas(creas_2024,q13_15_0,"2024","15","0")) %>%
+  
+  
+   
    
   ungroup() %>%
   mutate(Categoria=str_wrap(Categoria,width=51))
 
 ordenado<-tabela %>%
-  filter(Ano == "2023") %>%
+  filter(Ano == "2024") %>%
   arrange(Percentual) %>%
   pull(Categoria)
 
@@ -702,18 +822,18 @@ Logo em seguida observamos as Comunidades Quilombolas, puxado pelo alto percentu
 
 Destaca-se o alto percentual de CREAS da Região Norte que atenderam Comunidades Ribeirinhas (51%).
 
-```{r fig-creas-tradicionais, fig.cap = "Percentual de CREAS segundo realização de atendimento de povos e comunidades tradicionais - Brasil e Grandes Regiões, 2023", fig.footer = "Fonte: MDS, Censo SUAS."}
+```{r fig-creas-tradicionais, fig.cap = "Percentual de CREAS segundo realização de atendimento de povos e comunidades tradicionais - Brasil e Grandes Regiões, 2024", fig.footer = "Fonte: MDS, Censo SUAS."}
 # #| fig-height: 8
 
 tabela <- 
-  f_selecao_regiao_grupo_com_na (creas_2023, q42_1, "Sim", Regiao, "Povos Indígenas") %>%
-  bind_rows(f_selecao_regiao_grupo_com_na(creas_2023, q42_2, "Sim", Regiao, "Comunidade Quilombola")) %>%
-  bind_rows(f_selecao_regiao_grupo_com_na(creas_2023, q42_4, "Sim", Regiao, "Povos Ciganos")) %>%
-  bind_rows(f_selecao_regiao_grupo_com_na(creas_2023, q42_3, "Sim", Regiao, "Comunidade Ribeirinha")) %>%
-  bind_rows(f_selecao_regiao_grupo_com_na(creas_2023, q42_5, "Sim", Regiao, "Povos de Matriz Africana e de terreiro")) %>%
-  bind_rows(f_selecao_regiao_grupo_com_na(creas_2023, q42_6, "Sim", Regiao, "Comunidades Extrativistas")) %>%
-  bind_rows(f_selecao_regiao_grupo_com_na(creas_2023, q42_99, "Sim", Regiao, "Outros povos e comunidades tradicionais")) %>%
-#  bind_rows(f_selecao_regiao_grupo_com_na(creas_2023, q42_0, "Sim", Regiao, "Não atendeu")) %>%
+  f_selecao_regiao_grupo_com_na (creas_2024, q42_1, "Sim", Regiao, "Povos Indígenas") %>%
+  bind_rows(f_selecao_regiao_grupo_com_na(creas_2024, q42_2, "Sim", Regiao, "Comunidade Quilombola")) %>%
+  bind_rows(f_selecao_regiao_grupo_com_na(creas_2024, q42_4, "Sim", Regiao, "Povos Ciganos")) %>%
+  bind_rows(f_selecao_regiao_grupo_com_na(creas_2024, q42_3, "Sim", Regiao, "Comunidade Ribeirinha")) %>%
+  bind_rows(f_selecao_regiao_grupo_com_na(creas_2024, q42_5, "Sim", Regiao, "Povos de Matriz Africana e de terreiro")) %>%
+  bind_rows(f_selecao_regiao_grupo_com_na(creas_2024, q42_6, "Sim", Regiao, "Comunidades Extrativistas")) %>%
+  bind_rows(f_selecao_regiao_grupo_com_na(creas_2024, q42_99, "Sim", Regiao, "Outros povos e comunidades tradicionais")) %>%
+#  bind_rows(f_selecao_regiao_grupo_com_na(creas_2024, q42_0, "Sim", Regiao, "Não atendeu")) %>%
 
   mutate(Grupo=str_wrap(Grupo,width=38))
 
@@ -789,7 +909,7 @@ O Serviço de Proteção Social a Adolescentes em Cumprimento de Medida Socioedu
 
 Desde 2019 observamos no @fig-CREAS-MSE uma relativa estabilidade, em torno de 88%, no percentual de CREAS que realizam o Serviço de Proteção Social a Adolescentes em cumprimento de Medida Socioeducativa de Liberdade Assistida (LA) e de Prestação de Serviços à Comunidade (PSC).
 
-```{r fig-CREAS-MSE, fig.cap = "Percentual de CREAS que realizam o Serviço de Proteção Social a Adolescentes em cumprimento de Medida Socioeducativa de Liberdade Assistida (LA) e de Prestação de Serviços à Comunidade (PSC) - Brasil, 2017 a 2023", fig.footer = "Fonte: MDS, Censo SUAS"}
+```{r fig-CREAS-MSE, fig.cap = "Percentual de CREAS que realizam o Serviço de Proteção Social a Adolescentes em cumprimento de Medida Socioeducativa de Liberdade Assistida (LA) e de Prestação de Serviços à Comunidade (PSC) - Brasil, 2017 a 2024", fig.footer = "Fonte: MDS, Censo SUAS"}
 
 grafico <-
   f_sim(creas_2017, q20, "2017") %>%
@@ -799,7 +919,8 @@ grafico <-
   bind_rows(f_sim(creas_2021, q20, "2021")) %>%
   bind_rows(f_sim(creas_2022, q20, "2022")) %>%
   bind_rows(f_sim(creas_2023, q13, "2023")) %>%
-
+  bind_rows(f_sim(creas_2024, q14, "2024")) %>%
+  
   f_grafico_col_percent(Categoria, Percentual)
 
 grafico
@@ -811,7 +932,7 @@ O Serviço de Proteção Social Especial para Pessoas com Deficiência, Idosas e
 
 No @fig-creas-pse-domicilio vemos que o percentual de CREAS que ofertam Serviço de Proteção Social Especial para Pessoas com Deficiência, Idosas e suas Famílias vem reduzindo, tanto para os CREAS que ofertam com equipe específica para o serviço, quanto para os que ofertam sem equipe específica para o serviço.
 
-```{r fig-creas-pse-domicilio, fig.cap = "Percentual de CREAS segundo oferta do Serviço de Proteção Social Especial para Pessoas com Deficiência, Idosas e suas Famílias, 2018 a 2023", fig.footer = "Fonte: MDS, Censo SUAS."}
+```{r fig-creas-pse-domicilio, fig.cap = "Percentual de CREAS segundo oferta do Serviço de Proteção Social Especial para Pessoas com Deficiência, Idosas e suas Famílias, 2018 a 2024", fig.footer = "Fonte: MDS, Censo SUAS."}
 # #| fig-height: 4.5
 
 creas_pse = function(df, q, ano){
@@ -841,7 +962,7 @@ tabela <-
   bind_rows(creas_pse(creas_2022, q38, "2022")) %>%
   bind_rows(creas_pse(creas_2023, q30, "2023"))
 
-ordenado<-tabela %>%
+  ordenado<-tabela %>%
   filter(Ano == "2023") %>%
   arrange(Percentual) %>%
   pull(Grupo)
@@ -909,6 +1030,7 @@ grafico <-
   bind_rows(creas_psee(creas_2021, q30, "2021")) %>%
   bind_rows(creas_psee(creas_2022, q30, "2022")) %>%
   bind_rows(creas_psee(creas_2023, q22, "2023")) %>%
+  bind_rows(creas_psee(creas_2024, q23, "2024")) %>%
 
   f_grafico_col_stack_percent(Categoria, Percentual, Nível, 4)
 
@@ -936,7 +1058,8 @@ grafico <-
   bind_rows(f_percentual_municipios_regiao_ano(famacolfam_2021, codigo_ibge, "2021")) %>%
   bind_rows(f_percentual_municipios_regiao_ano(famacolfam_2022, IBGE7, "2022")) %>%
   bind_rows(f_percentual_municipios_regiao_ano(famacolfam_2023, IBGE, "2023")) %>%
-   
+  bind_rows(f_percentual_municipios_regiao_ano(famacolfam_2024, IBGE, "2024")) %>%
+  
   f_grafico_col_group_percent(Região, Percentual, Ano, 1)
 
 grafico
@@ -985,7 +1108,7 @@ Destaca-se que a oferta dos Benefícios Eventuais caracteriza-se como direito, p
 
 Observamos no @fig-be-munic que em 2023 se manteve o percentual de Municípios de 2022 que concediam Benefícios Eventuais, exceto em situações de calamidade pública, em que houve um recuo de 2 pontos percentuais.
 
-```{r fig-be-munic, fig.cap = "Percentual de Municípios que concedem Benefícios Eventuais, segundo situação de vulnerabilidade - Brasil, 2012, 2017, 2022 e 2023", fig.footer = "Fonte: MDS, Censo SUAS."}
+```{r fig-be-munic, fig.cap = "Percentual de Municípios que concedem Benefícios Eventuais, segundo situação de vulnerabilidade - Brasil, 2012, 2017, 2022, 2023 e 2024", fig.footer = "Fonte: MDS, Censo SUAS."}
 
 beneficios_eventuais = function(df, q, ano, cod_categoria){
   q <- enquo(q)
@@ -1028,11 +1151,17 @@ beneficios_eventuais = function(df, q, ano, cod_categoria){
   bind_rows(beneficios_eventuais(gm_2023,q60_2,"2023","2")) %>%
   bind_rows(beneficios_eventuais(gm_2023,q60_3,"2023","3")) %>%
   bind_rows(beneficios_eventuais(gm_2023,q60_4,"2023","4")) %>%
+   
+  bind_rows(beneficios_eventuais(gm_2024,q67_1,"2024","1")) %>%
+  bind_rows(beneficios_eventuais(gm_2024,q67_2,"2024","2")) %>%
+  bind_rows(beneficios_eventuais(gm_2024,q67_3,"2024","3")) %>%
+  bind_rows(beneficios_eventuais(gm_2024,q67_4,"2024","4")) %>%
+ 
 
   ungroup()
 
 ordenado<-tabela %>%
-  filter(Ano == "2023") %>%
+  filter(Ano == "2024") %>%
   arrange(Percentual) %>%
   pull(Categoria)
 
@@ -1045,7 +1174,7 @@ grafico
 
 Em relação aos locais onde os benefícios são concedidos nos Municípios, @fig-be-local, vemos uma redução na concessão realizada apenas na sede do Órgão Gestor, com aumento da concessão realizada em unidades da rede socioassistencial ou em ambos os locais.
 
-```{r fig-be-local, fig.cap = "Percentual dos locais onde os benefícios são concedidos nos Municípios que concedem Benefícios Eventuais, segundo situação de vulnerabilidade - Brasil, 2013, 2018, 2022 e 2023", fig.footer = "Fonte: MDS, Censo SUAS."}
+```{r fig-be-local, fig.cap = "Percentual dos locais onde os benefícios são concedidos nos Municípios que concedem Benefícios Eventuais, segundo situação de vulnerabilidade - Brasil, 2013, 2018, 2022, 2023 e 2024", fig.footer = "Fonte: MDS, Censo SUAS."}
 
 w_grupo <- 36
 
@@ -1104,6 +1233,11 @@ tabela <-
   bind_rows(f_local(gm_2023,q60_2_1,"2023","2")) %>%
   bind_rows(f_local(gm_2023,q60_3_1,"2023","3")) %>%
   bind_rows(f_local(gm_2023,q60_4_1,"2023","4")) %>%
+  
+  bind_rows(f_local(gm_2024,q67_1_1,"2024","1")) %>%
+  bind_rows(f_local(gm_2024,q67_2_1,"2024","2")) %>%
+  bind_rows(f_local(gm_2024,q67_3_1,"2024","3")) %>%
+  bind_rows(f_local(gm_2024,q67_4_1,"2024","4")) %>%
 
   mutate(Categoria = factor(Categoria, levels = c(
     "Situação de Natalidade",
