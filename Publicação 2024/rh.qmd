@@ -34,7 +34,7 @@ grafico
 
 Já na evolução da quantidade de trabalhadoras/es nas Secretarias Municipais de Assistência Social (@fig-qtd_trab_munic) vemos um direcionamento e um padrão bem definido a nível nacional, que se repete em todas as grandes regiões, que é um crescimento em todos os anos, exceto pelo ano de 2020, quando houve uma grande redução, com o patamar anterior a 2020 sendo praticamente retomado já em 2021.
 
-```{r fig-qtd_trab_munic, fig.cap ="Evolução da quantidade de trabalhadoras/es nas Secretarias Municipais de Assistência Social - Brasil e grandes regiões, 2018 a 2023"}
+```{r fig-qtd_trab_munic, fig.cap ="Evolução da quantidade de trabalhadoras/es nas Secretarias Municipais de Assistência Social - Brasil e grandes regiões, 2018 a 2024"}
 #| fig-height: 6
 
 grafico <- f_quantitativo_regiao_ano(gmrh_2018, IBGE, "2018")%>%
@@ -43,6 +43,7 @@ grafico <- f_quantitativo_regiao_ano(gmrh_2018, IBGE, "2018")%>%
   bind_rows(f_quantitativo_regiao_ano(gmrh_2021, IBGE, "2021")) %>%
   bind_rows(f_quantitativo_regiao_ano(gmrh_2022, IBGE, "2022")) %>%
   bind_rows(f_quantitativo_regiao_ano(gmrh_2023, IBGE, "2023")) %>%
+  bind_rows(f_quantitativo_regiao_ano(gmrh_2024, IBGE, "2024")) %>%
   
   f_grafico_col_numero_flip_2_x(Região, n, Ano)
 
@@ -51,7 +52,7 @@ grafico
 
 O @fig-uf_trab_vin mostra os percentuais das trabalhadoras e trabalhadores das Secretarias Estaduais de Assistência Social segundo o tipo de vínculo. O percentual de servidoras/es estatutárias/os caiu significativamente em 2023, de 46% para 40%. O percentual de comissionadas/os também reduziu, de 29% para 27%. O percentual de outros vínculos não permanentes aumentou, é o maior da série iniciada em 2018 e agora já representa 1/4 dos tipos de vínculo. Finalmente, o percentual de empregadas/os públicas/os (CLT) aumentou de 3,3% para 7,3% e também é o maior desta série histórica.
 
-```{r fig-uf_trab_vin, fig.cap ="Percentual de trabalhadoras/es nas Secretarias Estaduais de Assistência Social, segundo tipo de vínculo - Brasil, 2018 a 2023"}
+```{r fig-uf_trab_vin, fig.cap ="Percentual de trabalhadoras/es nas Secretarias Estaduais de Assistência Social, segundo tipo de vínculo - Brasil, 2018 a 2024"}
 
 # Devido à grande mudança na forma de coleta destes dados em 2018, optei por iniciar a série em 2018, para evitar comparações com os dados anteriores, que apresentam descontinuidade devido a essa mudança e mão devido a alteração da realidade investigada.
 
@@ -102,8 +103,10 @@ tabela <-
   bind_rows(f_nomex_grupos_quantitativo(gerh_2021, "2021", d_51_11)) %>%
   bind_rows(f_nomex_grupos_quantitativo(gerh_2022, "2022", d_51_11)) %>%
   bind_rows(f_nomex_grupos_quantitativo(gerh_2023, "2023", d31_11)) %>%
-
-  f_vinculo(Grupo) %>%
+  bind_rows(f_nomex_grupos_quantitativo(gerh_2023, "2023", d31_11)) %>%
+  bind_rows(f_nomex_grupos_quantitativo(gerh_2024, "2024", d41_11)) %>%
+  
+   f_vinculo(Grupo) %>%
   f_calcula_percentual(Eixo_x, Grupo, Eixo_y)
 
 ordenado<-tabela %>%
@@ -120,7 +123,7 @@ grafico
 
 Já em relação aos percentuais de tipos de vínculo das/os trabalhadoras/es nas Secretarias Municipais de Assistência Social, @fig-munic_trab_vin, vemos uma grande estabilidade na distribuição dos percentuais desde 2018, com pequenas oscilações: pouco mais de 1/3 de servidoras/es estatutárias/os, pouco menos de 1/3 de comissionadas/os e também de outros vínculos não permanentes, e em torno de 5% de empregadas/os públicas/os (CLT).
 
-```{r fig-munic_trab_vin, fig.cap ="Percentual de trabalhadoras/es nas Secretarias Municipais de Assistência Social, segundo tipo de vínculo - Brasil, 2018 a 2023"}
+```{r fig-munic_trab_vin, fig.cap ="Percentual de trabalhadoras/es nas Secretarias Municipais de Assistência Social, segundo tipo de vínculo - Brasil, 2018 a 2024"}
 
 tabela <-
 #  f_nomex_somay_nomegrupo(gm_2013, "2013", q42a_4, "Estatutários") %>%
@@ -154,12 +157,13 @@ tabela <-
   bind_rows(f_nomex_grupos_quantitativo(gmrh_2021, "2021", d81_11)) %>%
   bind_rows(f_nomex_grupos_quantitativo(gmrh_2022, "2022", d81_11)) %>%
   bind_rows(f_nomex_grupos_quantitativo(gmrh_2023, "2023", d66_11)) %>%
+  bind_rows(f_nomex_grupos_quantitativo(gmrh_2024, "2024", d76_11)) %>%
   
   f_vinculo(Grupo) %>%
   f_calcula_percentual(Eixo_x, Grupo, Eixo_y)
 
 ordenado<-tabela %>%
-  filter(Eixo_x == 2023) %>%
+  filter(Eixo_x == 2024) %>%
   arrange(Percentual) %>%
   pull(Grupo)
 
@@ -172,7 +176,7 @@ grafico
 
 Quanto à escolaridade das/os trabalhadoras/es das Secretarias Estaduais de Assistência Social observa-se em 2023 a manutenção da distribuição observada em 2022, apenas com um pequeno aumento no percentual de trabalhadoras/es com Nível Fundamental, de 6,2% para 6,6%, acompanhado de pequena redução no percentual de trabalhadoras/es com Nível Médio, de 31% para 30% (@fig-uf_trab_form). Vemos também que esta distribuição pouco mudou desde 2018, embora se perceba uma tendência de redução no percentual de trabalhadoras/es com Nível Fundamental e aumento no percentual trabalhadoras/es com Nível Superior.
 
-```{r fig-uf_trab_form, fig.cap ="Percentual de trabalhadoras/es nas Secretarias Estaduais de Assistência Social segundo escolaridade - Brasil, 2018 a 2023"}
+```{r fig-uf_trab_form, fig.cap ="Percentual de trabalhadoras/es nas Secretarias Estaduais de Assistência Social segundo escolaridade - Brasil, 2018 a 2024"}
 
 grafico <- 
 #  f_nomex_somay_nomegrupo(ge_2012, "2012", q55e_1, "Nível Fundamental") %>%
@@ -189,7 +193,8 @@ grafico <-
   bind_rows(f_nomex_grupos_quantitativo(gerh_2021, "2021", d_51_9)) %>%
   bind_rows(f_nomex_grupos_quantitativo(gerh_2022, "2022", d_51_9)) %>%
   bind_rows(f_nomex_grupos_quantitativo(gerh_2023, "2023", d31_9)) %>%
- 
+  bind_rows(f_nomex_grupos_quantitativo(gerh_2024, "2024", d41_9)) %>%
+  
   f_nivel_ensino(Grupo) %>%
   f_calcula_percentual(Eixo_x, Grupo, Eixo_y) %>%
 
@@ -202,7 +207,7 @@ Para as/os trabalhadoras/es nas Secretarias municipais observa-se cenário parec
 
 Apesar das semelhanças nas tendências, observa-se uma diferença significativa na distribuição por escolaridade entre as/os trabalhadoras/es das Secretarias estaduais e as/os das Secretarias municipais, com o percentual das/os trabalhadoras/es com Nível Superior nas Secretarias estaduais sendo 11 pontos percentuais superior ao percentual dessas/es trabalhadoras/es nas Secretarias municipais. O percentual das/os trabalhadoras/es com Nível Médio é 10 pontos percentuais maior nas Secretarias municipais do que nas Secretarias estaduais, e com Nível Fundamental é 1,8 pontos percentuais maior nas Secretarias municipais também.
 
-```{r fig-munic_trab_form, fig.cap ="Percentual de trabalhadoras/es nas Secretarias municipais, segundo escolaridade - Brasil, 2018 a 2023"}
+```{r fig-munic_trab_form, fig.cap ="Percentual de trabalhadoras/es nas Secretarias municipais, segundo escolaridade - Brasil, 2018 a 2024"}
 
  grafico <- 
 #  f_nomex_somay_nomegrupo(gm_2013, "2013", q41e_1, "Nível Fundamental") %>%
@@ -231,7 +236,8 @@ Apesar das semelhanças nas tendências, observa-se uma diferença significativa
   bind_rows(f_nomex_grupos_quantitativo(gmrh_2021, "2021", d81_9)) %>%
   bind_rows(f_nomex_grupos_quantitativo(gmrh_2022, "2022", d81_9)) %>%
   bind_rows(f_nomex_grupos_quantitativo(gmrh_2023, "2023", d66_9)) %>%
-  
+  bind_rows(f_nomex_grupos_quantitativo(gmrh_2024, "2024", d76_9)) %>% 
+ 
   f_nivel_ensino(Grupo) %>%
   f_calcula_percentual(Eixo_x, Grupo, Eixo_y) %>%
   f_grafico_col_stack_percent(Eixo_x, Percentual, Grupo, 1)
@@ -272,7 +278,7 @@ f_formacao = function(df, formacao, ano){
 }
 ```
 
-```{r fig-uf_trab_prof, fig.cap ="Percentual de trabalhadoras/es nas Secretarias estaduais de Assistência Social, segundo área de formação - Brasil, 2018, 2022 e 2023"}
+```{r fig-uf_trab_prof, fig.cap ="Percentual de trabalhadoras/es nas Secretarias estaduais de Assistência Social, segundo área de formação - Brasil, 2018, 2022,2023 e 2024"}
 # #| fig-height: 9
 
 f_profissao = function(df, profissao){
@@ -367,11 +373,12 @@ tabela <-
   f_formacao(gerh_2018, q_37_10, "2018") %>%
   bind_rows(f_formacao(gerh_2022, q51_10, "2022")) %>%
   bind_rows(f_formacao(gerh_2023, q31_10, "2023")) %>%
+  bind_rows(f_formacao(gerh_2024, q41_10, "2024")) %>%
   f_profissao(Eixo_x) %>%
   f_calcula_percentual(Grupo, Eixo_x, Eixo_y)
 
 ordenado<-tabela %>%
-  filter(Grupo == "2023") %>%
+  filter(Grupo == "2024") %>%
   arrange(Eixo_y) %>%
   pull(Eixo_x)
 
@@ -386,7 +393,7 @@ No @fig-munic_trab_prof, vemos a mesma informação sobre as áreas de formaçã
 
 Uma grande diferença na formação das/os trabalhadoras/es dos Municípios para as/os trabalhadoras/es do Estado é que a formação de socióloga/o, sexta mais frequenta nos Estados, não aparece entre as formações mais frequentes nos Municípios, e outras 5 formações são mais frequentes nos Municípios do que a formação de socióloga/o (Administrador/a Público/a ou Gestor/a Público/a, Contador/a, Nutricionista, Enfermeira/o e Profissional de Educação Física).
 
-```{r fig-munic_trab_prof, fig.cap ="Percentual de trabalhadoras/es nas Secretarias municipais de Assistência Social, segundo área de formação - Brasil, 2018, 2022 e 2023"}
+```{r fig-munic_trab_prof, fig.cap ="Percentual de trabalhadoras/es nas Secretarias municipais de Assistência Social, segundo área de formação - Brasil, 2018, 2022 2023 e 2024"}
 # #| fig-height: 10
 
 f_profissao = function(df, profissao){
@@ -480,11 +487,12 @@ tabela <-
   f_formacao(gmrh_2018, q_62_10, "2018") %>%
   bind_rows(f_formacao(gmrh_2022, q81_10, "2022")) %>%
   bind_rows(f_formacao(gmrh_2023, q66_10, "2023")) %>%
+  bind_rows(f_formacao(gmrh_2024, q76_10, "2024")) %>%
   f_profissao(Eixo_x) %>%
   f_calcula_percentual(Grupo, Eixo_x, Eixo_y)
 
 ordenado<-tabela %>%
-  filter(Grupo == "2023") %>%
+  filter(Grupo == "2024") %>%
   arrange(Eixo_y) %>%
   pull(Eixo_x)
 
@@ -501,7 +509,7 @@ O Artigo 6º da Lei Orgânica de Assistência Social (LOAS) estabelece que os re
 
 O @fig-trab-unidades mostra um crescimento contínuo na quantidade de trabalhadoras/es nas unidades socioassistenciais. Em 2023 o número de trabalhadoras/es nos CRAS cresceu de 115.149 (em 2022) para 117.376, um acréscimo de 2.227 (1,9%) trabalhadoras/es em um ano. Nos CREAS o número de trabalhadoras/es cresceu de 27.084 (em 2022) para 27.875, aumento de 791 (2,9%) trabalhadoras/es. E nos Centros POP cresceu de 3.628 (em 2022) para 3.982, ou seja, um adicional de 354 (9,8%) trabalhadoras/es nesse equipamento.
 
-```{r fig-trab-unidades, fig.cap ="Evolução da quantidade de trabalhadoras/es dos CRAS, CREAS e Centro POP - Brasil; 2012, 2017, 2022 e 2023" }
+```{r fig-trab-unidades, fig.cap ="Evolução da quantidade de trabalhadoras/es dos CRAS, CREAS e Centro POP - Brasil; 2012, 2017, 2022, 2023 e 2024" }
 
 grafico <-
   f_quantitativo_em_2_grupos(crasrh_2012, "CRAS", "2012") %>%
@@ -519,6 +527,11 @@ grafico <-
   bind_rows(f_quantitativo_em_2_grupos(crasrh_2023, "CRAS", "2023")) %>%
   bind_rows(f_quantitativo_em_2_grupos(creasrh_2023, "CREAS", "2023")) %>%
   bind_rows(f_quantitativo_em_2_grupos(cpoprh_2023, "Centro POP", "2023")) %>%
+  
+  bind_rows(f_quantitativo_em_2_grupos(crasrh_2024, "CRAS", "2024")) %>%
+  bind_rows(f_quantitativo_em_2_grupos(creasrh_2024, "CREAS", "2024")) %>%
+  bind_rows(f_quantitativo_em_2_grupos(cpoprh_2024, "Centro POP", "2024")) %>%
+
 
   mutate(Grupo1 = factor(Grupo1, levels = c("CRAS", "CREAS", "Centro POP"))) %>%
   f_grafico_col_group_numero(Grupo1, n, Grupo2, 1)
@@ -577,7 +590,7 @@ grafico <- f_sim(ge_2013, q68a_1, "2013") %>%
     bind_rows(f_sim(ge_2021, q46_1_1, "2021")) %>%
     bind_rows(f_sim(ge_2022, q46_1_1, "2022")) %>%
     
-  #2023 não foi feita essa pergunta
+  #2023 e 2024 não foi feita essa pergunta
   
   f_grafico_col_percent(Categoria, Percentual)
 
@@ -586,7 +599,7 @@ grafico
 
 Em relação à realização de concursos públicos pelos Municípios o @fig-conc_munic mostra o percentual de Municípios que realizaram concurso público para trabalhadoras/es de nível superior no SUAS. Vemos entre 2012 e 2015 os maiores percentuais de Municípios que realizaram concursos, com um pico de 27% dos Municípios em 2013. Em 2023 o percentual aumentou em relação a 2022, com 5,2% dos Municípios realizando concurso público, percentual que ficou acima também do observado em 2021 e em 2018.
 
-```{r fig-conc_munic, fig.cap = "Percentual de municípios que realizaram concursos para trabalhadores de nível superior no SUAS - Brasil, 2012 a 2023", fig.footer = "Fonte: MDS, Censo SUAS"}
+```{r fig-conc_munic, fig.cap = "Percentual de municípios que realizaram concursos para trabalhadores de nível superior no SUAS - Brasil, 2012 a 2024", fig.footer = "Fonte: MDS, Censo SUAS"}
 
 grafico <- f_sim(gm_2012, q43a_1, "2012") %>%
   bind_rows(f_sim(gm_2013, q36_8, "2013")) %>%
@@ -600,7 +613,8 @@ grafico <- f_sim(gm_2012, q43a_1, "2012") %>%
   bind_rows(f_sim(gm_2021, q72_1_1, "2021")) %>%
   bind_rows(f_sim(gm_2022, q72_1_1, "2022")) %>%
   bind_rows(f_sim(gm_2023, q61_1_1, "2023")) %>%
-
+  bind_rows(f_sim(gm_2024, q68_1_1, "20234")) %>%
+  
   f_grafico_col_percent(Categoria, Percentual)
 
 grafico
