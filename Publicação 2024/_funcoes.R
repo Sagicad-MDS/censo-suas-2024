@@ -131,7 +131,9 @@ f_percentual_municipios_regiao_ano = function(df, municipio, ano){
     !! ano == "2020"~municipios_2020,
     !! ano == "2021"~municipios_2021,
     !! ano == "2022"~municipios_2022,
-    !! ano == "2023"~municipios_2023)
+    !! ano == "2023"~municipios_2023,
+    !! ano == "2024"~municipios_2024,
+    !! ano == "2025"~municipios_2025)
 
   df %>%
     select(!! municipio) %>%

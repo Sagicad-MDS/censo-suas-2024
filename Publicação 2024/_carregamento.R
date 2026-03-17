@@ -672,7 +672,7 @@ idcreas_2023 <- read_excel("../ID CREAS/IDCREAS2023_divulgacao_retificado090824.
 
 niveis_ID <- c(1, 2, 3, 4, 5)
 
-#Número de municipios no Brasil e por região. Fonte: Anuário Estatístico do Brasil 2017, IBGE.
+#Número de municipios no Brasil e por região. Fonte: Anuário Estatístico do Brasil 2024, IBGE (https://anuario.ibge.gov.br/2024/territorio/divisao-territorial.html).
 #c(Norte, Nordeste, Sudeste, Sul, Centro-Oeste, Brasil)
 municipios_2007 <- c(449, 1793, 1668, 1188, 466, 5564)
 municipios_2008 <- c(449, 1793, 1668, 1188, 466, 5564)
@@ -690,7 +690,9 @@ municipios_2019 <- c(450, 1794, 1668, 1191, 467, 5570)
 municipios_2020 <- c(450, 1794, 1668, 1191, 467, 5570)
 municipios_2021 <- c(450, 1794, 1668, 1191, 467, 5570)
 municipios_2022 <- c(450, 1794, 1668, 1191, 467, 5570)
-municipios_2023 <- c(450, 1794, 1668, 1191, 467, 5570) # Ainda não disponível oficialmente no Anuário Estatístico do Brasil, consultado no site do IBGE em 9/9/2025
+municipios_2023 <- c(450, 1794, 1668, 1191, 467, 5570) 
+municipios_2024 <- c(450, 1794, 1668, 1191, 467, 5570) 
+municipios_2025 <- c(450, 1794, 1668, 1191, 468, 5571) 
 
 # População dos municípios estimada pelo IBGE
 pop_municipios_2016 <- read_excel("../Estimativa População IBGE/estimativa_dou_2016_20160913.xlsx", sheet = "Municípios (limpo)")
