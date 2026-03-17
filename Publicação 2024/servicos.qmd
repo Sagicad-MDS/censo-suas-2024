@@ -826,14 +826,14 @@ Destaca-se o alto percentual de CREAS da Região Norte que atenderam Comunidades
 # #| fig-height: 8
 
 tabela <- 
-  f_selecao_regiao_grupo_com_na (creas_2024, q42_1, "Sim", Região, "Povos Indígenas") %>%
-  bind_rows(f_selecao_regiao_grupo_com_na(creas_2024, q42_2, "Sim", Região, "Comunidade Quilombola")) %>%
-  bind_rows(f_selecao_regiao_grupo_com_na(creas_2024, q42_4, "Sim", Região, "Povos Ciganos")) %>%
-  bind_rows(f_selecao_regiao_grupo_com_na(creas_2024, q42_3, "Sim", Região, "Comunidade Ribeirinha")) %>%
-  bind_rows(f_selecao_regiao_grupo_com_na(creas_2024, q42_5, "Sim", Região, "Povos de Matriz Africana e de terreiro")) %>%
-  bind_rows(f_selecao_regiao_grupo_com_na(creas_2024, q42_6, "Sim", Região, "Comunidades Extrativistas")) %>%
-  bind_rows(f_selecao_regiao_grupo_com_na(creas_2024, q42_99, "Sim", Região, "Outros povos e comunidades tradicionais")) %>%
-#  bind_rows(f_selecao_regiao_grupo_com_na(creas_2024, q42_0, "Sim", Região, "Não atendeu")) %>%
+  f_selecao_regiao_grupo_com_na (creas_2024, q42_1, "1", Região, "Povos Indígenas") %>%
+  bind_rows(f_selecao_regiao_grupo_com_na(creas_2024, q42_2, "1", Região, "Comunidade Quilombola")) %>%
+  bind_rows(f_selecao_regiao_grupo_com_na(creas_2024, q42_4, "1", Região, "Povos Ciganos")) %>%
+  bind_rows(f_selecao_regiao_grupo_com_na(creas_2024, q42_3, "1", Região, "Comunidade Ribeirinha")) %>%
+  bind_rows(f_selecao_regiao_grupo_com_na(creas_2024, q42_5, "1", Região, "Povos de Matriz Africana e de terreiro")) %>%
+  bind_rows(f_selecao_regiao_grupo_com_na(creas_2024, q42_6, "1", Região, "Comunidades Extrativistas")) %>%
+  bind_rows(f_selecao_regiao_grupo_com_na(creas_2024, q42_99, "1", Região, "Outros povos e comunidades tradicionais")) %>%
+#  bind_rows(f_selecao_regiao_grupo_com_na(creas_2024, q42_0, "1", Região, "Não atendeu")) %>%
 
   mutate(Grupo=str_wrap(Grupo,width=38))
 
@@ -960,10 +960,11 @@ tabela <-
   bind_rows(creas_pse(creas_2020, q38, "2020")) %>%
   bind_rows(creas_pse(creas_2021, q38, "2021")) %>%
   bind_rows(creas_pse(creas_2022, q38, "2022")) %>%
-  bind_rows(creas_pse(creas_2023, q30, "2023"))
+  bind_rows(creas_pse(creas_2023, q30, "2023")) %>%
+  bind_rows(creas_pse(creas_2024, q31, "2024"))
 
   ordenado<-tabela %>%
-  filter(Ano == "2023") %>%
+  filter(Ano == "2024") %>%
   arrange(Percentual) %>%
   pull(Grupo)
 
@@ -995,7 +996,7 @@ O Serviço Especializado em Abordagem Social consiste na identificação, por eq
 
 Os percentuais de CREAS que realizaram o Serviço Especializado em Abordagem Social, mostrados no @fig-CREAS-abordagem-social, permaneceram relativamente estáveis de 2019 a 2023, com pequenas oscilações.
 
-```{r fig-CREAS-abordagem-social, fig.cap = "Percentual de CREAS que realizam o Serviço Especializado em Abordagem Social - Brasil, 2019 a 2023", fig.footer = "Fonte: MDS, Censo SUAS"}
+```{r fig-CREAS-abordagem-social, fig.cap = "Percentual de CREAS que realizam o Serviço Especializado em Abordagem Social - Brasil, 2019 a 2024", fig.footer = "Fonte: MDS, Censo SUAS"}
 
 creas_psee  = function(df, q, ano){
   q <- enquo(q)
@@ -1047,7 +1048,7 @@ O Serviço de Acolhimento em Família Acolhedora "organiza o acolhimento de cria
 
 O @fig-fam_acolhedora mostra um contínuo crescimento do percentual de Municípios com unidades municipais executoras do Serviço de Acolhimento de Família Acolhedora, chegando a 10% dos Municípios brasileiros em 2023, com destaque para a Região Sul, cujo percentual chegou a 23%.
 
-```{r fig-fam_acolhedora, fig.cap = "Percentual de Municípios com unidades municipais executoras do Serviço de Acolhimento de Família Acolhedora - Brasil, 2017 a 2023", fig.footer = "Fonte: MDS, Censo SUAS."}
+```{r fig-fam_acolhedora, fig.cap = "Percentual de Municípios com unidades municipais executoras do Serviço de Acolhimento de Família Acolhedora - Brasil, 2017 a 2024", fig.footer = "Fonte: MDS, Censo SUAS."}
 # #| fig-height: 6.5
 
 grafico <- 
