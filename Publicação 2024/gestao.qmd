@@ -61,10 +61,7 @@ grafico <- estados_sec_exc(ge_2012, q1, "2012") %>%
   bind_rows(estados_sec_exc(ge_2022, q1, "2022")) %>%
   bind_rows(estados_sec_exc(ge_2023, q1, "2023")) %>%
   bind_rows(estados_sec_exc(ge_2024, q1, "2024")) %>%
-<<<<<<< HEAD
-  
-=======
->>>>>>> refs/remotes/origin/main
+
   f_grafico_col_stack_percent(Categoria, Percentual, Nível, 2)
 #  f_grafico_col_numero(Categoria, n)
 
