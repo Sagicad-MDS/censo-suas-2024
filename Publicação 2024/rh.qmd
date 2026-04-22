@@ -54,7 +54,7 @@ O @fig-uf_trab_vin mostra os percentuais das trabalhadoras e trabalhadores das S
 
 ```{r fig-uf_trab_vin, fig.cap ="Percentual de trabalhadoras/es nas Secretarias Estaduais de Assistência Social, segundo tipo de vínculo - Brasil, 2018 a 2024"}
 
-# Devido à grande mudança na forma de coleta destes dados em 2018, optei por iniciar a série em 2018, para evitar comparações com os dados anteriores, que apresentam descontinuidade devido a essa mudança e mão devido a alteração da realidade investigada.
+# Devido à grande mudança na forma de coleta destes dados em 2018, optei por iniciar a série em 2018, para evitar comparações com os dados anteriores, que apresentam descontinuidade devido a essa mudança e não devido a alteração da realidade investigada.
 
 tabela <- 
 #  bind_rows(f_nomex_somay_nomegrupo(ge_2010, "2010", q34_1_4, "Estatutários")) %>%
