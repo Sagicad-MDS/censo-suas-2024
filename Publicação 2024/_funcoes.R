@@ -460,11 +460,31 @@ f_nomex_grupos_quantitativo = function(df, nomex, grupos){
     mutate("Eixo_x" = !! nomex)
 }
 
+f_preenche_cores_d = function(grafico, df, grupo) {
+  grupo <- enquo(grupo)
+
+  n_cores <- df %>%
+    select(!! grupo) %>%
+    n_distinct()
+  
+  if(color.map.option %in% seaborn_colors) {
+    cores_env <- seaborn$color_palette(color.map.option, n_colors = n_cores)
+    cores_env <- cores_env$as_hex()
+    cores <- NULL
+    for (i in 0:(n_cores-1)) {
+      cores <- c(cores, cores_env[i])
+    }
+    grafico <- grafico + scale_fill_manual(values = cores)
+  } else {
+    grafico <- grafico + scale_fill_viridis_d(option = color.map.option)
+  }
+}
+
 f_grafico_col_numero = function(df, x, y){
   x <- enquo(x)
   y <- enquo(y)
   
-  df <- df %>%
+  grafico <- df %>%
     ggplot(aes(x = !! x, y = !! y)) +
     geom_col(aes(fill = !! y), position="dodge") +
     geom_text_repel(aes(label = format(!! y, big.mark=".", digits = 3, decimal.mark = ",")),
@@ -480,17 +500,17 @@ f_grafico_col_numero = function(df, x, y){
           axis.line.x = element_line(),
           panel.background = element_blank())
   if(gera.graficos.office) {
-    df %>% graph2office(file=arquivo_graficos, append = arquivo_graficos_criado, paper = "A4", orient = "portrait")
+    grafico %>% graph2office(file=arquivo_graficos, append = arquivo_graficos_criado, paper = "A4", orient = "portrait")
     arquivo_graficos_criado <<- TRUE
   }
-  df
+  grafico
 }
 
 f_grafico_col_numero_flip = function(df, x, y){
   x <- enquo(x)
   y <- enquo(y)
   
-  df <- df %>%
+  grafico <- df %>%
     ggplot(aes(x = !! x, y = !! y)) +
     geom_col(aes(fill = !! y), position="dodge") +
     geom_text(aes(label = format(!! y, big.mark=".", digits = 3, decimal.mark = ",")),
@@ -508,10 +528,10 @@ f_grafico_col_numero_flip = function(df, x, y){
           axis.line.y = element_line(),
           panel.background = element_blank())
   if(gera.graficos.office) {
-    df %>% graph2office(file=arquivo_graficos, append = arquivo_graficos_criado, paper = "A4", orient = "portrait")
+    grafico %>% graph2office(file=arquivo_graficos, append = arquivo_graficos_criado, paper = "A4", orient = "portrait")
     arquivo_graficos_criado <<- TRUE
   }
-  df
+  grafico
 }
 
 f_grafico_col_group_numero = function(df, x, y, grupo, legend_nrow){
@@ -519,7 +539,7 @@ f_grafico_col_group_numero = function(df, x, y, grupo, legend_nrow){
   y <- enquo(y)
   grupo <- enquo(grupo)
   
-  df <- df %>%
+  grafico <- df %>%
     ggplot(aes(x = !! x, y = !! y, group = !! grupo)) +
     geom_col(aes(fill = !! grupo), position="dodge") +
     geom_text_repel(aes(label = format(!! y, big.mark=".", digits = 3, decimal.mark = ",")),
@@ -528,7 +548,6 @@ f_grafico_col_group_numero = function(df, x, y, grupo, legend_nrow){
                     angle = 90,
                     point.size = NA) +
     scale_y_continuous(expand = expansion(mult = c(0, .25))) +
-    scale_fill_viridis_d(option = color.map.option) +
     theme(legend.position="bottom",
           legend.title = element_blank(),
           axis.title = element_blank(),
@@ -537,11 +556,14 @@ f_grafico_col_group_numero = function(df, x, y, grupo, legend_nrow){
           axis.line.x = element_line(),
           panel.background = element_blank()) +
     guides(fill=guide_legend(nrow=legend_nrow,byrow=TRUE))
+
+  grafico <- f_preenche_cores_d(grafico, df, !! grupo)
+  
   if(gera.graficos.office) {
-    df %>% graph2office(file=arquivo_graficos, append = arquivo_graficos_criado, paper = "A4", orient = "portrait")
+    grafico %>% graph2office(file=arquivo_graficos, append = arquivo_graficos_criado, paper = "A4", orient = "portrait")
     arquivo_graficos_criado <<- TRUE
   }
-  df
+  grafico
 }
 
 f_grafico_col_group_numero_flip = function(df, x, y, grupo, legend_nrow){
@@ -549,7 +571,7 @@ f_grafico_col_group_numero_flip = function(df, x, y, grupo, legend_nrow){
   y <- enquo(y)
   grupo <- enquo(grupo)
   
-  df <- df %>%
+  grafico <- df %>%
     ggplot(aes(x = !! x, y = !! y, group = fct_rev(!! grupo))) +
     geom_col(aes(fill = !! grupo), position = "dodge") +
     geom_text(aes(label = format(!! y, big.mark=".", digits = 3, decimal.mark = ",")),
@@ -557,7 +579,6 @@ f_grafico_col_group_numero_flip = function(df, x, y, grupo, legend_nrow){
               position = position_dodge(width = 0.9),
               check_overlap = TRUE) +
     scale_y_continuous(expand = expansion(mult = c(0, .1))) +
-    scale_fill_viridis_d(option = color.map.option) +
     coord_flip() +
     theme(legend.position="bottom",
           legend.title = element_blank(),
@@ -567,11 +588,14 @@ f_grafico_col_group_numero_flip = function(df, x, y, grupo, legend_nrow){
           axis.line.y = element_line(),
           panel.background = element_blank()) +
     guides(fill=guide_legend(nrow=legend_nrow, byrow=TRUE))
+
+  grafico <- f_preenche_cores_d(grafico, df, !! grupo)
+  
   if(gera.graficos.office) {
-    df %>% graph2office(file=arquivo_graficos, append = arquivo_graficos_criado, paper = "A4", orient = "portrait")
+    grafico %>% graph2office(file=arquivo_graficos, append = arquivo_graficos_criado, paper = "A4", orient = "portrait")
     arquivo_graficos_criado <<- TRUE
   }
-  df
+  grafico
 }
 
 f_grafico_col_numero_flip_2_x = function(df, x1, y, x2){
@@ -579,7 +603,7 @@ f_grafico_col_numero_flip_2_x = function(df, x1, y, x2){
   y <- enquo(y)
   x2 <- enquo(x2)
   
-  df <- df %>%
+  grafico <- df %>%
     ggplot(aes(x = fct_rev(!! x2), y = !! y)) +
     geom_col(aes(fill = !! x2), position = "dodge") +
     geom_text(aes(label = format(!! y, big.mark=".", digits = 3, decimal.mark = ",")),
@@ -589,7 +613,6 @@ f_grafico_col_numero_flip_2_x = function(df, x1, y, x2){
     facet_wrap(vars(!! x1), strip.position = "left", ncol = 1) +
     scale_x_discrete(expand = expansion(add = 1)) +
     scale_y_continuous(expand = expansion(mult = c(0, .1))) +
-    scale_fill_viridis_d(option = color.map.option) +
     coord_flip() +
     theme(legend.position="none",
           axis.title = element_blank(),
@@ -602,11 +625,14 @@ f_grafico_col_numero_flip_2_x = function(df, x1, y, x2){
           strip.placement = "outside",
           strip.text.y.left = element_text(angle = 0, hjust = 1)
     )
+
+  grafico <- f_preenche_cores_d(grafico, df, !! x2)
+  
   if(gera.graficos.office) {
-    df %>% graph2office(file=arquivo_graficos, append = arquivo_graficos_criado, paper = "A4", orient = "portrait")
+    grafico %>% graph2office(file=arquivo_graficos, append = arquivo_graficos_criado, paper = "A4", orient = "portrait")
     arquivo_graficos_criado <<- TRUE
   }
-  df
+  grafico
 }
 
 f_grafico_col_numero_flip_3_groups = function(df, x1, x2, y, grupo){
@@ -615,7 +641,7 @@ f_grafico_col_numero_flip_3_groups = function(df, x1, x2, y, grupo){
   y <- enquo(y)
   grupo <- enquo(grupo)
   
-  df <- df %>%
+  grafico <- df %>%
     ggplot(aes(x = fct_rev(!! x2), y = !! y, group = fct_rev(!! grupo))) +
     geom_col(aes(fill = !! grupo), position = "dodge") +
     geom_text(aes(label = format(!! y, big.mark=".", digits = 3, decimal.mark = ",")),
@@ -625,7 +651,6 @@ f_grafico_col_numero_flip_3_groups = function(df, x1, x2, y, grupo){
     facet_wrap(vars(!! x1), strip.position = "left", ncol = 1) +
     scale_x_discrete(expand = expansion(add = 1)) +
     scale_y_continuous(expand = expansion(mult = c(0, .1))) +
-    scale_fill_viridis_d(option = color.map.option) +
     coord_flip() +
     theme(legend.position="right",
           legend.title = element_blank(),
@@ -639,18 +664,21 @@ f_grafico_col_numero_flip_3_groups = function(df, x1, x2, y, grupo){
           strip.placement = "outside",
           strip.text.y.left = element_text(angle = 0, hjust = 1)
     )
+
+  grafico <- f_preenche_cores_d(grafico, df, !! grupo)
+  
   if(gera.graficos.office) {
-    df %>% graph2office(file=arquivo_graficos, append = arquivo_graficos_criado, paper = "A1", orient = "portrait")
+    grafico %>% graph2office(file=arquivo_graficos, append = arquivo_graficos_criado, paper = "A1", orient = "portrait")
     arquivo_graficos_criado <<- TRUE
   }
-  df
+  grafico
 }
 
 f_grafico_col_percent = function(df, x, y){
   x <- enquo(x)
   y <- enquo(y)
   
-  df <- df %>%
+  grafico <- df %>%
     mutate(precisao = ifelse(!! y < 0.0995, 0.1, 1)) %>%
     ggplot(aes(x = !! x, y = !! y)) +
     geom_col(aes(fill = !! y), position = "dodge") +
@@ -667,10 +695,10 @@ f_grafico_col_percent = function(df, x, y){
           axis.line.x = element_line(),
           panel.background = element_blank())
   if(gera.graficos.office) {
-    df %>% graph2office(file=arquivo_graficos, append = arquivo_graficos_criado, paper = "A4", orient = "portrait")
+    grafico %>% graph2office(file=arquivo_graficos, append = arquivo_graficos_criado, paper = "A4", orient = "portrait")
     arquivo_graficos_criado <<- TRUE
   }
-  df
+  grafico
 }
 
 f_grafico_col_group_percent = function(df, x, y, grupo, legend_nrow){
@@ -678,7 +706,7 @@ f_grafico_col_group_percent = function(df, x, y, grupo, legend_nrow){
   y <- enquo(y)
   grupo <- enquo(grupo)
   
-  df <- df %>%
+  grafico <- df %>%
     mutate(precisao = ifelse(!! y < 0.0995, 0.1, 1)) %>%
     ggplot(aes(x = !! x, y = !! y, group = !! grupo)) +
     geom_col(aes(fill = !! grupo), position = "dodge") +
@@ -688,7 +716,6 @@ f_grafico_col_group_percent = function(df, x, y, grupo, legend_nrow){
                     angle = 90,
                     point.size = NA) +
     scale_y_continuous(expand = expansion(mult = c(0, .22))) +
-    scale_fill_viridis_d(option = color.map.option) +
     theme(legend.position="bottom",
           legend.title = element_blank(),
           axis.title = element_blank(),
@@ -697,11 +724,14 @@ f_grafico_col_group_percent = function(df, x, y, grupo, legend_nrow){
           axis.line.x = element_line(),
           panel.background = element_blank()) +
     guides(fill=guide_legend(nrow=legend_nrow, byrow=TRUE))
+
+  grafico <- f_preenche_cores_d(grafico, df, !! grupo)
+  
   if(gera.graficos.office) {
-    df %>% graph2office(file=arquivo_graficos, append = arquivo_graficos_criado, paper = "A4", orient = "portrait")
+    grafico %>% graph2office(file=arquivo_graficos, append = arquivo_graficos_criado, paper = "A4", orient = "portrait")
     arquivo_graficos_criado <<- TRUE
   }
-  df
+  grafico
 }
 
 f_grafico_col_group_percent_decimal = function(df, x, y, grupo, legend_nrow){
@@ -709,7 +739,7 @@ f_grafico_col_group_percent_decimal = function(df, x, y, grupo, legend_nrow){
   y <- enquo(y)
   grupo <- enquo(grupo)
   
-  df <- df %>%
+  grafico <- df %>%
     mutate(precisao = ifelse(!! y < 0.0995, 0.01, ifelse(!! y < 1, 0.1, 1))) %>%
     ggplot(aes(x = !! x, y = !! y, group = !! grupo)) +
     geom_col(aes(fill = !! grupo), position = "dodge") +
@@ -719,7 +749,6 @@ f_grafico_col_group_percent_decimal = function(df, x, y, grupo, legend_nrow){
                     angle = 90,
                     point.size = NA) +
     scale_y_continuous(expand = expansion(mult = c(0, .22))) +
-    scale_fill_viridis_d(option = color.map.option) +
     theme(legend.position="bottom",
           legend.title = element_blank(),
           axis.title = element_blank(),
@@ -728,28 +757,32 @@ f_grafico_col_group_percent_decimal = function(df, x, y, grupo, legend_nrow){
           axis.line.x = element_line(),
           panel.background = element_blank()) +
     guides(fill=guide_legend(nrow=legend_nrow, byrow=TRUE))
+
+  grafico <- f_preenche_cores_d(grafico, df, !! grupo)
+  
   if(gera.graficos.office) {
-    df %>% graph2office(file=arquivo_graficos, append = arquivo_graficos_criado, paper = "A4", orient = "portrait")
+    grafico %>% graph2office(file=arquivo_graficos, append = arquivo_graficos_criado, paper = "A4", orient = "portrait")
     arquivo_graficos_criado <<- TRUE
   }
-  df
+  grafico
 }
 
 f_grafico_pizza_percent = function(df, y, grupo){
   y <- enquo(y)
   grupo <- enquo(grupo)
   
-  df <- df %>%
+  grafico <- df %>%
     mutate(precisao = ifelse(!! y < 0.0995, 0.1, 1)) %>%
     ggplot(aes(x = "", y = !! y, group = !! grupo)) +
     geom_bar(aes(fill = !! grupo), stat="identity") +
     geom_text_repel(aes(label = label_percent(accuracy = precisao, decimal.mark = ",")(!! y)),
                     position = position_stack(vjust = 0.5)) +
     coord_polar(theta = "y", direction = -1) +
-    scale_fill_viridis_d(option = color.map.option) +
     theme_void() +
     theme(legend.title = element_blank(),
           legend.key.size = unit(2, 'lines'))
+
+  grafico <- f_preenche_cores_d(grafico, df, !! grupo)
 }  
 
 f_grafico_col_percent_flip = function(df, x, y, grupo, legend_nrow){
@@ -757,7 +790,7 @@ f_grafico_col_percent_flip = function(df, x, y, grupo, legend_nrow){
   y <- enquo(y)
   grupo <- enquo(grupo)
   
-  df <- df %>%
+  grafico <- df %>%
     mutate(precisao = ifelse(!! y < 0.0995, 0.1, 1)) %>%
     ggplot(aes(x = !! x, y = !! y, group = fct_rev(!! grupo))) +
     geom_col(aes(fill = !! grupo), position = "dodge") +
@@ -766,7 +799,6 @@ f_grafico_col_percent_flip = function(df, x, y, grupo, legend_nrow){
               position = position_dodge(width = 0.9),
               check_overlap = TRUE) +
     scale_y_continuous(expand = expansion(mult = c(0, .12))) +
-    scale_fill_viridis_d(option = color.map.option) +
     coord_flip() +
     theme(legend.position="bottom",
           legend.title = element_blank(),
@@ -776,11 +808,14 @@ f_grafico_col_percent_flip = function(df, x, y, grupo, legend_nrow){
           axis.line.y = element_line(),
           panel.background = element_blank()) +
     guides(fill=guide_legend(nrow=legend_nrow, byrow=TRUE))
+
+  grafico <- f_preenche_cores_d(grafico, df, !! grupo)
+
   if(gera.graficos.office) {
-    df %>% graph2office(file=arquivo_graficos, append = arquivo_graficos_criado, paper = "A4", orient = "portrait")
+    grafico %>% graph2office(file=arquivo_graficos, append = arquivo_graficos_criado, paper = "A4", orient = "portrait")
     arquivo_graficos_criado <<- TRUE
   }
-  df
+  grafico
 }
 
 f_grafico_col_stack_percent = function(df, x, y, grupo, legend_nrow){
@@ -788,7 +823,7 @@ f_grafico_col_stack_percent = function(df, x, y, grupo, legend_nrow){
   y <- enquo(y)
   grupo <- enquo(grupo)
   
-  df <- df %>%
+  grafico <- df %>%
     mutate(precisao = ifelse(!! y < 0.0995, 0.1, 1)) %>%
     ggplot(aes(x = !! x, y = !! y, group = !! grupo)) +
     geom_col(aes(fill = !! grupo), position = position_stack(reverse = TRUE)) +
@@ -797,7 +832,6 @@ f_grafico_col_stack_percent = function(df, x, y, grupo, legend_nrow){
                     point.size = NA,
                     segment.colour = NA) +
     scale_y_continuous(expand = expansion(mult = c(0, .1))) +
-    scale_fill_viridis_d(option = color.map.option) +
     theme(legend.position="bottom",
           legend.title = element_blank(),
           axis.title = element_blank(),
@@ -806,11 +840,14 @@ f_grafico_col_stack_percent = function(df, x, y, grupo, legend_nrow){
           axis.line.x = element_line(),
           panel.background = element_blank()) +
     guides(fill=guide_legend(nrow=legend_nrow,byrow=TRUE))
+
+  grafico <- f_preenche_cores_d(grafico, df, !! grupo)
+  
   if(gera.graficos.office) {
-    df %>% graph2office(file=arquivo_graficos, append = arquivo_graficos_criado, paper = "A4", orient = "portrait")
+    grafico %>% graph2office(file=arquivo_graficos, append = arquivo_graficos_criado, paper = "A4", orient = "portrait")
     arquivo_graficos_criado <<- TRUE
   }
-  df
+  grafico
 }
 
 f_grafico_col_stack_percent_flip = function(df, x, y, grupo, legend_nrow){
@@ -818,7 +855,7 @@ f_grafico_col_stack_percent_flip = function(df, x, y, grupo, legend_nrow){
   y <- enquo(y)
   grupo <- enquo(grupo)
   
-  df <- df %>%
+  grafico <- df %>%
     mutate(precisao = ifelse(!! y < 0.0995, 0.1, 1)) %>%
     arrange(!! grupo) %>%
     ggplot(aes(x = !! x, y = !! y)) +
@@ -827,7 +864,6 @@ f_grafico_col_stack_percent_flip = function(df, x, y, grupo, legend_nrow){
               position = position_stack(reverse = TRUE, vjust = .5),
               check_overlap = TRUE) +
     scale_y_continuous(expand = expansion(mult = c(0, 0.05))) +
-    scale_fill_viridis_d(option = color.map.option) +
     coord_flip() +
     theme(legend.position="bottom",
           legend.title = element_blank(),
@@ -837,11 +873,14 @@ f_grafico_col_stack_percent_flip = function(df, x, y, grupo, legend_nrow){
           axis.line.y = element_line(),
           panel.background = element_blank()) +
     guides(fill=guide_legend(nrow=legend_nrow,byrow=TRUE))
+
+  grafico <- f_preenche_cores_d(grafico, df, !! grupo)
+  
   if(gera.graficos.office) {
-    df %>% graph2office(file=arquivo_graficos, append = arquivo_graficos_criado, paper = "A4", orient = "portrait")
+    grafico %>% graph2office(file=arquivo_graficos, append = arquivo_graficos_criado, paper = "A4", orient = "portrait")
     arquivo_graficos_criado <<- TRUE
   }
-  df
+  grafico
 }
 
 f_grafico_col_stack_percent_flip_2_x_groups = function(df, x1, x2, y, grupo, legend_nrow){
@@ -850,7 +889,7 @@ f_grafico_col_stack_percent_flip_2_x_groups = function(df, x1, x2, y, grupo, leg
   y <- enquo(y)
   grupo <- enquo(grupo)
   
-  df <- df %>%
+  grafico <- df %>%
     mutate(precisao = ifelse(!! y < 0.0995, 0.1, 1)) %>%
     arrange(!! grupo) %>%
     ggplot(aes(x = fct_rev(!! x2), y = !! y)) +
@@ -861,7 +900,6 @@ f_grafico_col_stack_percent_flip_2_x_groups = function(df, x1, x2, y, grupo, leg
     facet_wrap(vars(fct_rev(!! x1)), strip.position = "left", ncol = 1) +
     scale_x_discrete(expand = expansion(add = 1)) +
     scale_y_continuous(expand = expansion(mult = c(0, 0.05))) +
-    scale_fill_viridis_d(option = color.map.option) +
     coord_flip() +
     theme(legend.position="bottom",
           legend.title = element_blank(),
@@ -876,10 +914,13 @@ f_grafico_col_stack_percent_flip_2_x_groups = function(df, x1, x2, y, grupo, leg
           strip.text.y.left = element_text(angle = 0, hjust = 1)
     )+
     guides(fill=guide_legend(nrow=legend_nrow,byrow=TRUE))
+
+  grafico <- f_preenche_cores_d(grafico, df, !! grupo)
+  
   if(gera.graficos.office) {
-    df %>% graph2office(file=arquivo_graficos, append = arquivo_graficos_criado, paper = "A4", orient = "portrait")
+    grafico %>% graph2office(file=arquivo_graficos, append = arquivo_graficos_criado, paper = "A4", orient = "portrait")
     arquivo_graficos_criado <<- TRUE
   }
-  df
+  grafico
 }
 
