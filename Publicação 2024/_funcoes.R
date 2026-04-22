@@ -29,12 +29,11 @@ f_selecao_regiao_grupo_com_na = function(df, q, selecao, regiao, grupo){
                                   substr(!! regiao,1,1) == "5"~"Centro-Oeste",
                                   TRUE ~ str_replace(!! regiao, "Região ", ""))) %>%
     group_by(!! regiao, !! q) %>%
-    summarise(n=n()) %>%
+    summarise(n=n(), .groups = "drop_last") %>%
     spread(!! regiao, n, fill = 0) %>%
     mutate("Brasil" = rowSums(.[2:6])) %>%
     gather("Região","n",-!! q) %>%
-    group_by(Região) %>%
-    mutate("Percentual" = n/sum(n)) %>%
+    mutate("Percentual" = n/sum(n), .by = Região) %>%
     filter(!! q == !! selecao) %>%
     mutate("Grupo" = !! grupo)
 }
@@ -255,8 +254,8 @@ equip_acessibilidade_situacao = function(df, q_situacao, q_acessibilidade, cod_c
     f_acessibilidade(!! q_acessibilidade) %>%
     f_situacao(!! q_situacao) %>%
     group_by(!! q_situacao, !! q_acessibilidade) %>%
-    summarise(n=n()) %>%
-    mutate(Percentual = n/sum(n)) %>%
+    summarise(n=n(), .groups = "drop") %>%
+    mutate(Percentual = n/sum(n), .by = !! q_situacao) %>%
     filter(!! q_acessibilidade == "Sim") %>%
     f_tipo_acessibilidade(cod_categoria) %>%
     mutate("Situacao" = !! q_situacao)
@@ -269,12 +268,12 @@ f_equip_imovel = function(df, q, ano){
   ano <- quo_name(ano)
   
   df %>%
-    select(!! ano := !! q) %>%
-    gather("Categoria","Nível") %>%
+    select("Nível" = !! q) %>%
     f_situacao(Nível) %>%
-    group_by(Categoria, Nível) %>%
+    group_by(Nível) %>%
     summarise(n=n()) %>%
-    mutate(Percentual = n/sum(n))
+    mutate(Percentual = n/sum(n)) %>%
+    mutate("Categoria" = !! ano)
 }
 
 f_vinculo = function(df, vinculo){
@@ -444,9 +443,8 @@ f_calcula_percentual  = function(df, grupo_percentual, item_percentual, n){
     mutate(!! grupo_percentual := as_factor(!! grupo_percentual)) %>%
     mutate(!! item_percentual := as_factor(!! item_percentual)) %>%
     group_by(!! grupo_percentual, !! item_percentual) %>%
-    summarise(!! n := sum(!! n)) %>%
-    group_by(!! grupo_percentual) %>%
-    mutate(Percentual = !! n/sum(!! n))
+    summarise(!! n := sum(!! n), .groups = "drop") %>%
+    mutate(Percentual = !! n/sum(!! n), .by = !! grupo_percentual)
 }
 
 f_nomex_grupos_quantitativo = function(df, nomex, grupos){

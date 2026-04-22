@@ -108,7 +108,7 @@ dados <- cras_2024 %>%
                                             "De 7 a 10 CRAS",
                                             "Mais de 10 CRAS"))) %>%
   group_by(Porte, grupo) %>%
-  summarise(n=n()) #%>%
+  summarise(n=n(), .groups = "drop") #%>%
 #  complete(grupo, fill = list(n=0))
 
 niveis_porte <- dados$Porte %>%
@@ -120,8 +120,7 @@ grafico <- dados %>%
   mutate("Brasil" = rowSums(.[2:6])) %>%
   gather("Porte","n",-grupo) %>%
   mutate(Porte = factor(Porte, levels = niveis_porte)) %>%
-  group_by(Porte) %>%
-  mutate("Percentual" = n/sum(n)) %>%
+  mutate("Percentual" = n/sum(n), .by = Porte) %>%
 
   f_grafico_col_stack_percent(Porte, Percentual, grupo, 2)
 
@@ -308,8 +307,7 @@ equip_cadunico  = function(df, q, ano){
   ano <- quo_name(ano)
 
   df %>%
-    select(!! ano := !! q) %>%
-    gather("Categoria","Nível") %>%
+    select("Nível" = !! q) %>%
     mutate(Nível = case_when(
       Nível == "Sim, com equipe exclusiva para esta finalidade"~"Realizam com equipe exclusiva para esta finalidade",
       Nível == "Sim, com outra equipe"~"Realizam com outra equipe",
@@ -322,10 +320,10 @@ equip_cadunico  = function(df, q, ano){
                                             "Realizam com a equipe responsável pelo PAIF",
                                             "Realizam com outra equipe",
                                             "Não realizam"))) %>%
-    group_by(Categoria, Nível) %>%
+    group_by(Nível) %>%
     summarise(n=n()) %>%
-    group_by(Categoria) %>%
-    mutate(Percentual = n/sum(n), Posição = (cumsum(n/sum(n)) - 0.5 * n/sum(n)))
+    mutate(Percentual = n/sum(n), Posição = (cumsum(n/sum(n)) - 0.5 * n/sum(n)))  %>%
+    mutate("Categoria" = !! ano)
 }
 
 grafico <- 
@@ -383,8 +381,7 @@ centro  = function(df, q, ano){
   ano <- quo_name(ano)
 
   df %>%
-    select(!! ano := !! q) %>%
-    gather("Categoria","Nível") %>%
+    select("Nível" = !! q) %>%
     mutate(Nível = case_when(
       Nível == "Não Governamental"|
       Nível == "Organização da Sociedade Civil" ~"Não Governamental/Organização da Sociedade Civil",
@@ -392,10 +389,10 @@ centro  = function(df, q, ano){
     filter(!is.na(Nível)) %>%
     mutate(Nível = factor(Nível, levels = c("Governamental",
                                             "Não Governamental/Organização da Sociedade Civil"))) %>%
-    group_by(Categoria, Nível) %>%
+    group_by(Nível) %>%
     summarise(n=n()) %>%
-    group_by(Categoria) %>%
-    mutate(Percentual = n/sum(n))
+    mutate(Percentual = n/sum(n)) %>%
+    mutate("Categoria" = !! ano)
 }
 
 grafico <-
@@ -478,7 +475,7 @@ dados <- creas_2024 %>%
                                             "De 7 a 10 CREAS",
                                             "Mais de 10 CREAS"))) %>%
   group_by(Porte, grupo) %>%
-  summarise(n=n()) #%>%
+  summarise(n=n(), .groups = "drop") #%>%
 #  complete(grupo, fill = list(n=0))
 
 niveis_porte <- dados$Porte %>%
@@ -490,8 +487,7 @@ grafico <- dados %>%
   mutate("Brasil" = rowSums(.[2:6])) %>%
   gather("Porte","n",-grupo) %>%
   mutate(Porte = factor(Porte, levels = niveis_porte)) %>%
-  group_by(Porte) %>%
-  mutate("Percentual" = n/sum(n)) %>%
+  mutate("Percentual" = n/sum(n), .by = Porte) %>%
 
   f_grafico_col_stack_percent(Porte, Percentual, grupo, 2)
 
@@ -715,7 +711,7 @@ dados <- cpop_2024 %>%
                                             "De 7 a 10 Centro POP",
                                             "Mais de 10 Centro POP"))) %>%
   group_by(Porte, grupo) %>%
-  summarise(n=n()) #%>%
+  summarise(n=n(), .groups = "drop") #%>%
 #  complete(grupo, fill = list(n=0))
 
 niveis_porte <- dados$Porte %>%
@@ -727,8 +723,7 @@ grafico <- dados %>%
   mutate("Brasil" = rowSums(.[2:6])) %>%
   gather("Porte","n",-grupo) %>%
   mutate(Porte = factor(Porte, levels = niveis_porte)) %>%
-  group_by(Porte) %>%
-  mutate("Percentual" = n/sum(n)) %>%
+  mutate("Percentual" = n/sum(n), .by = Porte) %>%
 
   f_grafico_col_stack_percent(Porte, Percentual, grupo, 2)
 
@@ -813,8 +808,7 @@ centrodia  = function(df, q, ano){
   ano <- quo_name(ano)
 
   df %>%
-    select(!! ano := !! q) %>%
-    gather("Categoria","Nível") %>%
+    select("Nível" = !! q) %>%
     mutate(Nível = case_when(
       Nível == "Não Governamental" |
       Nível == "Não-Governamental" |
@@ -823,10 +817,10 @@ centrodia  = function(df, q, ano){
     filter(!is.na(Nível)) %>%
     mutate(Nível = factor(Nível, levels = c("Governamental",
                                             "Não Governamental/Organização da Sociedade Civil"))) %>%
-    group_by(Categoria, Nível) %>%
+    group_by(Nível) %>%
     summarise(n=n()) %>%
-    group_by(Categoria) %>%
-    mutate(Percentual = n/sum(n))
+    mutate(Percentual = n/sum(n)) %>%
+    mutate("Categoria" = !! ano)
 }
 
 grafico <- centrodia(cedia_2015, q6, "2015") %>%
@@ -1035,7 +1029,7 @@ dados <- unac_2024 %>%
                                             "De 7 a 10 Unidades de Acolhimento",
                                             "Mais de 10 Unidades de Acolhimento"))) %>%
   group_by(Porte, grupo) %>%
-  summarise(n=n()) #%>%
+  summarise(n=n(), .groups = "drop") #%>%
 #  complete(grupo, fill = list(n=0))
 
 niveis_porte <- dados$Porte %>%
@@ -1047,8 +1041,7 @@ grafico <- dados %>%
   mutate("Brasil" = rowSums(.[2:6])) %>%
   gather("Porte","n",-grupo) %>%
   mutate(Porte = factor(Porte, levels = niveis_porte)) %>%
-  group_by(Porte) %>%
-  mutate("Percentual" = n/sum(n)) %>%
+  mutate("Percentual" = n/sum(n), .by = Porte) %>%
 
   f_grafico_col_stack_percent(Porte, Percentual, grupo, 3)
 
@@ -1064,8 +1057,7 @@ acolh_nat  = function(df, q, ano){
   ano <- quo_name(ano)
 
   df %>%
-    select(!! ano := !! q) %>%
-    gather("Categoria","Nível") %>%
+    select("Nível" = !! q) %>%
     mutate(Nível = case_when(
       Nível == "Não Governamental" |
       Nível == "Não-Governamental/Organização da Sociedade Civil" |
@@ -1076,10 +1068,10 @@ acolh_nat  = function(df, q, ano){
     filter(!is.na(Nível)) %>%
     mutate(Nível = factor(Nível, levels = c("Governamental",
                                             "Não Governamental/Organização da Sociedade Civil"))) %>%
-    group_by(Categoria, Nível) %>%
+    group_by(Nível) %>%
     summarise(n=n()) %>%
-    group_by(Categoria) %>%
-    mutate(Percentual = n/sum(n))
+    mutate(Percentual = n/sum(n)) %>%
+    mutate("Categoria" = !! ano)
 }
 
 grafico <- acolh_nat(unac_2012, q4, "2012") %>%

@@ -28,12 +28,10 @@ estados_sec_exc  = function(df, q, ano){
   ano <- quo_name(ano)
 
   df %>%
-    select(!! ano := !! q) %>%
-    gather("Categoria","Nível") %>%
+    select("Nível" = !! q) %>%
     mutate(Nível = case_when(
       Nível == "Secretaria estadual exclusiva da Área de Assistência Social"~"Secretaria estadual exclusiva da área de Assistência Social",
       TRUE ~ Nível)) %>%
-
     filter(!is.na(Nível)) %>%
     mutate(Nível = factor(Nível, levels = c(
       "Secretaria estadual exclusiva da área de Assistência Social",
@@ -41,11 +39,11 @@ estados_sec_exc  = function(df, q, ano){
 
 #    filter(Nível == "Secretaria estadual exclusiva da área de Assistência Social") %>%
 
-    group_by(Categoria, Nível) %>%
+    group_by(Nível) %>%
 #    summarise(n=n())
     summarise(n=n()) %>%
-    group_by(Categoria) %>%
-    mutate(Percentual = n/sum(n))
+    mutate(Percentual = n/sum(n)) %>%
+    mutate(Categoria = !! ano)
 }
 
 grafico <- estados_sec_exc(ge_2012, q1, "2012") %>%
@@ -127,8 +125,7 @@ sec_munic_exc  = function(df, q, ano){
 
   w_nivel <- 52
   df %>%
-    select(!! ano := !! q) %>%
-    gather("Categoria","Nível") %>%
+    select("Nível" = !! q) %>%
     mutate(Nível = case_when(
       Nível == "Setor/Coordenadoria/Assessoria subordinado diretamente ao Gabinete do(a) Prefeito(a)" |
       Nível == "Setor/Coordenadoria/Assessoria subordinado diretamente ao Gabinete do(a) Prefeito(a)|" |
@@ -145,15 +142,13 @@ sec_munic_exc  = function(df, q, ano){
       "Secretaria municipal em conjunto com outras políticas setoriais"),
       width=w_nivel))) %>%
 
-    group_by(Categoria, Nível) %>%
+    group_by(Nível) %>%
     summarise(n=n()) %>%
-    group_by(Categoria) %>%
-    mutate(Percentual = n/sum(n))
+    mutate(Percentual = n/sum(n)) %>%
+    mutate("Categoria" = !! ano)
 }
 
 grafico <-
-  
-  
   sec_munic_exc(gm_2012, q1, "2012") %>%
   bind_rows(sec_munic_exc(gm_2013, q1, "2013")) %>%
   bind_rows(sec_munic_exc(gm_2014, q1, "2014")) %>%
@@ -1097,14 +1092,12 @@ O cofinanciamento deve ser realizado por meio de transferência automática regu
 
 ```{r fig-estados-cofinanciamento-municipios, fig.cap = "Percentual de Estados segundo realização de cofinanciamento aos Municípios - Brasil; 2012 a 2024", fig.footer = "Fonte: MDS, Censo SUAS."}
 
-ge_cofinanciamento = function(df, q, ano, ibge){
+ge_cofinanciamento = function(df, q, ano){
   q <- enquo(q)
   ano <- quo_name(ano)
-  ibge <- enquo(ibge)
 
   df %>%
-    select(!! ano := !! q) %>%
-    gather("Categoria","Nível") %>%
+    select("Nível" = !! q) %>%
     mutate(Nível = case_when(Nível == "Sim, fundo-a-fundo"~"Realiza apenas fundo-a-fundo",
                              Nível == "Sim, apenas fundo-a-fundo"~"Realiza apenas fundo-a-fundo",
                              Nível == "Sim, por convênio"~"Realiza apenas por convênio",
@@ -1119,27 +1112,27 @@ ge_cofinanciamento = function(df, q, ano, ibge){
                                             "Realiza apenas por convênio",
                                             "Realiza ambos",
                                             "Não informou"))) %>%
-    group_by(Categoria, Nível) %>%
+    group_by(Nível) %>%
     summarise(n=n()) %>%
-    group_by(Categoria) %>%
-    mutate(Percentual = n/sum(n))
+    mutate(Percentual = n/sum(n)) %>%
+    mutate("Categoria" = !! ano)
 }
 
 #grafico <- ge_cofinanciamento(ge_2010, q24, "2010") %>%
 #  bind_rows(ge_cofinanciamento(ge_2011, q64, "2011")) %>%
-grafico <- ge_cofinanciamento(ge_2012, q64_0, "2012", codigo_ibge) %>%
-  bind_rows(ge_cofinanciamento(ge_2013, q73, "2013", IBGE)) %>%
-  bind_rows(ge_cofinanciamento(ge_2014, q40, "2014", IBGE)) %>%
-  bind_rows(ge_cofinanciamento(ge_2015, q32, "2015", IBGE)) %>%
-  bind_rows(ge_cofinanciamento(ge_2016, q30, "2016", IBGE)) %>%
-  bind_rows(ge_cofinanciamento(ge_2017, q39, "2017", IBGE)) %>%
-  bind_rows(ge_cofinanciamento(feas_2018, q_6, "2018", IBGE)) %>%
-  bind_rows(ge_cofinanciamento(feas_2019, q9, "2019", IBGE)) %>%
-  bind_rows(ge_cofinanciamento(feas_2020, q9, "2020", IBGE)) %>%
-  bind_rows(ge_cofinanciamento(feas_2021, q9, "2021", IBGE)) %>%
-  bind_rows(ge_cofinanciamento(feas_2022, q9, "2022", IBGE)) %>%
-  bind_rows(ge_cofinanciamento(feas_2023, q6, "2023", IBGE)) %>%
-   bind_rows(ge_cofinanciamento(feas_2024, q6, "2024", IBGE)) %>%
+grafico <- ge_cofinanciamento(ge_2012, q64_0, "2012") %>%
+  bind_rows(ge_cofinanciamento(ge_2013, q73, "2013")) %>%
+  bind_rows(ge_cofinanciamento(ge_2014, q40, "2014")) %>%
+  bind_rows(ge_cofinanciamento(ge_2015, q32, "2015")) %>%
+  bind_rows(ge_cofinanciamento(ge_2016, q30, "2016")) %>%
+  bind_rows(ge_cofinanciamento(ge_2017, q39, "2017")) %>%
+  bind_rows(ge_cofinanciamento(feas_2018, q_6, "2018")) %>%
+  bind_rows(ge_cofinanciamento(feas_2019, q9, "2019")) %>%
+  bind_rows(ge_cofinanciamento(feas_2020, q9, "2020")) %>%
+  bind_rows(ge_cofinanciamento(feas_2021, q9, "2021")) %>%
+  bind_rows(ge_cofinanciamento(feas_2022, q9, "2022")) %>%
+  bind_rows(ge_cofinanciamento(feas_2023, q6, "2023")) %>%
+   bind_rows(ge_cofinanciamento(feas_2024, q6, "2024")) %>%
   
   f_grafico_col_stack_percent(Categoria, Percentual, Nível, 1)
 
@@ -1362,8 +1355,7 @@ ord_despesa = function(df, q, ano){
   ano <- quo_name(ano)
 
   df %>%
-    select(!! ano := !! q) %>%
-    gather("Categoria","Nível") %>%
+    select("Nível" = !! q) %>%
     mutate(Nível = case_when(
       Nível == "Secretário(a) Estadual de Assistência Social" |
       Nível == "O Secretário(a) Estadual da Assistência Social" |
@@ -1383,10 +1375,10 @@ ord_despesa = function(df, q, ano){
                                             "Outra/o Funcionária/o da Secretaria de Assistência Social",
                                             "O/A Governador/a"))) %>%
 
-    group_by(Categoria, Nível) %>%
+    group_by(Nível) %>%
     summarise(n=n()) %>%
-    group_by(Categoria) %>%
-    mutate(Percentual = n/sum(n))
+    mutate(Percentual = n/sum(n)) %>%
+    mutate("Categoria" = !! ano)
 }
 
 grafico <- ord_despesa(ge_2012, q44, "2012") %>%
@@ -1422,8 +1414,7 @@ ord_despesa = function(df, q, ano){
   ano <- quo_name(ano)
 
   df %>%
-    select(!! ano := !! q) %>%
-    gather("Categoria","Nível") %>%
+    select("Nível" = !! q) %>%
     mutate(Nível = case_when(Nível == "Secretário Municipal de Assistência Social." |
                             Nível == "O Secretário Municipal de Assistência Social" |
                             Nível == "O Secretário(a) Municipal de Assistência Social" |
@@ -1441,10 +1432,10 @@ ord_despesa = function(df, q, ano){
                                             "Secretária/o ou técnica/o de outra área",
                                             "Outra/o Funcionária/o da Secretaria de Assistência Social"))) %>%
 
-    group_by(Categoria, Nível) %>%
+    group_by(Nível) %>%
     summarise(n=n()) %>%
-    group_by(Categoria) %>%
-    mutate(Percentual = n/sum(n))
+    mutate(Percentual = n/sum(n)) %>%
+    mutate("Categoria" = !! ano)
 }
 
 grafico <- ord_despesa(gm_2012, q28, "2012") %>%

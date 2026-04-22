@@ -940,8 +940,7 @@ creas_pse = function(df, q, ano){
   ano <- quo_name(ano)
 
   df %>%
-    select(!! ano := !! q) %>%
-    gather("Ano","Grupo") %>%
+    select("Grupo" = !! q) %>%
     mutate(Grupo = case_when(
       Grupo == "Sim, com equipe específica para o serviço"~"Oferta com equipe específica para o serviço",
       Grupo == "Sim, sem equipe específica para o serviço"~"Oferta sem equipe específica para o serviço",
@@ -949,9 +948,10 @@ creas_pse = function(df, q, ano){
       Grupo == "Não realiza, nem possui o Serviço no município" ~"Não realiza",
       TRUE ~ Grupo)) %>%
     filter(!is.na(Grupo)) %>%
-    group_by(Ano, Grupo) %>%
+    group_by(Grupo) %>%
     summarise(n=n()) %>%
-    mutate(Percentual = n/sum(n))
+    mutate(Percentual = n/sum(n)) %>%
+    mutate("Ano" = !! ano)
 }
 
 tabela <- 
@@ -1003,8 +1003,7 @@ creas_psee  = function(df, q, ano){
   ano <- quo_name(ano)
 
   df %>%
-    select(!! ano := !! q) %>%
-    gather("Categoria","Nível") %>%
+    select("Nível" = !! q) %>%
     mutate(Nível = case_when(
       Nível == "Sim, com equipe exclusiva para Abordagem"~"Realiza com equipe exclusiva para Abordagem",
       Nível == "Sim, sem equipe exclusiva para Abordagem"~"Realiza sem equipe exclusiva para Abordagem",
@@ -1018,10 +1017,10 @@ creas_psee  = function(df, q, ano){
       "Não realiza com a equipe do CREAS, mas no município existe o Serviço referenciado ao CREAS",
       "Não realiza, nem possui o Serviço referenciado ao CREAS"))) %>%
 
-    group_by(Categoria, Nível) %>%
+    group_by(Nível) %>%
     summarise(n=n()) %>%
-    group_by(Categoria) %>%
-    mutate(Percentual = n/sum(n))
+    mutate(Percentual = n/sum(n)) %>%
+    mutate("Categoria" = !! ano)
 }
 
 grafico <- 
