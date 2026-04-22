@@ -826,14 +826,14 @@ Destaca-se o alto percentual de CREAS da Região Norte que atenderam Comunidades
 # #| fig-height: 8
 
 tabela <- 
-  f_selecao_regiao_grupo_com_na (creas_2024, q42_1, "1", Região, "Povos Indígenas") %>%
-  bind_rows(f_selecao_regiao_grupo_com_na(creas_2024, q42_2, "1", Região, "Comunidade Quilombola")) %>%
-  bind_rows(f_selecao_regiao_grupo_com_na(creas_2024, q42_4, "1", Região, "Povos Ciganos")) %>%
-  bind_rows(f_selecao_regiao_grupo_com_na(creas_2024, q42_3, "1", Região, "Comunidade Ribeirinha")) %>%
-  bind_rows(f_selecao_regiao_grupo_com_na(creas_2024, q42_5, "1", Região, "Povos de Matriz Africana e de terreiro")) %>%
-  bind_rows(f_selecao_regiao_grupo_com_na(creas_2024, q42_6, "1", Região, "Comunidades Extrativistas")) %>%
-  bind_rows(f_selecao_regiao_grupo_com_na(creas_2024, q42_99, "1", Região, "Outros povos e comunidades tradicionais")) %>%
-#  bind_rows(f_selecao_regiao_grupo_com_na(creas_2024, q42_0, "1", Região, "Não atendeu")) %>%
+  f_selecao_regiao_grupo_com_na (creas_2024, q42_1, "Sim", Região, "Povos Indígenas") %>%
+  bind_rows(f_selecao_regiao_grupo_com_na(creas_2024, q42_2, "Sim", Região, "Comunidade Quilombola")) %>%
+  bind_rows(f_selecao_regiao_grupo_com_na(creas_2024, q42_4, "Sim", Região, "Povos Ciganos")) %>%
+  bind_rows(f_selecao_regiao_grupo_com_na(creas_2024, q42_3, "Sim", Região, "Comunidade Ribeirinha")) %>%
+  bind_rows(f_selecao_regiao_grupo_com_na(creas_2024, q42_5, "Sim", Região, "Povos de Matriz Africana e de terreiro")) %>%
+  bind_rows(f_selecao_regiao_grupo_com_na(creas_2024, q42_6, "Sim", Região, "Comunidades Extrativistas")) %>%
+  bind_rows(f_selecao_regiao_grupo_com_na(creas_2024, q42_99, "Sim", Região, "Outros povos e comunidades tradicionais")) %>%
+#  bind_rows(f_selecao_regiao_grupo_com_na(creas_2024, q42_0, "Sim", Região, "Não atendeu")) %>%
 
   mutate(Grupo=str_wrap(Grupo,width=38))
 
