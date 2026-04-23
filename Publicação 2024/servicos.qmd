@@ -6,9 +6,9 @@ source("_funcoes.R")
 
 # Serviços e Benefícios ofertados pelo SUAS
 
-A Assistência Social organiza-se por provisões e elas correspondem a seguranças previstas na integração de serviços e benefícios. No ambito dos Serviços, estão previstos através de dois tipos de proteção:
+A Assistência Social organiza-se por provisões e elas correspondem a seguranças previstas na integração de serviços e benefícios. No que se refere aos serviços, há a previsão de dois tipos de proteção, conforme o Art. 6º-A da [Lei Orgânica da Assistência Social (LOAS)](http://www.planalto.gov.br/ccivil_03/Leis/L8742compilado.htm):
 
--   a Proteção Social Básica, definida no Art. 6º-A da [Lei Orgânica da Assistência Social (LOAS)](http://www.planalto.gov.br/ccivil_03/Leis/L8742compilado.htm) como um "conjunto de serviços, programas, projetos e benefícios da assistência social que visa a prevenção de situações de vulnerabilidade e risco social por meio do desenvolvimento de potencialidades e aquisições e do fortalecimento de vínculos familiares e comunitários" e
+-   a Proteção Social Básica, definida como "conjunto de serviços, programas, projetos e benefícios da assistência social que visa a prevenção de situações de vulnerabilidade e risco social por meio do desenvolvimento de potencialidades e aquisições e do fortalecimento de vínculos familiares e comunitários"; e
 
 -   a Proteção Social Especial, definida como "conjunto de serviços, programas e projetos que tem por objetivo contribuir para a reconstrução de vínculos familiares e comunitários, a defesa de direito, o fortalecimento das potencialidades e aquisições e a proteção de famílias e indivíduos para o enfrentamento das situações de violação de direitos".
 
@@ -21,17 +21,17 @@ A Proteção Social Básica destina-se à população que vive em situação de 
 Os serviços do SUAS no âmbito da Proteção Social Básica são:
 
 -   Serviço de Proteção e Atendimento Integral à Família (PAIF);
--   Serviço de Convivência e Fortalecimento de Vínculos;
--   Serviço de Proteção Social Básica no Domicílio para Pessoas com Deficiência e Idosas;
--   <!--Serviço de Proteção Social Básica no Domicílio para Gestantes e crianças de 0 a 6 anos.-->
+-   Serviço de Convivência e Fortalecimento de Vínculos (SCFV);
+-   Serviço de Proteção Social Básica no Domicílio para Pessoas com Deficiência e Idosas; e
+-   Serviço de Proteção Social Básica no Domicílio para Gestantes e Crianças de 0 a 6 anos.
 
 ### Serviço de Proteção e Atendimento Integral à Família (PAIF)
 
-O Serviço de Proteção e Atendimento Integral à Família (PAIF) é oferecido em todos os Centros de Referência da Assistência Social (CRAS).
+O PAIF é oferecido em todos os Centros de Referência da Assistência Social (CRAS).
 
-De acordo com a [Tipificação Nacional dos Serviços Socioassistenciais](https://www.mds.gov.br/webarquivos/publicacao/assistencia_social/Normativas/tipificacao.pdf), o PAIF consiste no trabalho social com famílias, de caráter continuado, com a finalidade de fortalecer a função protetiva das famílias, prevenir a ruptura dos seus vínculos, promover seu acesso a direitos e contribuir na melhoria de sua qualidade de vida. Prevê o desenvolvimento de potencialidades e aquisições das famílias e o fortalecimento de vínculos familiares e comunitários, por meio de ações de caráter preventivo, protetivo e proativo. O trabalho social do PAIF deve utilizar-se de estratégias de ações e atendimentos coletivos uma vez que as causas da pobreza e desigualdades são estruturais e presentes no território.
+De acordo com a [Tipificação Nacional de Serviços Socioassistenciais](https://www.mds.gov.br/webarquivos/publicacao/assistencia_social/Normativas/tipificacao.pdf), o PAIF "consiste no trabalho social com famílias, de caráter continuado, com a finalidade de fortalecer a função protetiva das famílias, prevenir a ruptura dos seus vínculos, promover seu acesso e usufruto de direitos e contribuir na melhoria de sua qualidade de vida. Prevê o desenvolvimento de potencialidades e aquisições das famílias e o fortalecimento de vínculos familiares e comunitários, por meio de ações de caráter preventivo, protetivo e proativo". O trabalho social do PAIF deve utilizar-se de estratégias de ações e atendimentos coletivos uma vez que as causas da pobreza e da desigualdades são estruturais e estão presentes nos territórios.
 
-O @fig-paif_cras_maiores mostra as atividades no âmbito do PAIF com maiores percentuais de unidades de CRAS que as realizaram em 2023, com destaque para visitas domiciliares e encaminhamento para o Cadastro Único, com 99% das unidades relatando o desenvolvimento dessas atividades.
+O @fig-paif_cras_maiores apresenta as atividades no âmbito do PAIF executadas com maior frequência pelas unidades de CRAS em 2024, com destaque para as visitas domiciliares, realizadas por 99% das unidades.
 
 ```{r}
 paif_cras= function(df, q, ano, cod_categoria){
@@ -198,7 +198,7 @@ grafico<-tabela %>%
 grafico
 ```
 
-Já o @fig-paif_cras-menores mostra as atividades no âmbito do PAIF com os menores percentuais de unidades de CRAS que as desenvolviam em 2023, com destaque para a elaboração do Plano de Acompanhamento Familiar, atividade realizada por 80% das unidades de CRAS, e para o registro em prontuário do acompanhamento das famílias, realizado em 2023 por 92% das unidades de CRAS (aumento de 1 ponto percentual em relação a 2022), sendo que o registro do acompanhamento familiar através de prontuário é obrigatório.
+Já o @fig-paif_cras-menores evidencia as atividades do PAIF com os menores percentuais de execução pelas unidades de CRAS em 2024. Entre elas, destacam-se a elaboração do Plano de Acompanhamento Familiar, realizada por 82% das unidades, e o registro das famílias acompanhadas, realizado por 92% dos CRAS — percentual que se manteve em relação ao ano anterior. Cabe ressaltar que o registro dos acompanhamentos familiares em prontuário é de caráter obrigatório.
 
 ```{r fig-paif_cras-menores, fig.cap = "Percentual de CRAS que desenvolvem atividades no âmbito do PAIF, atividades com menores percentuaia em 2023 - Brasil, 2015, 2022, 2023 e 2024", fig.footer = "Fonte: MDS, Censo SUAS."}
 # #| fig-height: 30
@@ -357,9 +357,11 @@ grafico
 
 ### Serviço de Convivência e Fortalecimento de Vínculos (SCFV)
 
-O Serviço de Convivência e Fortalecimento de Vínculos (SCFV) é tipificado como serviço realizado em grupos, organizado a partir de percursos, de modo a garantir aquisições progressivas aos seus usuários, de acordo com o seu ciclo de vida, a fim de complementar o trabalho social com famílias e prevenir a ocorrência de situações de risco social.
+O SCFV é tipificado como "serviço realizado em grupos, organizado a partir de percursos, de modo a garantir aquisições progressivas aos seus usuários, de acordo com o seu ciclo de vida, a fim de complementar o trabalho social com famílias e prevenir a ocorrência de situações de risco social".
 
-O @fig-CRAS-SCFV mostra o percentual de CRAS que executam diretamente os Serviços de Convivência e Fortalecimento de Vínculos. Em 2023 registrou-se a manutenção do percentual de 2022, quando 82% dos CRAS relataram executar diretamente este serviço. Percebe-se na série histórica, começando em 2014, uma tendência de redução gradual do percentual de CRAS que executam diretamente o SCFV, exceto pelos anos de 2021 e 2022, quando houve uma recuperação após uma queda acentuada em 2020, ano da pandemia de COVID-19. Vale lembrar que o SCFV pode também ser ofertado nas Unidades de Centro de Convivência.
+O @fig-CRAS-SCFV apresenta o percentual de CRAS que executam diretamente o SCFV. Em 2024, 80% dos CRAS informaram realizar a execução direta desse serviço, o que representa uma redução de 2 pontos percentuais em relação aos anos de 2022 e 2023. A análise da série histórica, iniciada em 2014, evidencia uma tendência gradual de diminuição da participação dos CRAS na execução direta do SCFV, com exceção do período entre 2021 e 2023, quando se observou uma recuperação após a queda acentuada registrada em 2020, em decorrência da pandemia de COVID-19.
+
+Ressalta-se que o SCFV também pode ser ofertado por meio dos Centros de Convivência, tanto governamentais quanto vinculados às Organizaçõe da Sociedade Civil.
 
 ```{r fig-CRAS-SCFV, fig.cap = "Percentual de CRAS que executam diretamente os Serviços de Convivência e Fortalecimento de Vínculos - Brasil, 2014 a 2024", fig.footer = "Fonte: MDS, Censo SUAS"}
 
@@ -385,9 +387,9 @@ grafico
 
 ### Serviço de Proteção Social Básica no Domicílio para Pessoas com Deficiência e Idosas
 
-O Serviço de Proteção Social Básica no Domicílio para Pessoas com Deficiência e Idosas está previsto na Tipificação dos Serviços Socioassistenciais como o serviço que tem por finalidade a prevenção de agravos que possam provocar o rompimento de vínculos familiares e sociais dos usuários. Visa a garantia de direitos, o desenvolvimento de mecanismos para a inclusão social, a equiparação de oportunidades e a participação e o desenvolvimento da autonomia das pessoas com deficiência e pessoas idosas, a partir de suas necessidades e potencialidades individuais e sociais, prevenindo situações de risco, a exclusão e o isolamento.
+De acordo com a Tipificação Nacional de Serviços Socioassistenciais, o Serviço de Proteção Social Básica no Domicílio para Pessoas com Deficiência e Idosas "tem por finalidade a prevenção de agravos que possam provocar o rompimento de vínculos familiares e sociais dos usuários. Visa a garantia de direitos, o desenvolvimento de mecanismos para a inclusão social, a equiparação de oportunidades e a participação e o desenvolvimento da autonomia das pessoas com deficiência e pessoas idosas, a partir de suas necessidades e potencialidades individuais e sociais, prevenindo situações de risco, a exclusão e o isolamento".
 
-O @fig-CRAS-PSB mostra uma redução a partir de 2021 no percentual de CRAS que executam diretamente o Serviço de Proteção Social Básica no Domicílio para Pessoas com Deficiência e Idosas, de 30% entre 2018 e 2020 para 26% em 2023.
+O @fig-CRAS-PSB apresenta o percentual de CRAS que executam diretamente o Serviço de Proteção Social Básica no Domicílio para Pessoas com Deficiência e Idosas. Observa-se uma redução desse percentual a partir de 2021, passando de 30% no período entre 2018 e 2020 para 24% em 2024.
 
 ```{r fig-CRAS-PSB, fig.cap = "Percentual de CRAS que executam diretamente o Serviço de Proteção Social Básica no Domicílio para Pessoas com Deficiência e Idosas - Brasil, 2018 a 2024", fig.footer = "Fonte: MDS, Censo SUAS"}
 
@@ -406,29 +408,33 @@ grafico
 
 <!--Recentemente, a Resolução CNAS/MDS Nº 117, de 28 de Agosto de 2023, na qual aprovou o reordenamento e a atualização da tipificação, incluindo crianças e gestantes como público alvo do Serviço de Proteção Social Básica no Domicílio. Esta resolução foi aprovada na CIT e CNAS no ano de 2025 através das seguintes normativas: obs: vai para CNAS agora em novembro/2025, esperar validar para atualziar essa informação.-->
 
-## Serviços da Proteção Social Especial - Média Compexidade
+## Serviços da Proteção Social Especial - Média Complexidade
 
-A Proteção Social Especial de Média Complexidade organiza a oferta de serviços, programas e projetos de caráter especializado que requerem maior estruturação técnica e operativa, com competências e atribuições definidas, destinados ao atendimento a famílias e indivíduos em situação de risco pessoal e social, por violação de direitos.
+A Proteção Social Especial de Média Complexidade organiza a oferta de serviços, programas e projetos de caráter especializado que requerem maior estruturação técnica e operativa, com competências e atribuições definidas, destinados ao atendimento de famílias e indivíduos em situação de risco pessoal e social, por violação de direitos.
 
-É ofertada pelos seguintes equipamentos do SUAS:
+É ofertada pelas seguintes Unidades do SUAS:
 
--   Centros de Referência Especializados de Assistência Social (CREAS),
--   Centros de Referência Especializados para População em Situação de Rua (Centro POP), e
--   Centro-Dia.
+-   Centros de Referência Especializados de Assistência Social (CREAS);
+-   Centros de Referência Especializados para População em Situação de Rua (Centro POP); e
+-   Centros-Dia.
 
-Os serviços de Proteção Social Especial ofertados no nível de Média Complexidade são:
+Os serviços de Proteção Social Especial ofertados na Média Complexidade são:
 
 -   Serviço de Proteção e Atendimento Especializado a Famílias e Indivíduos (PAEFI);
 -   Serviço de Proteção Social a Adolescentes em Cumprimento de Medida Socioeducativa de Liberdade Assistida e de Prestação de Serviços à Comunidade;
 -   Serviço Especializado em Abordagem Social;
--   Serviço de Proteção Social Especial para Pessoas com Deficiência, Idosos e suas Famílias e
+-   Serviço de Proteção Social Especial para Pessoas com Deficiência, Idosas e suas Famílias; e
 -   Serviço Especializado para Pessoas em Situação de Rua.
+
+Nos tópicos a seguir, os percentuais apresentados resultam da soma dos CREAS Regionais com os CREAS Municipais.
 
 ### Serviço de Proteção e Atendimento Especializado a Famílias e Indivíduos (PAEFI)
 
-O PAEFI é definido na Tipificação Nacional de Serviços Socioassistenciais como sendo o "serviço de apoio, orientação e acompanhamento a famílias com um ou mais de seus membros em situação de ameaça ou violação de direitos", e que "compreende atenções e orientações direcionadas para a promoção de direitos, a preservação e o fortalecimento de vínculos familiares, comunitários e sociais e para o fortalecimento da função protetiva das famílias diante do conjunto de condições que as vulnerabilizam e/ou as submetem a situações de risco pessoal e social".
+O PAEFI é tipificado como o "serviço de apoio, orientação e acompanhamento a famílias com um ou mais de seus membros em situação de ameaça ou violação de direitos", e "compreende atenções e orientações direcionadas para a promoção de direitos, a preservação e o fortalecimento de vínculos familiares, comunitários e sociais e para o fortalecimento da função protetiva das famílias diante do conjunto de condições que as vulnerabilizam e/ou as submetem a situações de risco pessoal e social".
 
-O @fig-paefi_creas mostra as situações e perfis com os maiores percentuais de CREAS que relataram ter realizado atendimento nessas situações e perfis em 2023. Todos os percentuais deste gráfico caíram em 2023 em relação a 2019, e a maioria caiu também em relação a 2022. As situações e perfis com maiores percentuais de CREAS que realizaram atendimento foram as situações de abuso e violência sexual e as de violência psicológica contra crianças e adolesecente, e as situações de violência psicológica e de violência física contra mulheres, com mais de 90% dos CREAS tendo relatado a realização de atendimentos dessas situações e perfis.
+O @fig-paefi_creas apresenta o percentual de CREAS que prestaram atendimento das situações de risco e os perfis atendidos com maior frequência em 2024. Observa-se que todos os percentuais registrados nesse ano apresentaram redução em relação a 2019, bem como em comparação com 2022, à exceção do percentual de CREAS que atenderam pessoas idosas em situação de risco de violência patrimonial, que se manteve estável. Em relação a 2023, apenas uma situação apresentou aumento no percentual de CREAS, três mantiveram-se estáveis e cinco registraram diminuição, com variações limitadas entre 1 e 2 pontos percentuais.
+
+Os perfis atendidos com maior frequência foram crianças e adolescentes em situações de abuso ou violência sexual (95%), violência psicológica (92%) e violência física (90%); e as mulheres em situações de violência psicológica (91%) e violência física (91%).
 
 ```{r}
 paefi_creas= function(df, q, ano, cod_categoria_A, cod_categoria_B){
@@ -633,9 +639,11 @@ grafico<-tabela %>%
 grafico
 ```
 
-A seguir destacamos algumas situações atendidas no PAEFI que não estão entre as situações com maiores percentuais de CREAS que realizaram atendimento.
+A seguir, destacam-se situações de trabalho marcadas por graves violações de direitos. O @fig-paefi2_creas apresenta os percentuais de CREAS que realizaram atendimentos, no âmbito do PAEFI, relacionados a trabalho em condição análoga à escravidão e a trabalho infantil.
 
-O @fig-paefi2_creas mostra os percentuais de CREAS que realizaram atendimentos do PAEFI em situações de trabalho em condição análoga à escravidão e de trabalho infantil. Os percentuais de CREAS que realizaram atendimentos nestas situações caiu em 2023.
+Observa-se que todos os percentuais registrados em 2024 apresentaram redução em relação aos anos anteriores. Destaca-se a queda para aproximadamente a metade no percentual de CREAS que atenderam mulheres e pessoas idosas em situação de trabalho em condição análoga à escravidão, bem como a redução superior à metade nos atendimentos a famílias de crianças e adolescentes nessa condição, ao longo da série histórica analisada neste gráfico.
+
+Merece atenção, ainda, o elevado percentual de CREAS que atenderam famílias de crianças e adolescentes em situação de trabalho infantil, correspondente a 60%. Embora tenha havido redução em relação aos anos anteriores, o patamar observado em 2024 permanece elevado e preocupante, indicando a persistência dessa grave violação de direitos nos territórios.
 
 ```{r fig-paefi2_creas, fig.cap = "Percentual de CREAS que realizaram atendimentos do PAEFI em situações de trabalho em condição análoga à escravidão e de trabalho infantil - Brasil, 2020, 2022, 2023 e 2024", fig.footer = "Fonte: MDS, Censo SUAS."}
 
@@ -769,7 +777,9 @@ grafico<-tabela %>%
 grafico
 ```
 
-Os percentuais de CREAS que realizaram atendimento do PAEFI para pessoas em situação de imigração (internacional) e/ou refúgio reduziram em 2023 em relação a 2022 (@fig-paefi6_creas).
+O @fig-paefi6_creas apresenta os percentuais de CREAS que ofertaram atendimento, pelo PAEFI, a pessoas em situação de imigração internacional e/ou refúgio por perfis. O percentual de oferta manteve-se o mesmo em 2024 em relação ao ano anterior: 27% dos CREAS ofertaram atendimento e 73% não ofertaram.
+
+O mesmo padrão de manutenção aproximado do índice pode-se observar por perfis atendidos: quedas em 2023 em todos os perfis, após um aumento em 2022, manteve-se presente em 2024.
 
 ```{r fig-paefi6_creas, fig.cap = "Percentual de CREAS que realizaram atendimentos do PAEFI para pessoas em situação de imigração (internacional) e/ou refúgio - Brasil,  2020, 2022, 2023 e 2024", fig.footer = "Fonte: MDS, Censo SUAS."}
 
