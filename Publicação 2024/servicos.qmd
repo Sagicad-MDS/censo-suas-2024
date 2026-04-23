@@ -468,7 +468,7 @@ paefi_creas= function(df, q, ano, cod_categoria_A, cod_categoria_B){
     summarise(n=n()) %>%
     mutate(Percentual = n/sum(n)) %>%
     filter(!! q == "Sim" | !! q == 1) %>%
-    mutate("Categoria" = categoria, "Ano" = !! ano)
+    mutate("Categoria" = categoria, "Ano" = !! ano, "cod_categoria_B" = !! cod_categoria_B)
 }
 ```
 
@@ -798,10 +798,10 @@ Os percentuais de CREAS que realizaram atendimento do PAEFI para pessoas em situ
   bind_rows(paefi_creas(creas_2024,q13_15_4,"2024","15","4")) %>%
   bind_rows(paefi_creas(creas_2024,q13_15_0,"2024","15","0")) %>%
   
-  
-   
-   
   ungroup() %>%
+  mutate(Categoria = case_when(
+    cod_categoria_B == "0"~"Não atende este tipo de situação",
+    TRUE ~ Categoria)) %>%
   mutate(Categoria=str_wrap(Categoria,width=51))
 
 ordenado<-tabela %>%
