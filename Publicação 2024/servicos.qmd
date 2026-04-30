@@ -444,6 +444,7 @@ paefi_creas= function(df, q, ano, cod_categoria_A, cod_categoria_B){
   cod_categoria_B <- quo_name(cod_categoria_B)
 
   categoria <- case_when(
+    !! cod_categoria_A == "0"~"",
     !! cod_categoria_A == "1"~"Violência Física",
     !! cod_categoria_A == "2"~"Violência Psicológica",
     !! cod_categoria_A == "3"~"Abuso ou Violência Sexual",
@@ -466,7 +467,7 @@ paefi_creas= function(df, q, ano, cod_categoria_A, cod_categoria_B){
       !! cod_categoria_B == "3"~"Homens",
       !! cod_categoria_B == "4"~"Pessoas Idosas",
       !! cod_categoria_B == "0"~"Não atende este tipo de situação"),
-      sep = " - ")
+      sep = ifelse(!! cod_categoria_A == "0", ifelse(!! cod_categoria_B == "0", "", "Atendeu "), " - "))
 
   df %>%
     select(!! q) %>%
@@ -474,7 +475,7 @@ paefi_creas= function(df, q, ano, cod_categoria_A, cod_categoria_B){
     summarise(n=n()) %>%
     mutate(Percentual = n/sum(n)) %>%
     filter(!! q == "Sim" | !! q == 1) %>%
-    mutate("Categoria" = categoria, "Ano" = !! ano, "cod_categoria_B" = !! cod_categoria_B)
+    mutate("Categoria" = categoria, "Ano" = !! ano)
 }
 ```
 
@@ -781,37 +782,34 @@ O @fig-paefi6_creas apresenta os percentuais de CREAS que ofertaram atendimento,
 
 O mesmo padrão de manutenção aproximado do índice pode-se observar por perfis atendidos: quedas em 2023 em todos os perfis, após um aumento em 2022, manteve-se presente em 2024.
 
-```{r fig-paefi6_creas, fig.cap = "Percentual de CREAS que realizaram atendimentos do PAEFI para pessoas em situação de imigração (internacional) e/ou refúgio - Brasil,  2020, 2022, 2023 e 2024", fig.footer = "Fonte: MDS, Censo SUAS."}
+```{r fig-paefi6_creas, fig.cap = "Percentual de CREAS segundo atendimento e perfil atendido no PAEFI para pessoas em situação de imigração (internacional) e/ou refúgio  - Brasil,  2020, 2022, 2023 e 2024", fig.footer = "Fonte: MDS, Censo SUAS."}
 
  tabela <-
-  paefi_creas(creas_2020,q16_14_1,"2020","15","1") %>%
-  bind_rows(paefi_creas(creas_2020,q16_14_2,"2020","15","2")) %>%
-  bind_rows(paefi_creas(creas_2020,q16_14_3,"2020","15","3")) %>%
-  bind_rows(paefi_creas(creas_2020,q16_14_4,"2020","15","4")) %>%
-  bind_rows(paefi_creas(creas_2020,q16_14_0,"2020","15","0")) %>%
+  paefi_creas(creas_2020,q16_14_1,"2020","0","1") %>%
+  bind_rows(paefi_creas(creas_2020,q16_14_2,"2020","0","2")) %>%
+  bind_rows(paefi_creas(creas_2020,q16_14_3,"2020","0","3")) %>%
+  bind_rows(paefi_creas(creas_2020,q16_14_4,"2020","0","4")) %>%
+  bind_rows(paefi_creas(creas_2020,q16_14_0,"2020","0","0")) %>%
 
-  bind_rows(paefi_creas(creas_2022,q16_14_1,"2022","15","1")) %>% 
-  bind_rows(paefi_creas(creas_2022,q16_14_2,"2022","15","2")) %>%
-  bind_rows(paefi_creas(creas_2022,q16_14_3,"2022","15","3")) %>%
-  bind_rows(paefi_creas(creas_2022,q16_14_4,"2022","15","4")) %>%
-  bind_rows(paefi_creas(creas_2022,q16_14_0,"2022","15","0")) %>%
+  bind_rows(paefi_creas(creas_2022,q16_14_1,"2022","0","1")) %>% 
+  bind_rows(paefi_creas(creas_2022,q16_14_2,"2022","0","2")) %>%
+  bind_rows(paefi_creas(creas_2022,q16_14_3,"2022","0","3")) %>%
+  bind_rows(paefi_creas(creas_2022,q16_14_4,"2022","0","4")) %>%
+  bind_rows(paefi_creas(creas_2022,q16_14_0,"2022","0","0")) %>%
 
-  bind_rows(paefi_creas(creas_2023,q12_15_1,"2023","15","1")) %>%
-  bind_rows(paefi_creas(creas_2023,q12_15_2,"2023","15","2")) %>%
-  bind_rows(paefi_creas(creas_2023,q12_15_3,"2023","15","3")) %>%
-  bind_rows(paefi_creas(creas_2023,q12_15_4,"2023","15","4")) %>%
-  bind_rows(paefi_creas(creas_2023,q12_15_0,"2023","15","0")) %>%
+  bind_rows(paefi_creas(creas_2023,q12_15_1,"2023","0","1")) %>%
+  bind_rows(paefi_creas(creas_2023,q12_15_2,"2023","0","2")) %>%
+  bind_rows(paefi_creas(creas_2023,q12_15_3,"2023","0","3")) %>%
+  bind_rows(paefi_creas(creas_2023,q12_15_4,"2023","0","4")) %>%
+  bind_rows(paefi_creas(creas_2023,q12_15_0,"2023","0","0")) %>%
   
-  bind_rows(paefi_creas(creas_2024,q13_15_1,"2024","15","1")) %>%
-  bind_rows(paefi_creas(creas_2024,q13_15_2,"2024","15","2")) %>%
-  bind_rows(paefi_creas(creas_2024,q13_15_3,"2024","15","3")) %>%
-  bind_rows(paefi_creas(creas_2024,q13_15_4,"2024","15","4")) %>%
-  bind_rows(paefi_creas(creas_2024,q13_15_0,"2024","15","0")) %>%
+  bind_rows(paefi_creas(creas_2024,q13_15_1,"2024","0","1")) %>%
+  bind_rows(paefi_creas(creas_2024,q13_15_2,"2024","0","2")) %>%
+  bind_rows(paefi_creas(creas_2024,q13_15_3,"2024","0","3")) %>%
+  bind_rows(paefi_creas(creas_2024,q13_15_4,"2024","0","4")) %>%
+  bind_rows(paefi_creas(creas_2024,q13_15_0,"2024","0","0")) %>%
   
   ungroup() %>%
-  mutate(Categoria = case_when(
-    cod_categoria_B == "0"~"Não atende este tipo de situação",
-    TRUE ~ Categoria)) %>%
   mutate(Categoria=str_wrap(Categoria,width=51))
 
 ordenado<-tabela %>%
