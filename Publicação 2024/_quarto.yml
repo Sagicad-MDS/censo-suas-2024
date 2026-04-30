@@ -51,6 +51,8 @@ crossref:
 #  ref-hyperlink: false # (default is true)
 #  chapters: false
 
+fig-cap-location: top
+
 format:
   html: 
 #    css: 
