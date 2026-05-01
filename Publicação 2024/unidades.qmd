@@ -65,7 +65,7 @@ grafico <- f_percentual_municipios_regiao_ano(cras_2007, ibge, "2007") %>%
   bind_rows(f_percentual_municipios_regiao_ano(cras_2023, IBGE, "2023")) %>%
   bind_rows(f_percentual_municipios_regiao_ano(cras_2024, IBGE, "2024")) %>%
 
-  f_grafico_col_group_percent_decimal(Região, Percentual, Ano, 1)
+  f_grafico_col_group_percent(Região, Percentual, Ano, 1)
 
 grafico
 ```
@@ -293,7 +293,7 @@ grafico <-
   bind_rows(f_maior0_regiao_grupo(cras_2023, q11_2, IBGE, "2023")) %>%
   bind_rows(f_maior0_regiao_grupo(cras_2024, q11_2, IBGE, "2024")) %>%
   
-  f_grafico_col_group_percent_decimal(Região, Percentual, Grupo, 1)
+  f_grafico_col_group_percent(Região, Percentual, Grupo, 1)
 
 grafico
 ```
@@ -628,7 +628,7 @@ grafico <-
   bind_rows(f_maior0_regiao_grupo(creas_2023, q10_2, IBGE, "2023")) %>%
   bind_rows(f_maior0_regiao_grupo(creas_2024, q10_2, IBGE, "2024")) %>%
 
-  f_grafico_col_group_percent_decimal(Região, Percentual, Grupo, 1)
+  f_grafico_col_group_percent(Região, Percentual, Grupo, 1)
 
 grafico
 ```
@@ -771,7 +771,7 @@ grafico <-
   bind_rows(f_maior0_regiao_grupo(cpop_2023, q10, IBGE, "2023")) %>%
   bind_rows(f_maior0_regiao_grupo(cpop_2024, q10, IBGE, "2024")) %>%
 
-  f_grafico_col_group_percent_decimal(Região, Percentual, Grupo, 1)
+  f_grafico_col_group_percent(Região, Percentual, Grupo, 1)
 
 grafico
 ```
@@ -1162,7 +1162,7 @@ grafico <-
   bind_rows(f_maior0_regiao_grupo(unac_2023, q48_27, IBGE, "2023")) %>%
   bind_rows(f_maior0_regiao_grupo(unac_2024, q48_27, IBGE, "2024")) %>%
 
-  f_grafico_col_group_percent_decimal(Região, Percentual, Grupo, 1)
+  f_grafico_col_group_percent(Região, Percentual, Grupo, 1)
 
 grafico
 ```
@@ -1321,7 +1321,7 @@ grafico <- f_maior0_regiao_grupo(posto_cadunico_2020, q10_2, IBGE, "2020") %>%
   bind_rows(f_maior0_regiao_grupo(posto_cadunico_2024, q8_2, IBGE, "2024")) %>%
   
   
-  f_grafico_col_group_percent_decimal(Região, Percentual, Grupo, 1)
+  f_grafico_col_group_percent(Região, Percentual, Grupo, 1)
 
 grafico
 ```

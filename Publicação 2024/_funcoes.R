@@ -677,10 +677,9 @@ f_grafico_col_percent = function(df, x, y){
   y <- enquo(y)
   
   grafico <- df %>%
-    mutate(precisao = ifelse(!! y < 0.0995, 0.1, 1)) %>%
     ggplot(aes(x = !! x, y = !! y)) +
     geom_col(aes(fill = !! y), position = "dodge") +
-    geom_text_repel(aes(label = label_percent(accuracy = precisao, decimal.mark = ",")(!! y)),
+    geom_text_repel(aes(label = label_percent(accuracy = 0.1, decimal.mark = ",")(!! y)),
                     vjust = -0.5,
                     position = position_dodge(width = 0.9),
                     point.size = NA) +
@@ -705,43 +704,9 @@ f_grafico_col_group_percent = function(df, x, y, grupo, legend_nrow){
   grupo <- enquo(grupo)
   
   grafico <- df %>%
-    mutate(precisao = ifelse(!! y < 0.0995, 0.1, 1)) %>%
     ggplot(aes(x = !! x, y = !! y, group = !! grupo)) +
     geom_col(aes(fill = !! grupo), position = "dodge") +
-    geom_text_repel(aes(label = label_percent(accuracy = precisao, decimal.mark = ",")(!! y)),
-                    hjust = -0.01,
-                    position = position_dodge(width = 0.9),
-                    angle = 90,
-                    point.size = NA) +
-    scale_y_continuous(expand = expansion(mult = c(0, .22))) +
-    theme(legend.position="bottom",
-          legend.title = element_blank(),
-          axis.title = element_blank(),
-          axis.ticks = element_blank(),
-          axis.text.y = element_blank(),
-          axis.line.x = element_line(),
-          panel.background = element_blank()) +
-    guides(fill=guide_legend(nrow=legend_nrow, byrow=TRUE))
-
-  grafico <- f_preenche_cores_d(grafico, df, !! grupo)
-  
-  if(gera.graficos.office) {
-    grafico %>% graph2office(file=arquivo_graficos, append = arquivo_graficos_criado, paper = "A4", orient = "portrait")
-    arquivo_graficos_criado <<- TRUE
-  }
-  grafico
-}
-
-f_grafico_col_group_percent_decimal = function(df, x, y, grupo, legend_nrow){
-  x <- enquo(x)
-  y <- enquo(y)
-  grupo <- enquo(grupo)
-  
-  grafico <- df %>%
-    mutate(precisao = ifelse(!! y < 0.0995, 0.01, ifelse(!! y < 1, 0.1, 1))) %>%
-    ggplot(aes(x = !! x, y = !! y, group = !! grupo)) +
-    geom_col(aes(fill = !! grupo), position = "dodge") +
-    geom_text_repel(aes(label = label_percent(accuracy = precisao, decimal.mark = ",")(!! y)),
+    geom_text_repel(aes(label = label_percent(accuracy = 0.1, decimal.mark = ",")(!! y)),
                     hjust = -0.01,
                     position = position_dodge(width = 0.9),
                     angle = 90,
@@ -770,10 +735,9 @@ f_grafico_pizza_percent = function(df, y, grupo){
   grupo <- enquo(grupo)
   
   grafico <- df %>%
-    mutate(precisao = ifelse(!! y < 0.0995, 0.1, 1)) %>%
     ggplot(aes(x = "", y = !! y, group = !! grupo)) +
     geom_bar(aes(fill = !! grupo), stat="identity") +
-    geom_text_repel(aes(label = label_percent(accuracy = precisao, decimal.mark = ",")(!! y)),
+    geom_text_repel(aes(label = label_percent(accuracy = 0.1, decimal.mark = ",")(!! y)),
                     position = position_stack(vjust = 0.5)) +
     coord_polar(theta = "y", direction = -1) +
     theme_void() +
@@ -789,10 +753,9 @@ f_grafico_col_percent_flip = function(df, x, y, grupo, legend_nrow){
   grupo <- enquo(grupo)
   
   grafico <- df %>%
-    mutate(precisao = ifelse(!! y < 0.0995, 0.1, 1)) %>%
     ggplot(aes(x = !! x, y = !! y, group = fct_rev(!! grupo))) +
     geom_col(aes(fill = !! grupo), position = "dodge") +
-    geom_text(aes(label = ifelse(!! y, label_percent(accuracy = precisao, decimal.mark = ",")(!! y), "")),
+    geom_text(aes(label = ifelse(!! y, label_percent(accuracy = 0.1, decimal.mark = ",")(!! y), "")),
               hjust = -0.05,
               position = position_dodge(width = 0.9),
               check_overlap = TRUE) +
@@ -822,10 +785,9 @@ f_grafico_col_stack_percent = function(df, x, y, grupo, legend_nrow){
   grupo <- enquo(grupo)
   
   grafico <- df %>%
-    mutate(precisao = ifelse(!! y < 0.0995, 0.1, 1)) %>%
     ggplot(aes(x = !! x, y = !! y, group = !! grupo)) +
     geom_col(aes(fill = !! grupo), position = position_stack(reverse = TRUE)) +
-    geom_text_repel(aes(label = ifelse(!! y > 0.0005, label_percent(accuracy = precisao, decimal.mark = ",")(!! y), ""), fill = !! grupo, color = after_scale(prismatic::best_contrast(fill, c("white", "black")))),
+    geom_text_repel(aes(label = ifelse(!! y > 0.0005, label_percent(accuracy = 0.1, decimal.mark = ",")(!! y), ""), fill = !! grupo, color = after_scale(prismatic::best_contrast(fill, c("white", "black")))),
                     position = position_stack(reverse = TRUE, vjust = .5),
                     point.size = NA,
                     segment.colour = NA) +
@@ -854,11 +816,10 @@ f_grafico_col_stack_percent_flip = function(df, x, y, grupo, legend_nrow){
   grupo <- enquo(grupo)
   
   grafico <- df %>%
-    mutate(precisao = ifelse(!! y < 0.0995, 0.1, 1)) %>%
     arrange(!! grupo) %>%
     ggplot(aes(x = !! x, y = !! y)) +
     geom_col(aes(fill = !! grupo), position = position_stack(reverse = TRUE)) +
-    geom_text(aes(label = ifelse(!! y > 0.0005, label_percent(accuracy = precisao, decimal.mark = ",")(!! y), ""), fill = !! grupo, color = after_scale(prismatic::best_contrast(fill, c("white", "black")))),
+    geom_text(aes(label = ifelse(!! y > 0.0005, label_percent(accuracy = 0.1, decimal.mark = ",")(!! y), ""), fill = !! grupo, color = after_scale(prismatic::best_contrast(fill, c("white", "black")))),
               position = position_stack(reverse = TRUE, vjust = .5),
               check_overlap = TRUE) +
     scale_y_continuous(expand = expansion(mult = c(0, 0.05))) +
@@ -888,11 +849,10 @@ f_grafico_col_stack_percent_flip_2_x_groups = function(df, x1, x2, y, grupo, leg
   grupo <- enquo(grupo)
   
   grafico <- df %>%
-    mutate(precisao = ifelse(!! y < 0.0995, 0.1, 1)) %>%
     arrange(!! grupo) %>%
     ggplot(aes(x = fct_rev(!! x2), y = !! y)) +
     geom_col(aes(fill = !! grupo), position = position_stack(reverse = TRUE)) +
-    geom_text(aes(label = ifelse(!! y > 0.0005, label_percent(accuracy = precisao, decimal.mark = ",")(!! y), ""), fill = !! grupo, color = after_scale(prismatic::best_contrast(fill, c("white", "black")))),
+    geom_text(aes(label = ifelse(!! y > 0.0005, label_percent(accuracy = 0.1, decimal.mark = ",")(!! y), ""), fill = !! grupo, color = after_scale(prismatic::best_contrast(fill, c("white", "black")))),
               position = position_stack(reverse = TRUE, vjust = .5),
               check_overlap = TRUE) +
     facet_wrap(vars(fct_rev(!! x1)), strip.position = "left", ncol = 1) +
