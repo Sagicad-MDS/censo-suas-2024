@@ -351,7 +351,7 @@ tabela <-
   mutate(Categoria=str_wrap(Categoria,width=28))
 
 ordenado<-tabela %>%
-  filter(Ano == "2023") %>%
+  filter(Ano == "2024") %>%
   filter(Grupo == str_wrap("Constituída formalmente", width=w_grupo)) %>%
   arrange(Percentual) %>%
   pull(Categoria)
@@ -517,7 +517,7 @@ tabela <-
   mutate(Categoria=str_wrap(Categoria,width=49))
 
 ordenado<-tabela %>%
-  filter(Ano == "2023") %>%
+  filter(Ano == "2024") %>%
   filter(Grupo == str_wrap("Constituída formalmente", width=w_grupo)) %>%
   arrange(Percentual) %>%
   pull(Categoria)
@@ -2204,19 +2204,16 @@ igd_pbf  = function(df, q, ano){
   ano <- quo_name(ano)
 
   df %>%
-    select(!! ano := !! q) %>%
-    gather("Categoria","Nível") %>%
-    mutate(Nível = case_when(Nível == "Não sabe informar"~"Não sabe informar",
-                             TRUE ~ Nível)) %>%
+    select("Nível" = !! q) %>%
     filter(!is.na(Nível)) %>%
     mutate(Nível = factor(Nível, levels = c("Não, o planejamento é realizado exclusivamente pelo órgão gestor municipal",
                                             "Sim, é ouvido e indica necessidades",
                                             "Sim, indica necessidades e consegue influenciar no processo decisório",
                                             "Não sabe informar"))) %>%
-    group_by(Categoria, Nível) %>%
+    group_by(Nível) %>%
     summarise(n=n()) %>%
-    group_by(Categoria) %>%
-    mutate(Percentual = n/sum(n))
+    mutate(Percentual = n/sum(n)) %>%
+    mutate("Categoria" = !! ano)
 }
 
 grafico <- igd_pbf(posto_cadunico_2020, q29, "2020") %>%

@@ -1060,21 +1060,17 @@ pub_cmas  = function(df, q, ano){
   ano <- quo_name(ano)
 
   df %>%
-    select(!! ano := !! q) %>%
-    gather("Categoria","Nível") %>%
-    mutate(Nível = case_when(Nível == " A minoria das deliberações/resoluções é publicada"~" A minoria das deliberações/resoluções é publicada",
-                                        TRUE ~ Nível)) %>%
+    select("Nível" = !! q) %>%
     filter(!is.na(Nível)) %>%
     mutate(Nível = factor(Nível, levels = c("A minoria das deliberações/resoluções é publicada",
                                             "A maioria das deliberações/resoluções é publicada",
                                             "Nenhuma das deliberações/resoluções é publicada",
                                             "A metade das deliberações/resoluções é publicada",
                                             "Todas as deliberações/resoluções são publicadas"))) %>%
-
-    group_by(Categoria, Nível) %>%
+    group_by(Nível) %>%
     summarise(n=n()) %>%
-    group_by(Categoria) %>%
-    mutate(Percentual = n/sum(n))
+    mutate(Percentual = n/sum(n)) %>%
+    mutate("Categoria" = !! ano)
 }
 
 grafico <- pub_cmas(cmun_2017, q36, "2017") %>%
@@ -1470,28 +1466,23 @@ grafico <- f_quantitativo_niveis(idconselho_2022, `Estrutura Administrativa`, "E
 grafico
 ```
 
-```{r fig-Id_per, fig.cap = "Indicador de Desenvolvimento do conselhos municpais por compsição, 2014 a 2022",eval=FALSE}
-
+```{r}
 idconselho  = function(df, q, ano){
   q <- enquo(q)
   ano <- quo_name(ano)
 
   df %>%
-    select(!! ano := !! q) %>%
-    gather("Categoria","Nível") %>%
-    mutate(Nível = case_when(Nível == 1~1,
-                             TRUE ~ Nível)) %>%
-    filter(!is.na(Nível)) %>%
-    mutate(Nível = factor(Nível, levels = c(1,
-                                            2,
-                                            3,
-                                            4,
-                                            5)))%>%
-    group_by(Categoria, Nível) %>%
+    filter(!is.na(!! q)) %>%
+    mutate(Nível = factor(!! q, levels = c(1, 2, 3, 4, 5)))%>%
+    select(Nível) %>%
+    group_by(Nível) %>%
     summarise(n=n()) %>%
-    group_by(Categoria) %>%
-    mutate(Percentual = n/sum(n))
+    mutate(Percentual = n/sum(n)) %>%
+    mutate("Categoria" = !! ano)
 }
+```
+
+```{r fig-Id_per, fig.cap = "Indicador de Desenvolvimento do conselhos municpais por compsição, 2014 a 2022",eval=FALSE}
 
 grafico <- idconselho(idconselho_2014, `Estrutura Administrativa`, "2014") %>%
    bind_rows(idconselho(idconselho_2015, `Estrutura Administrativa`, "2015")) %>%
@@ -1510,27 +1501,6 @@ grafico
 
 ```{r fig-id_fun, fig.cap = "Indicador de Desenvolvimento do conselhos municpais - Dinamiza da funcionamento",eval=FALSE}
 
-idconselho  = function(df, q, ano){
-  q <- enquo(q)
-  ano <- quo_name(ano)
-
-  df %>%
-    select(!! ano := !! q) %>%
-    gather("Categoria","Nível") %>%
-    mutate(Nível = case_when(Nível == 1~1,
-                             TRUE ~ Nível)) %>%
-    filter(!is.na(Nível)) %>%
-    mutate(Nível = factor(Nível, levels = c(1,
-                                            2,
-                                            3,
-                                            4,
-                                            5)))%>%
-    group_by(Categoria, Nível) %>%
-    summarise(n=n()) %>%
-    group_by(Categoria) %>%
-    mutate(Percentual = n/sum(n))
-}
-
 grafico <- idconselho(idconselho_2014, `Dinâmica de Funcionamento`, "2014") %>%
     bind_rows(idconselho(idconselho_2015, `Dinâmica de Funcionamento`, "2015")) %>%
     bind_rows(idconselho(idconselho_2016, `Dinâmica de Funcionamento`, "2016")) %>%
@@ -1547,27 +1517,6 @@ grafico
 ```
 
 ```{r fig-idcom, fig.cap = "Indicador de Desenvolvimento do conselhos municpais composição",eval=FALSE}
-
-idconselho  = function(df, q, ano){
-  q <- enquo(q)
-  ano <- quo_name(ano)
-
-  df %>%
-    select(!! ano := !! q) %>%
-    gather("Categoria","Nível") %>%
-    mutate(Nível = case_when(Nível == 1~1,
-                             TRUE ~ Nível)) %>%
-    filter(!is.na(Nível)) %>%
-    mutate(Nível = factor(Nível, levels = c(1,
-                                            2,
-                                            3,
-                                            4,
-                                            5)))%>%
-    group_by(Categoria, Nível) %>%
-    summarise(n=n()) %>%
-    group_by(Categoria) %>%
-    mutate(Percentual = n/sum(n))
-}
 
 grafico <- idconselho(idconselho_2014, `Composição do Conselho`, "2014") %>%
     bind_rows(idconselho(idconselho_2015, `Composição do Conselho`, "2015")) %>%
