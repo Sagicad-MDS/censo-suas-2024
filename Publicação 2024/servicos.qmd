@@ -31,7 +31,7 @@ O PAIF é oferecido em todos os Centros de Referência da Assistência Social (C
 
 De acordo com a [Tipificação Nacional de Serviços Socioassistenciais](https://www.mds.gov.br/webarquivos/publicacao/assistencia_social/Normativas/tipificacao.pdf), o PAIF "consiste no trabalho social com famílias, de caráter continuado, com a finalidade de fortalecer a função protetiva das famílias, prevenir a ruptura dos seus vínculos, promover seu acesso e usufruto de direitos e contribuir na melhoria de sua qualidade de vida. Prevê o desenvolvimento de potencialidades e aquisições das famílias e o fortalecimento de vínculos familiares e comunitários, por meio de ações de caráter preventivo, protetivo e proativo". O trabalho social do PAIF deve utilizar-se de estratégias de ações e atendimentos coletivos uma vez que as causas da pobreza e da desigualdades são estruturais e estão presentes nos territórios.
 
-O @fig-paif_cras_maiores apresenta as atividades no âmbito do PAIF executadas com maior frequência pelas unidades de CRAS em 2024, com destaque para as visitas domiciliares, realizadas por 99% das unidades.
+O @fig-paif_cras_maiores apresenta as atividades desenvolvidas no âmbito do PAIF que concentraram os maiores percentuais de CRAS que relataram sua realização em 2024, com destaque para as visitas domiciliares, realizadas por 99% das unidades.
 
 ```{r}
 paif_cras= function(df, q, ano, cod_categoria){
@@ -198,7 +198,7 @@ grafico<-tabela %>%
 grafico
 ```
 
-Já o @fig-paif_cras-menores evidencia as atividades do PAIF com os menores percentuais de execução pelas unidades de CRAS em 2024. Entre elas, destacam-se a elaboração do Plano de Acompanhamento Familiar, realizada por 82% das unidades, e o registro das famílias acompanhadas, realizado por 92% dos CRAS — percentual que se manteve em relação ao ano anterior. Cabe ressaltar que o registro dos acompanhamentos familiares em prontuário é de caráter obrigatório.
+Já o @fig-paif_cras-menores apresenta as atividades do PAIF que registraram os menores percentuais de unidades do CRAS que relataram sua realização em 2024. Entre elas, destacam-se a elaboração do Plano de Acompanhamento Familiar, realizada por 82% das unidades, e o registro das famílias acompanhadas, realizado por 92% dos CRAS — percentual que se manteve em relação ao ano anterior. Cabe ressaltar que o registro dos acompanhamentos familiares em prontuário é de caráter obrigatório.
 
 ```{r fig-paif_cras-menores, fig.cap = "Percentual de CRAS que desenvolvem atividades no âmbito do PAIF, atividades com menores percentuaia em 2023 - Brasil, 2015, 2022, 2023 e 2024", fig.footer = "Fonte: MDS, Censo SUAS."}
 # #| fig-height: 30
@@ -421,20 +421,20 @@ A Proteção Social Especial de Média Complexidade organiza a oferta de serviç
 Os serviços de Proteção Social Especial ofertados na Média Complexidade são:
 
 -   Serviço de Proteção e Atendimento Especializado a Famílias e Indivíduos (PAEFI);
--   Serviço de Proteção Social a Adolescentes em Cumprimento de Medida Socioeducativa de Liberdade Assistida e de Prestação de Serviços à Comunidade;
+-   Serviço de Proteção Social a Adolescentes em Cumprimento de Medida Socioeducativa de Liberdade Assistida (LA) e de Prestação de Serviços à Comunidade (PSC);
 -   Serviço Especializado em Abordagem Social;
 -   Serviço de Proteção Social Especial para Pessoas com Deficiência, Idosas e suas Famílias; e
 -   Serviço Especializado para Pessoas em Situação de Rua.
 
-Nos tópicos a seguir, os percentuais apresentados resultam da soma dos CREAS Regionais com os CREAS Municipais.
+Nos tópicos a seguir, os percentuais apresentados resultam da soma dos CREAS Regionais (Modelo I e II) com os CREAS Municipais, totalizando 2.883 CREAS, conforme informações coletadas na [base de dados do Censo SUAS](https://aplicacoes.mds.gov.br/sagi/snas/vigilancia/index2.php).
 
 ### Serviço de Proteção e Atendimento Especializado a Famílias e Indivíduos (PAEFI)
 
 O PAEFI é tipificado como o "serviço de apoio, orientação e acompanhamento a famílias com um ou mais de seus membros em situação de ameaça ou violação de direitos", e "compreende atenções e orientações direcionadas para a promoção de direitos, a preservação e o fortalecimento de vínculos familiares, comunitários e sociais e para o fortalecimento da função protetiva das famílias diante do conjunto de condições que as vulnerabilizam e/ou as submetem a situações de risco pessoal e social".
 
-O @fig-paefi_creas apresenta o percentual de CREAS que prestaram atendimento das situações de risco e os perfis atendidos com maior frequência em 2024. Observa-se que todos os percentuais registrados nesse ano apresentaram redução em relação a 2019, bem como em comparação com 2022, à exceção do percentual de CREAS que atenderam pessoas idosas em situação de risco de violência patrimonial, que se manteve estável. Em relação a 2023, apenas uma situação apresentou aumento no percentual de CREAS, três mantiveram-se estáveis e cinco registraram diminuição, com variações limitadas entre 1 e 2 pontos percentuais.
+O @fig-paefi_creas apresenta as situações e os perfis que concentraram os maiores percentuais de CREAS que relataram a realização de atendimentos em 2024. Observa-se que todos os percentuais registrados nesse ano apresentaram redução em relação a 2019, bem como em comparação com 2022, à exceção do percentual de CREAS que atenderam pessoas idosas em situação de risco de violência patrimonial, que se manteve estável. Em relação a 2023, apenas uma situação apresentou aumento no percentual de CREAS, três mantiveram-se estáveis e cinco registraram diminuição, com variações limitadas entre 1 e 2 pontos percentuais.
 
-Os perfis atendidos com maior frequência foram crianças e adolescentes em situações de abuso ou violência sexual (95%), violência psicológica (92%) e violência física (90%); e as mulheres em situações de violência psicológica (91%) e violência física (91%).
+As situações e os perfis com os maiores percentuais de CREAS que realizaram atendimentos foram aquelas relacionadas a crianças e adolescentes - abuso ou violência sexual (95%), violência psicológica (92%) e violência física (90%) - e a mulheres em situações de violência psicológica (91%) e violência física (91%).
 
 ```{r}
 paefi_creas= function(df, q, ano, cod_categoria_A, cod_categoria_B){
@@ -642,9 +642,9 @@ grafico
 
 A seguir, destacam-se situações de trabalho marcadas por graves violações de direitos. O @fig-paefi2_creas apresenta os percentuais de CREAS que realizaram atendimentos, no âmbito do PAEFI, relacionados a trabalho em condição análoga à escravidão e a trabalho infantil.
 
-Observa-se que todos os percentuais registrados em 2024 apresentaram redução em relação aos anos anteriores. Destaca-se a queda para aproximadamente a metade no percentual de CREAS que atenderam mulheres e pessoas idosas em situação de trabalho em condição análoga à escravidão, bem como a redução superior à metade nos atendimentos a famílias de crianças e adolescentes nessa condição, ao longo da série histórica analisada neste gráfico.
+Observa-se que todos os percentuais registrados em 2024 apresentaram redução em relação à série histórica analisada neste gráfico. Destaca-se a queda, em relação a 2020 e 2022, para aproximadamente a metade no percentual de CREAS que atenderam mulheres e pessoas idosas em situação de trabalho em condição análoga à escravidão, bem como a redução superior à metade nos atendimentos a famílias de crianças e adolescentes nessa condição.
 
-Merece atenção, ainda, o elevado percentual de CREAS que atenderam famílias de crianças e adolescentes em situação de trabalho infantil, correspondente a 60%. Embora tenha havido redução em relação aos anos anteriores, o patamar observado em 2024 permanece elevado e preocupante, indicando a persistência dessa grave violação de direitos nos territórios.
+Merece atenção, ainda, o elevado percentual de CREAS que atenderam famílias de crianças e adolescentes em situação de trabalho infantil, correspondente a 60%. Embora tenha havido redução, principalmente em relação a 2020 e 2022, o patamar observado em 2024 permanece elevado e preocupante, indicando a persistência dessa grave violação de direitos nos territórios.
 
 ```{r fig-paefi2_creas, fig.cap = "Percentual de CREAS que realizaram atendimentos do PAEFI em situações de trabalho em condição análoga à escravidão e de trabalho infantil - Brasil, 2020, 2022, 2023 e 2024", fig.footer = "Fonte: MDS, Censo SUAS."}
 
@@ -780,7 +780,7 @@ grafico
 
 O @fig-paefi6_creas apresenta os percentuais de CREAS que ofertaram atendimento, pelo PAEFI, a pessoas em situação de imigração internacional e/ou refúgio por perfis. O percentual de oferta manteve-se o mesmo em 2024 em relação ao ano anterior: 27% dos CREAS ofertaram atendimento e 73% não ofertaram.
 
-O mesmo padrão de manutenção aproximado do índice pode-se observar por perfis atendidos: quedas em 2023 em todos os perfis, após um aumento em 2022, manteve-se presente em 2024.
+Observa-se que, após aumentos registrados em 2022, houve quedas em todos os perfis ao longo de 2023, com estabilidade percentual em 2024. A única exceção foi o atendimento de homens em situação de imigração internacional e/ou refúgio, que apresentou redução de 2% em 2024 em relação a 2023.
 
 ```{r fig-paefi6_creas, fig.cap = "Percentual de CREAS segundo atendimento e perfil atendido no PAEFI para pessoas em situação de imigração (internacional) e/ou refúgio  - Brasil,  2020, 2022, 2023 e 2024", fig.footer = "Fonte: MDS, Censo SUAS."}
 
@@ -824,11 +824,11 @@ grafico<-tabela %>%
 grafico
 ```
 
-O @fig-creas-tradicionais mostra os percentuais de CREAS segundo realização de atendimento de povos e comunidades tradicionais. Os Povos Indígenas são o grupo com maior percentual de CREAS que os atenderam (17%), percentual puxado pelos CREAS da Região Norte (36% dos CREAS), Sul (34%) e Centro-Oeste (30%).
+O @fig-creas-tradicionais apresenta os percentuais de CREAS que ofertaram atendimento a Povos e Comunidades Tradicionais em 2024. Os povos indígenas constituem o grupo com maior percentual de CREAS que realizaram atendimento (17%), resultado influenciado principalmente pelas unidades das regiões Norte (35% dos CREAS), Sul (35%) e Centro-Oeste (31%).
 
-Logo em seguida observamos as Comunidades Quilombolas, puxado pelo alto percentual de CREAS que os atenderam na Região Nordeste (26%).
+Em seguida, destacam-se as comunidades quilombolas, com maior participação dos CREAS da região Nordeste, onde 25% das unidades informaram atendimento a esse público.
 
-Destaca-se o alto percentual de CREAS da Região Norte que atenderam Comunidades Ribeirinhas (51%).
+Ressalta-se ainda o elevado percentual de CREAS da Região Norte que atenderam comunidades ribeirinhas (50%) e comunidades extrativistas (20%).
 
 ```{r fig-creas-tradicionais, fig.cap = "Percentual de CREAS segundo realização de atendimento de povos e comunidades tradicionais - Brasil e Grandes Regiões, 2024", fig.footer = "Fonte: MDS, Censo SUAS."}
 # #| fig-height: 8
@@ -913,9 +913,9 @@ grafico
 
 ### Serviço de Proteção Social a Adolescentes em Cumprimento de Medida Socioeducativa de Liberdade Assistida (LA) e de Prestação de Serviços à Comunidade (PSC)
 
-O Serviço de Proteção Social a Adolescentes em Cumprimento de Medida Socioeducativa de Liberdade Assistida (LA) e de Prestação de Serviços à Comunidade (PSC), segundo definido na Tipificação Nacional de Serviços Socioassistenciais, "tem por finalidade prover atenção socioassistencial e acompanhamento a adolescentes e jovens em cumprimento de medidas socioeducativas em meio aberto, determinadas judicialmente". Deve contribuir para o acesso a direitos e para a resignificação de valores na vida pessoal e social dos adolescentes e jovens. Para a oferta do serviço faz-se necessário a observância da responsabilização face ao ato infracional praticado, cujos direitos e obrigações devem ser assegurados de acordo com as legislações e normativas específicas para o cumprimento da medida.
+O Serviço de LA e de PSC, conforme definido na Tipificação Nacional de Serviços Socioassistenciais, "tem por finalidade prover atenção socioassistencial e acompanhamento a adolescentes e jovens em cumprimento de medidas socioeducativas em meio aberto, determinadas judicialmente". Além disso, o serviço "deve contribuir para o acesso a direitos e para a resignificação de valores na vida pessoal e social dos adolescentes e jovens. Para a oferta do serviço, faz-se necessário a observância da responsabilização face ao ato infracional praticado, cujos direitos e obrigações devem ser assegurados de acordo com as legislações e normativas específicas para o cumprimento da medida".
 
-Desde 2019 observamos no @fig-CREAS-MSE uma relativa estabilidade, em torno de 88%, no percentual de CREAS que realizam o Serviço de Proteção Social a Adolescentes em cumprimento de Medida Socioeducativa de Liberdade Assistida (LA) e de Prestação de Serviços à Comunidade (PSC).
+Desde 2019, observa-se no @fig-CREAS-MSE relativa estabilidade no percentual de CREAS que realizam o Serviço de LA e de PSC, mantendo-se entre 88% e 89%.
 
 ```{r fig-CREAS-MSE, fig.cap = "Percentual de CREAS que realizam o Serviço de Proteção Social a Adolescentes em cumprimento de Medida Socioeducativa de Liberdade Assistida (LA) e de Prestação de Serviços à Comunidade (PSC) - Brasil, 2017 a 2024", fig.footer = "Fonte: MDS, Censo SUAS"}
 
@@ -936,9 +936,9 @@ grafico
 
 ### Serviço de Proteção Social Especial para Pessoas com Deficiência, Idosas e suas Famílias
 
-O Serviço de Proteção Social Especial para Pessoas com Deficiência, Idosas e suas Famílias é definido na Tipificação Nacional de Serviços Socioassistenciais como sendo o "serviço para a oferta de atendimento especializado a famílias com pessoas com deficiência e idosos com algum grau de dependência, que tiveram suas limitações agravadas por violações de direitos, tais como: exploração da imagem, isolamento, confinamento, atitudes discriminatórias e preconceituosas no seio da família, falta de cuidados adequados por parte do cuidador, alto grau de estresse do cuidador, desvalorização da potencialidade/capacidade da pessoa, dentre outras que agravam a dependência e comprometem o desenvolvimento da autonomia."
+O Serviço de Proteção Social Especial para Pessoas com Deficiência, Idosas e suas Famílias é definido na Tipificação Nacional de Serviços Socioassistenciais como sendo o "serviço para a oferta de atendimento especializado a famílias com pessoas com deficiência e idosos com algum grau de dependência, que tiveram suas limitações agravadas por violações de direitos, tais como: exploração da imagem, isolamento, confinamento, atitudes discriminatórias e preconceituosas no seio da família, falta de cuidados adequados por parte do cuidador, alto grau de estresse do cuidador, desvalorização da potencialidade/capacidade da pessoa, dentre outras que agravam a dependência e comprometem o desenvolvimento da autonomia".
 
-No @fig-creas-pse-domicilio vemos que o percentual de CREAS que ofertam Serviço de Proteção Social Especial para Pessoas com Deficiência, Idosas e suas Famílias vem reduzindo, tanto para os CREAS que ofertam com equipe específica para o serviço, quanto para os que ofertam sem equipe específica para o serviço.
+Observa-se no @fig-creas-pse-domicilio que, embora tenha havido redução, ao longo da série histórica, no percentual de CREAS que ofertam Serviço de Proteção Social Especial para Pessoas com Deficiência, Idosas e suas Famílias, esse percentual manteve-se estável em relação a 2023. Tal estabilidade é observada tanto entre os CREAS que ofertam o serviço com equipe específica quanto entre aqueles que o realizam sem equipe específica.
 
 ```{r fig-creas-pse-domicilio, fig.cap = "Percentual de CREAS segundo oferta do Serviço de Proteção Social Especial para Pessoas com Deficiência, Idosas e suas Famílias, 2018 a 2024", fig.footer = "Fonte: MDS, Censo SUAS."}
 # #| fig-height: 4.5
@@ -1000,9 +1000,9 @@ grafico
 
 ### Serviço Especializado em Abordagem Social
 
-O Serviço Especializado em Abordagem Social consiste na identificação, por equipes de educadores sociais, de pessoas e famílias em situação de risco pessoal nos ambientes públicos. São considerados situações de risco: trabalho infantil, situação de rua, uso abusivo de drogas, exploração sexual de crianças e adolescentes, dentre outras. A abordagem é realizada em praças, feiras, locais de intensa circulação de pessoas e com existência de comércio, ruas, prédios abandonados, dentre outros espaços, e tem por objetivo garantir direitos por meio de inclusão em rede de serviços socioassistenciais e em outras políticas públicas.
+O Serviço Especializado em Abordagem Social consiste na identificação, por equipes de educadores sociais, de pessoas e famílias em situação de risco pessoal nos ambientes públicos. São considerados situações de risco: trabalho infantil, situação de rua, uso prejudicial de drogas, exploração sexual de crianças e adolescentes, dentre outras. A abordagem é realizada em espaços como praças, feiras, locais de intensa circulação de pessoas e existência de comércio, ruas, prédios abandonados e outros. Conforme a Tipificação Nacional de Serviços Socioassistenciais, este serviço "deve buscar a resolução de necessidades imediatas e promover a inserção na rede de serviços socioassistenciais e das demais políticas públicas na perspectiva da garantia dos direitos.
 
-Os percentuais de CREAS que realizaram o Serviço Especializado em Abordagem Social, mostrados no @fig-CREAS-abordagem-social, permaneceram relativamente estáveis de 2019 a 2023, com pequenas oscilações.
+Em 2024, a maioria dos CREAS (57%) realizou o Serviço Especializado em Abordagem Social, sendo que 43% o ofertaram sem equipe exclusiva e 14% com equipe exclusiva para Abordagem Social. Conforme apresentado no @fig-CREAS-abordagem-social, os percentuais mantiveram-se relativamente estáveis ao longo da série histórica, com destaque para a redução de 3% no percentual de CREAS que realizam o serviço em 2024 em relação a 2023.
 
 ```{r fig-CREAS-abordagem-social, fig.cap = "Percentual de CREAS que realizam o Serviço Especializado em Abordagem Social - Brasil, 2019 a 2024", fig.footer = "Fonte: MDS, Censo SUAS"}
 
@@ -1047,13 +1047,13 @@ grafico
 
 ## Serviços da Proteção Social Especial - Alta Complexidade
 
-Os Serviços de Proteção Social Especial de Alta Complexidade destinam-se a famílias e/ou indivíduos afastados temporariamente do núcleo familiar e/ou comunitário de origem. Estes Serviços são organizados em diferentes regulamentações, modalidades e públicos.
+Os Serviços de Proteção Social Especial de Alta Complexidade destinam-se a famílias e/ou indivíduos afastados temporariamente do núcleo familiar e/ou comunitário de origem. Estes serviços são organizados em diferentes regulamentações, modalidades e públicos.
 
 ### Serviço de Acolhimento em Família Acolhedora
 
-O Serviço de Acolhimento em Família Acolhedora "organiza o acolhimento de crianças e adolescentes, afastados da família de origem ou extensa por medida de proteção, em residência de famílias acolhedoras cadastradas. É previsto até que seja possível o retorno à família de origem ou, na sua impossibilidade, o encaminhamento para adoção. O serviço é o responsável por selecionar, capacitar, cadastrar e acompanhar as famílias acolhedoras, bem como realizar o acompanhamento da criança e/ou do adolescente acolhido e da sua família de origem."
+O Serviço de Acolhimento em Família Acolhedora é tipificado como o serviço que "organiza o acolhimento de crianças e adolescentes afastados da família por medida de proteção, em residência de famílias acolhedoras cadastradas. É previsto até que seja possível o retorno à família de origem ou, na sua impossibilidade, o encaminhamento para adoção. O serviço é o responsável por selecionar, capacitar, cadastrar e acompanhar as famílias acolhedoras, bem como realizar o acompanhamento da criança e/ou do adolescente acolhido e sua família de origem."
 
-O @fig-fam_acolhedora mostra um contínuo crescimento do percentual de Municípios com unidades municipais executoras do Serviço de Acolhimento de Família Acolhedora, chegando a 10% dos Municípios brasileiros em 2023, com destaque para a Região Sul, cujo percentual chegou a 23%.
+O @fig-fam_acolhedora mostra um crescimento contínuo do percentual de municípios com unidades executoras do Serviço de Acolhimento em Família Acolhedora, que alcançou 11% dos municípios brasileiros em 2024. Destaca-se a região Sul, onde esse percentual chegou a 24%.
 
 ```{r fig-fam_acolhedora, fig.cap = "Percentual de Municípios com unidades municipais executoras do Serviço de Acolhimento de Família Acolhedora - Brasil, 2017 a 2024", fig.footer = "Fonte: MDS, Censo SUAS."}
 # #| fig-height: 6.5
