@@ -40,7 +40,7 @@ execute:
   echo: false
   message: false
   warning: false
-  cache: false
+  cache: true
 
 crossref:
   fig-title: Gráfico     # (default is "Figure")
