@@ -6,9 +6,9 @@ source("_funcoes.R")
 
 # Participação e Controle Social no SUAS
 
-A participação social é uma das diretrizes estabelecidas pela Constituição Federal de 1988 para a organização das ações da Assistência Social. Nesse sentido, a [Lei Orgânica da Assistência Social (LOAS)](http://www.planalto.gov.br/ccivil_03/Leis/L8742compilado.htm), que dispõe sobre a sua organização, instituiu em seu artigo 16 os Conselhos de Assistência Social em âmbito Nacional, Estadual e Municipal como instâncias de deliberação colegiada do SUAS, cuja composição deve ser paritária entre Governo e Sociedade Civil.
+A participação social é uma das diretrizes estabelecidas pela Constituição Federal de 1988 para a organização das ações da Assistência Social. Nesse sentido, a [Lei Orgânica da Assistência Social (LOAS)](http://www.planalto.gov.br/ccivil_03/Leis/L8742compilado.htm), que dispõe sobre a sua organização, instituiu em seu artigo 16 os Conselhos de Assistência Social em âmbito nacional, estadual e municipal como instâncias de deliberação colegiada do SUAS, cuja composição deve ser paritária entre governo e sociedade civil.
 
-Os Conselhos integram o Sistema Único de Assistência Social (SUAS), juntamente com o Governo e as Entidades e Organizações de Assistência Social. A [Resolução do Conselho Nacional de Assistência Social (CNAS) nº 100/2023](https://aplicacoes.mds.gov.br/snas/regulacao/visualizar.php?codigo=6470), estabelece a definição dos Conselhos de Assistência Social, suas competências, criação, estrutura e organização. Esta resolução também trata do desempenho das conselheiras e conselheiros, bem como sua função de interesse público.
+Os Conselhos integram o Sistema Único de Assistência Social (SUAS), juntamente com o governo e as entidades e organizações de assistência social. A [Resolução do Conselho Nacional de Assistência Social (CNAS) nº 100/2023](https://aplicacoes.mds.gov.br/snas/regulacao/visualizar.php?codigo=6470) estabelece a definição dos Conselhos de Assistência Social, suas competências, criação, estrutura e organização. Esta resolução também trata do desempenho das conselheiras e conselheiros, bem como sua função de interesse público.
 
 Outra resolução importante para organização do controle social no SUAS é a [Resolução CNAS/MDS nº 99/2023](https://www.gov.br/participamaisbrasil/blob/baixar/26373), que caracteriza os usuários, seus direitos e participação na Política de Assistência Social.
 
@@ -16,7 +16,7 @@ Este capítulo apresenta os resultados apurados pelo Censo SUAS para os Conselho
 
 <!-- No que se refere aos dados do Censo SUAS, o @fig-qtd-ceas destaca os Conselhos Estaduais de Assistência Social. Observa-se que 100% dos conselhos responderam ao formulário do Censo SUAS. -->
 
-Em 2023, assim como em anos anteriores, todos os Conselhos Estaduais de Assistência Social (dos 26 Estados) responderam ao formulário do Censo SUAS.
+Em 2024, assim como em anos anteriores, todos os Conselhos Estaduais de Assistência Social (dos 26 Estados) responderam ao formulário do Censo SUAS.
 
 ```{r fig-qtd-ceas, fig.cap = "Quantidade de Conselhos Estaduais de Assistência Social", eval=FALSE}
 
@@ -39,7 +39,7 @@ grafico <- f_quantitativo_regiao_ano (cest_2012, IBGE, "2012") %>%
 grafico
 ```
 
-Vemos no @fig-qtd-cmas os percentuais de Municípios que responderam ao Censo SUAS com informações sobre os Conselhos Municipais. Em 2023 observamos uma redução, de 97%, em 2022, para 95%, no percentual de Municípios que informaram possuir Conselho Municipal, devido a reduções em 1 ponto percentual no Nordeste e no Sudeste, e de 3 pontos percentuais no Sul. Por outro lado, houve aumento de 4 pontos percentuais no Centro-Oeste e a Região Norte teve 100% dos Municípios informando possuir Conselho Municipal.
+Conforme apresentado no @fig-qtd-cmas, o percentual de municípios que responderam ao Censo SUAS com informações sobre os Conselhos Municipais de Assistência Social (CMAS) apresentou redução em 2024. O percentual de municípios que declararam possuir Conselho Municipal passou de 95%, em 2023, para 89% em 2024, sendo observada queda e, todas as regiões do país. Esse resultado merece atenção, uma vez que os Conselhos constituem instâncias fundamentais de participação e controle social no âmbito do SUAS.
 
 ```{r fig-qtd-cmas, fig.cap = "Percentual de Municípios que informaram possuir Conselho Municipal de Assistência Social - Brasil, 2013, 2018, 2022, 2023 e 2024"}
 
@@ -49,11 +49,11 @@ grafico <-
 #  bind_rows(f_percentual_municipios_regiao_ano(cmun_2015, IBGE, "2015")) %>%
 #  bind_rows(f_percentual_municipios_regiao_ano(cmun_2016, IBGE, "2016")) %>%
 #  bind_rows(f_percentual_municipios_regiao_ano(cmun_2017, IBGE, "2017")) %>%
-  bind_rows(f_percentual_municipios_regiao_ano(cmun_2018, IBGE, "2018")) %>%
+#  bind_rows(f_percentual_municipios_regiao_ano(cmun_2018, IBGE, "2018")) %>%
 #  bind_rows(f_percentual_municipios_regiao_ano(cmun_2019, IBGE, "2019")) %>%
-#  bind_rows(f_percentual_municipios_regiao_ano(cmun_2020, IBGE, "2020")) %>%
+  bind_rows(f_percentual_municipios_regiao_ano(cmun_2020, IBGE, "2020")) %>%
 #  bind_rows(f_percentual_municipios_regiao_ano(cmun_2021, IBGE, "2021")) %>%
-  bind_rows(f_percentual_municipios_regiao_ano(cmun_2022, IBGE, "2022")) %>%
+#  bind_rows(f_percentual_municipios_regiao_ano(cmun_2022, IBGE, "2022")) %>%
   bind_rows(f_percentual_municipios_regiao_ano(cmun_2023, IBGE, "2023")) %>%
   bind_rows(f_percentual_municipios_regiao_ano(cmun_2024, IBGE, "2024")) %>%
   
@@ -64,7 +64,7 @@ grafico
 
 ## Estrutura administrativa e dinâmica de funcionamento
 
-Em relação aos Conselhos Estaduais, atualmente 100% informam possuir sede específica para funcionamento do Controle Social no SUAS, conforme pode ser observado no @fig-ceas_sede. A existência de sede para o funcionamento dos Conselhos é essencial, pois além de garantir identidade na perspetiva de espaço ao qual a população pode acessar, também assegura o trabalho da/o secretária/o executiva/o e demais profissionais com a disposição de locais para arquivos e documentos, para reuniões, entre outros.
+Em relação aos Conselhos Estaduais, atualmente 96% informam possuir sede específica para funcionamento do controle social no SUAS, conforme pode ser observado no @fig-ceas_sede, apresentando leve redução com relação a 2023. A existência de sede para o funcionamento dos Conselhos é essencial, pois além de garantir identidade na perspectiva de espaço ao qual a população pode acessar, também assegura o trabalho da/o secretária/o executiva/o e demais profissionais com a disposição de locais para arquivos e documentos, para reuniões, entre outros.
 
 ```{r fig-ceas_sede, fig.cap = "Percentual de Conselhos Estaduais que possuem local/sede específicos para funcionamento - Brasil, 2012 a 2023"}
 
@@ -88,7 +88,7 @@ grafico <-
 grafico
 ```
 
-No que se refere aos Conselhos Municipais de Assistência Social, o @fig-cmas_sede mostra um crecimento ao longo dos anos no percentual de Conselhos Municipais que possuem sede para o funcionamento, com aumento de mais 2 pontos percentuais em 2023, chegando a 60%.
+No que se refere aos Conselhos Municipais de Assistência Social, o @fig-cmas_sede mostra um crescimento ao longo dos anos no percentual de Conselhos Municipais que possuem sede para o funcionamento, com aumento de mais 1 ponto percentual em 2024, chegando a 61%.
 
 ```{r fig-cmas_sede, fig.cap = "Percentual de Conselhos Municipais que possuem local/sede específicos para funcionamento - Brasil, 2012 a 2024"}
 
@@ -111,9 +111,9 @@ grafico <- f_sim(cmun_2012, q8, "2012") %>%
 grafico
 ```
 
-De acordo com a [Resolução CNAS Nº 100/2023](https://aplicacoes.mds.gov.br/snas/regulacao/visualizar.php?codigo=6470) os conselhos de assistência social deverão ter uma secretaria executiva vinculada ao conselho diretamente subordinada à presidência e ao colegiado, para dar suporte ao cumprimento de suas competências.
+De acordo com a [Resolução CNAS nº 100/2023](https://aplicacoes.mds.gov.br/snas/regulacao/visualizar.php?codigo=6470), os Conselhos de Assistência Social devem contar com uma Secretaria Executiva, diretamente vinculada ao Conselho e subordinada à sua presidência e ao colegiado, com a finalidade de prestar suporte técnico e administrativo ao exercício de suas competências.
 
-Vemos no @fig-ceas_se o registro de uma oscilação ao longo dos anos no percentual de Conselhos Estaduais que possuem secretárias/os executivas/os trabalhando exclusivamente no Conselho, conforme a diretriz da Resolução para esses Conselhos, observando-se em 2023 uma oscilação para baixo.
+Conforme apresentado no @fig-ceas_se, o percentual de Conselhos Estaduais de Assistência Social que possuem secretárias(os) executivas(os) atuando exclusivamente no Conselho apresentou variações ao longo da série histórica. Em 2024, observa-se uma retomada do crescimento desse indicador, alcançando 92% dos Conselhos Estaduais, aproximando-se do parâmetro estabelecido pela Resolução e indicando um fortalecimento da estrutura de apoio ao funcionamento e ao exercício do controle social no âmbito dos Conselhos.
 
 ```{r fig-ceas_se, fig.cap = "Percentual de Conselhos Estaduais que possuem secretárias/os executivas/os trabalhando exclusivamente no Conselho - Brasil, 2012 a 2024"}
 
@@ -136,7 +136,7 @@ grafico <- f_sim(cest_2012, q16, "2012") %>%
 grafico
 ```
 
-Nos Conselhos Municipais, vemos no @fig-cmas_se que o percentual dos que possuem Secretaria Executiva (independente da/o secretária/o executiva/o trabalhar exclusivamente no Conselho ou não) avançou de 63% em 2012 até 80% em 2018, e desde então se manteve nesse patamar, com pequenas oscilações, oscilando negativamente em 2023 de 82% para 81%.
+Nos Conselhos Municipais de Assistência Social, observa-se no @fig-cmas_se uma trajetória de crescimento no percentual daqueles que possuem Secretaria Executiva, independentemente de a(o) secretária(o) atuar exclusivamente no Conselho. O indicador passou de 63%, em 2012, para 80%, em 2018, mantendo-se relativamente estável nesse patamar nos anos subsequentes, com pequenas variações. Em 2024, verifica-se um novo avanço, alcançando 83% dos Conselhos Municipais, o que sugere um movimento de fortalecimento da estrutura de apoio técnico e administrativo necessária ao funcionamento dos conselhos e ao exercício do Controle Social no âmbito do SUAS.
 
 ```{r fig-cmas_se, fig.cap = "Percentual de Conselhos Municipais que possuem Secretaria Executiva - Brasil, 2012 a 2024"}
 
@@ -160,7 +160,7 @@ grafico <-
 grafico
 ```
 
-A legislação da assistência social diz que para os Municípios de Pequeno Porte I e II, a/o secretária/o executiva/o não precisa ser exclusiva/o. Por isso vemos no @fig-CRAS-porte que apenas 10% dos Conselhos nos Municípios de Pequeno Porte I e 19% nos de Pequeno Porte II informaram possuir secretárias/os executivas/os trabalhando exclusivamente no Conselho. Nos Municípios maiores esse percentual vai crescendo junto com o Porte, mas ainda são percentuais baixos, sendo de 27% para os Municípios de Médio Porte, 50% para os Municípios de Grande Porte, e mesmo nas Metrópoles o percentual não chega a 100%, ficando em 95%.
+A normativa da assistência social estabelece que, nos Municípios de Pequeno Porte I e II, a(o) secretária(o) executiva(o) do Conselho de Assistência Social não precisa atuar de forma exclusiva. Esse aspecto se reflete nos dados apresentados no @fig-CRAS-porte, que evidenciam baixos percentuais de Conselhos com secretárias(os) executivas(os) dedicadas(os) exclusivamente às suas atividades: apenas 9,9% nos Municípios de Pequeno Porte I e 20% nos de Pequeno Porte II. À medida que aumenta o porte populacional dos municípios, observa-se também crescimento desse percentual, alcançando 28% nos Municípios de Médio Porte e 46% nos de Grande Porte. Ainda assim, mesmo nas Metrópoles, onde se pressupõe uma maior capacidade institucional, o indicador não atinge a totalidade dos Conselhos, chegando a 95%. Em âmbito nacional, apenas 16% dos Conselhos Municipais de Assistência Social informaram contar com secretárias(os) executivas(os) atuando exclusivamente no Conselho.
 
 ```{r fig-CRAS-porte, fig.cap = "Percentual de Conselhos Municipais que possuem secretárias/os executivas/os trabalhando exclusivamente no Conselho por porte populacional estimado dos municípios - Brasil, 2024", fig.footer = "Fonte: MDS, Censo SUAS; e IBGE, estimativas da população residente para os municípios"}
 
@@ -191,7 +191,7 @@ grafico <- dados %>%
 grafico
 ```
 
-Em relação a dinâmica de funcionamento, o plenário deve, obrigatoriamente, funcionar uma vez ao mês, e, extraordinariamente, sempre que necessário. Vemos no @fig-qtdceas_reuniao que 73% dos Conselhos Estaduais realizaram 12 ou mais reuniões plenárias em 2022 (dados do Censo de 2023), enquanto 27% realizaram menos de 12 reuniões, ou seja, não chegaram a realizar uma reunião por mês.
+Em relação à dinâmica de funcionamento, a normativa estabelece que o plenário deve se reunir ordinariamente, no mínimo, uma vez por mês e, extraordinariamente, sempre que necessário. Conforme apresentado no @fig-qtdceas_reuniao, observa-se que 38% dos Conselhos realizaram entre 12 a 14 reuniões em 2024, percentual idêntico ao daqueles que realizaram 15 ou mais reuniões. Considerando conjuntamente essas duas categorias, verifica-se que 76% dos Conselhos Estaduais realizaram pelo menos uma reunião mensal, atendendo ou superando a periodicidade mínima prevista normativamente. Por outro lado, 19% dos Conselhos informaram ter realizado entre 9 a 11 reuniões no ano e 3,8% entre 6 a 8 reuniões, indicando que uma parcela dos Conselhos não alcançou a frequência mínima de reuniões estabelecida, o que pode representar limitações para o exercício regular das funções de deliberação, acompanhamento e controle social da Política de Assistência Social.
 
 ```{r fig-qtdceas_reuniao, fig.cap = "Percentual de Conselhos Estaduais segundo número de reuniões plenárias realizadas no ano anterior - Brasil, 2012, 2017, 2022, 2023 e 2024"}
 
@@ -232,9 +232,11 @@ grafico <-
 grafico
 ```
 
-De acordo com a [Resolução CNAS Nº 100/2023](https://aplicacoes.mds.gov.br/snas/regulacao/visualizar.php?codigo=6470), a periodicidade das reuniões dos Conselhos, que devem ocorrer obrigatoriamente ao menos uma vez por mês, deve estar prevista no regimento interno do respectivo conselho.
+Nos Conselhos Municipais, a periodicidade das reuniões deve estar prevista em seu regimento interno, observando-se a realização de, no mínimo, uma reunião ordinária mensal, conforme estabelece a [Resolução CNAS nº 100/2023](https://aplicacoes.mds.gov.br/snas/regulacao/visualizar.php?codigo=6470).
 
-Devido a um erro no formulário dos Conselhos Municipais do Censo SUAS 2023 não foi registrada a quantidade de reuniões realizadas pelos Conselhos que informaram não ter publicizado o calendário de reuniões. O @fig-qtdcmas_reuniao mostra os percentuais por faixas de quantidades de reuniões realizadas pelos Conselhos Municipais, considerando apenas os Conselhos que informaram ter publicizado o calendário de reuniões, para que os dados existentes de 2023 sejam comparáveis aos dados dos anos anteriores. Vemos que no ano de 2022 (dados do Censo de 2023) 60% dos Conselhos fizeram menos de 12 reuniões (ou seja, não chegaram a fazer uma reunião por mês), e 40% fizeram 12 reuniões ou mais.
+Os dados apresentados na @fig-qtdcmas_reuniao evidenciam uma distribuição heterogênea quanto à frequência das reuniões realizadas pelos Conselhos Municipais em 2024. Observa-se que 14% dos Conselhos realizaram entre 0 e 5 reuniões ao longo do ano, enquanto 27% promoveram de 6 a 8 reuniões e 23% realizaram entre 9 e 11 encontros. Por sua vez, 24% dos Conselhos informaram ter realizado de 12 a 14 reuniões e 12% registraram 15 ou mais reuniões no período.
+
+Considerando que a realização de, pelo menos, 12 reuniões anuais correspondem ao cumprimento da periodicidade mínima prevista normativamente, os dados indicam que apenas 36% dos Conselhos Municipais atingiram ou superaram esse parâmetro, ao passo que a maioria realizou um número de reuniões inferior ao recomendado, aspecto que pode repercutir na regularidade das atividades deliberativas e no exercício do controle social da Política de Assistência Social.
 
 ```{r fig-qtdcmas_reuniao, fig.cap = "Percentual de Conselhos Municipais segundo número de reuniões plenárias (ordinárias e extraordinárias) realizadas no ano anterior, para os Conselhos que informaram ter publicizado o calendário de reuniões - Brasil, 2020 a 2023"}
 
@@ -455,11 +457,11 @@ cmun_2010_regiao <- cmun_2010 %>%
 
 ```
 
-## Uso do IGD para apoio ao controle social e instância de controle social do Programa Bolsa Família e do CadÚnico
+## Uso do IGD para apoio ao Controle Social e instância de Controle Social do Programa Bolsa Família e do CadÚnico
 
-Os recursos do IGD Bolsa Família e IGD SUAS podem ser usados para o fortalecimento das atividades e apoio técnico e operacional do controle social do SUAS. De acordo com as [normativas do SUAS](https://www.planalto.gov.br/ccivil_03/_Ato2023-2026/2024/Decreto/D12064.htm#art6), para fins de fortalecimento das instâncias de controle social dos entes federativos, no mínimo 3% dos recursos transferidos para apoio financeiro às ações de gestão e execução descentralizada do Programa Bolsa Família e do CadÚnico serão destinados a atividades de apoio técnico e operacional ao Conselho de Assistência Social do respectivo ente federativo.
+Os recursos do Índice de Gestão Descentralizada do Programa Bolsa Família (IGD-PBF) e do Índice de Gestão Descentralizada do SUAS (IGD-SUAS) podem ser utilizados para o fortalecimento do controle social, incluindo ações de apoio técnico e operacional aos Conselhos de Assistência Social. Conforme estabelecem as [normativas do SUAS](https://www.planalto.gov.br/ccivil_03/_Ato2023-2026/2024/Decreto/D12064.htm#art6), no mínimo 3% dos recursos transferidos aos entes federativos para o apoio à gestão e à execução descentralizada do Programa Bolsa Família e do Cadastro Único devem ser destinados às atividades de apoio técnico e operacional dos respectivos Conselhos de Assistência Social.
 
-O @fig-ceas_igd mostra que em 2023 apenas 1 Estado não fez a destinação de pelo menos 3% dos recursos do IGD Bolsa Família e IGD SUAS para custear despesas do funcionamento do Conselho Estadual.
+Os dados apresentados no @fig-ceas_igd demonstram que, em 2024, todas as Unidades da Federação destinaram, pelo menos, o percentual mínimo de 3% dos recursos do IGD-PBF e do IGD-SUAS para o custeio das despesas de funcionamento dos Conselhos Estaduais de Assistência Social. Esse resultado evidencia a observância da normativa pelos estados e representa um importante indicativo de fortalecimento das condições institucionais para o exercício do controle social no âmbito do SUAS.
 
 ```{r fig-ceas_igd, fig.cap = "Percentual de Conselhos Estaduais que possuem destinação de pelo menos 3% dos recursos do IGD Bolsa Família e IGD SUAS para seu funcionamento - Brasil, 2012 a 2024"}
 
@@ -482,7 +484,7 @@ grafico <- f_sim(cest_2012, q7, "2012") %>%
 grafico
 ```
 
-Em relação à destinação de pelo menos 3% dos recursos do IGD Bolsa Família e IGD SUAS aos Conselhos Municipais, o @fig-cmas_igd mostra que em 2023 manteve-se em 82% o percentual dos Conselhos que informaram receber este recurso.
+Em relação à destinação de pelo menos 3% dos recursos do IGD Bolsa Família e IGD SUAS aos Conselhos Municipais, o @fig-cmas_igd mostra que, em 2024, houve uma redução para 79% no percentual dos Conselhos que informaram receber este recurso.
 
 ```{r fig-cmas_igd, fig.cap = "Percentual de Conselhos Municipais que possuem destinação de pelo menos 3% dos recursos do IGD Bolsa Família e IGD SUAS para seu funcionamento - Brasil, 2012 a 2023"}
 
@@ -507,9 +509,9 @@ grafico <- f_sim(cmun_2012, q7, "2012") %>%
 grafico
 ```
 
-De acordo com a Resolução CNAS Nº 202/2025 o Conselho de Assistência Social é a instância de participação e controle social do Programa Bolsa Família e do Cadastro Único de Programas Sociais do Governo Federal, esta resolução também sinaliza sobre à aplicação obrigatória dos percentuais dos índices de gestão descentralizada estimados ao controle social e dá outras providências.
+De acordo com a Resolução CNAS nº 202/2025, os Conselhos de Assistência Social constituem as instâncias de participação e controle social do Programa Bolsa Família e do Cadastro Único para Programas Sociais do Governo Federal. A normativa também reafirma a obrigatoriedade da destinação de parte dos recursos dos índices de gestão descentralizada para o fortalecimento do controle social, além de estabelecer outras diretrizes relacionadas ao acompanhamento e à fiscalização desses programas.
 
-Em 2023 manteve-se o percentual de 88% registrado em 2022 dos Conselhos Estaduais que informam ser a instância de controle social do Programa Bolsa Família. Esse percentual já foi de 100% em 2016, 2018 e 2019 e caiu para 88% em 2020 (@fig-ceas_icspbf2). Em 2023 os Conselhos Estaduais que não eram instância de controle social no Censo eram os Estados de Roraima, Paraíba e Goiás.
+Conforme apresentado na @fig-ceas_icspbf2, em 2024, 92% dos Conselhos Estaduais de Assistência Social informaram exercer a função de instância de controle social do Programa Bolsa Família, representando um aumento em relação aos 88% registrados em 2023. Apesar dessa recuperação, o percentual ainda permanece abaixo do observado em anos anteriores, quando a totalidade dos Conselhos Estaduais (100%) desempenhava essa função, como ocorreu em 2016, 2018 e 2019. A redução verificada a partir de 2020 e a posterior recuperação do indicador sugerem a necessidade de acompanhamento contínuo, considerando a importância do controle social para a transparência, o monitoramento e o aprimoramento da gestão do Programa Bolsa Família e do Cadastro Único.
 
 ```{r fig-ceas_icspbf2, fig.cap = "Percentual de Conselhos Estaduais de Assistência Social que são instância de controle Social do PBF - Brasil, 2012 a 2024"}
 
@@ -533,7 +535,7 @@ grafico <-
 grafico
 ```
 
-Em relação aos Conselhos Municipais, observa-se no @fig-cmas_icspbf que após um período de crescimento do percentual de Conselhos que informa ser Instância de Controle Social do Programa Bolsa Família, até 2018, quando chegou em 93%, houve uma estabilização deste percentual até 2020, um recuo até 91% em 2021 e 2022, e uma recupareção para 92% em 2023.
+Em relação aos Conselhos Municipais de Assistência Social, observa-se na @fig-cmas_icspbf uma trajetória de crescimento no percentual daqueles que informam atuar como Instância de controle social do Programa Bolsa Família até 2018, quando o indicador atingiu 93%. Entre 2018 e 2020, o percentual permaneceu relativamente estável, seguido de uma redução em 2021 e 2022. A partir de 2023, contudo, verifica-se uma retomada do crescimento, alcançando 92% em 2023 e 93% em 2024, patamar equivalente ao maior percentual registrado na série histórica.
 
 ```{r fig-cmas_icspbf, fig.cap = "Percentual de Conselhos Municipais de Assistência Social que são Instância de Controle Social do Programa Bolsa Família - Brasil, 2012 a 2024"}
 
@@ -558,9 +560,11 @@ grafico
 
 ## Deliberação sobre planejamento, orçamento e benefícios eventuais
 
-A elaboração do Plano de Assistência Social é tratada na LOAS (Lei Organica de Assistência Social) e NOB SUAS / 2012. É de responsabilidade do órgão gestor da Política de Assistência Social e deve ser apresentado ao Conselho de Assistência Social para aprovação.
+A elaboração do Plano de Assistência Social está prevista na Lei Orgânica da Assistência Social (LOAS) e na Norma Operacional Básica do SUAS (NOB-SUAS/2012). Trata-se de um instrumento de planejamento de responsabilidade do órgão gestor da política de assistência social, que deve ser submetido à apreciação e aprovação do respectivo Conselho de Assistência Social, reafirmando o papel do controle social na definição das diretrizes, prioridades e metas da política.
 
-O @fig-ceas_plano mostra o percentual de Conselhos Estaduais que discutiram sobre os Planos de Assistência Social no ano anterior. Este percentual atingiu o máximo em 2021, quando 85% dos Conselhos Estaduais informaram ter discutido o Plano de Assistência Social no ano anterior (2020), e caiu para 65% em 2022, com nova queda em 2023, agora para 62%. De acordo com a LOAS a aprovação do Plano de Assistência Social deve ser quadrienal, entretanto, recomenda-se que a cada atualização anual ele seja submetido ao respectivo Conselho.
+Conforme apresentado na @fig-ceas_plano, o percentual de Conselhos Estaduais que informaram ter discutido o Plano de Assistência Social referente ao ano anterior atingiu 85% em 2021. Nos anos seguintes, observou-se uma redução desse indicador, que passou para 65% em 2022 e para 62% em 2023. Em 2024, entretanto, verificou-se uma recuperação expressiva, alcançando 92%, o maior percentual registrado na série histórica.
+
+Embora a LOAS estabeleça que o Plano de Assistência Social tenha vigência quadrienal, a NOB-SUAS/2012 recomenda que suas atualizações anuais sejam submetidas ao respectivo Conselho de Assistência Social. Nesse sentido, o aumento observado em 2024 pode indicar um fortalecimento dos processos de planejamento e da participação dos Conselhos Estaduais no acompanhamento e na deliberação sobre os instrumentos de gestão da política de assistência social.
 
 ```{r fig-ceas_plano, fig.cap = "Percentual de Conselhos Estaduais que discutiram sobre o Plano de Assistência Social no ano anterior - Brasil, 2014 a 2024"}
 
@@ -583,7 +587,7 @@ grafico <-
 grafico
 ```
 
-Em relação aos Conselhos Municipais, vemos no @fig-cmas_plano muita variação ao longo dos anos no percentual dos que informam ter discutido sobre o Plano de Assistência Social no ano anterior, observando-se uma grande queda no Censo de 2023 em relação ao Censo de 2022, de 82% para 67%.
+Em relação aos Conselhos Municipais de Assistência Social, observa-se na @fig-cmas_plano uma variação ao longo da série histórica no percentual daqueles que informaram ter discutido o Plano de Assistência Social referente ao ano anterior. Destaca-se a redução expressiva registrada no Censo SUAS de 2023, quando o indicador passou de 82%, em 2022, para 67%. Em 2024, contudo, verifica-se uma recuperação desse percentual, que alcançou 75%, embora ainda permaneça abaixo do patamar observado em 2022.
 
 ```{r fig-cmas_plano, fig.cap = "Percentual de Conselhos Municipais que discutiram sobre o Plano de Assistência Social no ano anterior - Brasil, 2014 a 2024"}
 
@@ -605,7 +609,7 @@ grafico <-
 grafico
 ```
 
-É papel do controle social o exercício democrático de acompanhar a gestão e avaliar a Política de Assistência Social. Assim, a aprovação do orçamento executivo ou Plano Plurianual de Assistência Social (PPA) deve ser exercida por esta instância. O @fig-ceas_ppa mostra que em 2023 manteve-se em 69% o percentual de Conselhos Estaduais que deliberaram sobre a proposta orçamentária.
+O controle social tem como uma de suas atribuições o exercício democrático de acompanhar a gestão e avaliar a Política de Assistência Social. Nesse contexto, cabe aos Conselhos deliberarem sobre instrumentos de planejamento e financiamento, como a proposta orçamentária do Poder Executivo e o Plano Plurianual (PPA) da Assistência Social. Entretanto, o @fig-ceas_ppa evidencia que, em 2024, houve uma redução no percentual de Conselhos Estaduais que deliberaram sobre a proposta orçamentária, alcançando 65%.
 
 ```{r fig-ceas_ppa, fig.cap = "Percentual de Conselhos Estaduais que deliberaram sobre a proposta anual de orçamento do executivo - Brasil, 2012 a 2024"}
 
@@ -629,7 +633,7 @@ grafico <- f_sim(cest_2012, q29, "2012") %>%
 grafico
 ```
 
-Em 2023 o percentual de Conselhos Municipais que deliberaram sobre a proposta anual de orçamento do executivo aumentou em 4 pontos percentuais, chegando em 78%, o percentual máximo da série histórica desde 2012 (@fig-cmas_ppa).
+Em 2024 o percentual de Conselhos Municipais que deliberaram sobre a proposta anual de orçamento do Executivo aumentou em 1 ponto percentual, chegando em 79%, o percentual máximo da série histórica desde 2012 (@fig-cmas_ppa).
 
 ```{r fig-cmas_ppa, fig.cap = "Percentual de Conselhos Municipais que deliberaram sobre a proposta anual de orçamento do executivo - Brasil, 2012 a 2024"}
 
@@ -704,7 +708,9 @@ grafico
 
 De acordo com a [Resolução CNAS nº 99/2023](https://blog.mds.gov.br/redesuas/resolucao-cnas-mds-no-99-de-4-de-marco-de-2023/), "a representação dos usuários nas instâncias de participação e de deliberação do SUAS ocorrerá por meio de usuários integrantes de suas organizações representativas, democraticamente designados, preferencialmente dentre aquelas vinculadas aos serviços, programas, projetos, benefícios, transferência de renda e defesa dos direitos dos usuários da Política de Assistência Social".
 
-Observa-se que o grupo de representação que está mais presente nos Conselhos Estaduais é o de representantes de fórum ou coletivo de usuárias/os, grupo que estava presente em 69% dos Conselhos Estaduais em 2023 (@fig-usu_ceas). Destaca-se em 2023 o crescimento da presença de representação das/os usuárias/os de serviços socioassistenciais de Proteção Social Básica, que aumentou de 35% dos Conselhos Estaduais em 2022 para 54% em 2023, empatando com a presença da representação das/os beneficiárias/os do Programa Bolsa Família, que historicamente é o segundo grupo com maior presença de representação nos Conselhos Estaduais.
+Observa-se que, entre os diferentes segmentos de representação de usuárias e usuários, o grupo mais presente nos Conselhos Estaduais é o de representantes de fóruns ou coletivos de usuários, presente em 65% dos Conselhos em 2024 (@fig-usu_ceas). Por outro lado, destaca-se, em 2024, a expressiva redução da presença de representantes de usuárias e usuários dos serviços socioassistenciais da Proteção Social Básica, cuja participação caiu de 54% dos Conselhos Estaduais, em 2023, para 31%, em 2024.
+
+Também se observa uma redução significativa na presença de representantes de beneficiárias e beneficiários do Programa Bolsa Família, historicamente o segundo grupo com maior participação nos Conselhos Estaduais. Em 2024, esse segmento esteve presente em apenas 23% dos Conselhos.
 
 ```{r}
 f_representantes= function(df, q, ano, cod_categoria){
@@ -767,13 +773,13 @@ f_representantes= function(df, q, ano, cod_categoria){
 #  bind_rows(f_representantes(cest_2021,q78_6,"2021","6")) %>%
 #  bind_rows(f_representantes(cest_2021,q78_99,"2021","7")) %>%
 
-  bind_rows(f_representantes(cest_2022,q78_1,"2022","1")) %>%
-  bind_rows(f_representantes(cest_2022,q78_2,"2022","2")) %>%
-  bind_rows(f_representantes(cest_2022,q78_3,"2022","3")) %>%
-  bind_rows(f_representantes(cest_2022,q78_4,"2022","4")) %>%
-  bind_rows(f_representantes(cest_2022,q78_5,"2022","5")) %>%
-  bind_rows(f_representantes(cest_2022,q78_6,"2022","6")) %>%
-  bind_rows(f_representantes(cest_2022,q78_99,"2022","7")) %>%
+#  bind_rows(f_representantes(cest_2022,q78_1,"2022","1")) %>%
+#  bind_rows(f_representantes(cest_2022,q78_2,"2022","2")) %>%
+#  bind_rows(f_representantes(cest_2022,q78_3,"2022","3")) %>%
+#  bind_rows(f_representantes(cest_2022,q78_4,"2022","4")) %>%
+#  bind_rows(f_representantes(cest_2022,q78_5,"2022","5")) %>%
+#  bind_rows(f_representantes(cest_2022,q78_6,"2022","6")) %>%
+#  bind_rows(f_representantes(cest_2022,q78_99,"2022","7")) %>%
 
   bind_rows(f_representantes(cest_2023,q65_1,"2023","1")) %>%
   bind_rows(f_representantes(cest_2023,q65_2,"2023","2")) %>%
@@ -807,7 +813,7 @@ grafico<-tabela %>%
 grafico
 ```
 
-Já nos Conselhos Municipais, o grupo de representação com maior percentual de presença é o das/os usuárias/os de serviços socioassistenciais de Proteção Social Básica, que em 2023 estavam em 78% dos Conselhos. O segundo grupo de representação mais presente nos Conselhos Municipais, assim como nos Conselhos Estaduais, é o das/os beneficiárias/os do Programa Bolsa Família, presente em 70% dos Conselhos, mantendo o percentual observado em 2022 (@fig-usu_cmun).
+Já nos Conselhos Municipais, o grupo de representação com maior percentual de presença é o das/os usuárias/os de serviços socioassistenciais de Proteção Social Básica, que em 2024 estavam em 75% dos Conselhos. O segundo grupo de representação mais presente nos Conselhos Municipais, assim como nos Conselhos Estaduais, é o das/os beneficiárias/os do Programa Bolsa Família, presente em 74% dos Conselhos, reduzindo do percentual observado em 2023 (@fig-usu_cmun).
 
 ```{r fig-usu_cmun, fig.cap = "Percentual de Conselhos Municipais de Assistência Social segundo presença de grupos de representação de usuárias/os ou organização de usuárias/os - Brasil, 2018 a 2024", fig.footer = "Fonte: MDS, Censo SUAS."}
 # #| fig-height: 6.5
@@ -828,29 +834,29 @@ tabela <-f_representantes(cmun_2018,q_68_1,"2018","1") %>%
 #  bind_rows(f_representantes(cmun_2019,q64_6,"2019","6")) %>%
 #  bind_rows(f_representantes(cmun_2019,q64_99,"2019","7")) %>%
    
-  bind_rows(f_representantes(cmun_2020,q78_1,"2020","1")) %>%
-  bind_rows(f_representantes(cmun_2020,q78_2,"2020","2")) %>%
-  bind_rows(f_representantes(cmun_2020,q78_3,"2020","3")) %>%
-  bind_rows(f_representantes(cmun_2020,q78_4,"2020","4")) %>%
-  bind_rows(f_representantes(cmun_2020,q78_5,"2020","5")) %>%
-  bind_rows(f_representantes(cmun_2020,q78_6,"2020","6")) %>%
-  bind_rows(f_representantes(cmun_2020,q78_99,"2020","7")) %>%
+#  bind_rows(f_representantes(cmun_2020,q78_1,"2020","1")) %>%
+#  bind_rows(f_representantes(cmun_2020,q78_2,"2020","2")) %>%
+#  bind_rows(f_representantes(cmun_2020,q78_3,"2020","3")) %>%
+#  bind_rows(f_representantes(cmun_2020,q78_4,"2020","4")) %>%
+#  bind_rows(f_representantes(cmun_2020,q78_5,"2020","5")) %>%
+#  bind_rows(f_representantes(cmun_2020,q78_6,"2020","6")) %>%
+#  bind_rows(f_representantes(cmun_2020,q78_99,"2020","7")) %>%
    
-#  bind_rows(f_representantes(cmun_2021,q78_1,"2021","1")) %>%
-#  bind_rows(f_representantes(cmun_2021,q78_2,"2021","2")) %>%
-#  bind_rows(f_representantes(cmun_2021,q78_3,"2021","3")) %>%
-#  bind_rows(f_representantes(cmun_2021,q78_4,"2021","4")) %>%
-#  bind_rows(f_representantes(cmun_2021,q78_5,"2021","5")) %>%
-#  bind_rows(f_representantes(cmun_2021,q78_6,"2021","6")) %>%
-#  bind_rows(f_representantes(cmun_2021,q78_99,"2021","7")) %>%
+  bind_rows(f_representantes(cmun_2021,q78_1,"2021","1")) %>%
+  bind_rows(f_representantes(cmun_2021,q78_2,"2021","2")) %>%
+  bind_rows(f_representantes(cmun_2021,q78_3,"2021","3")) %>%
+  bind_rows(f_representantes(cmun_2021,q78_4,"2021","4")) %>%
+  bind_rows(f_representantes(cmun_2021,q78_5,"2021","5")) %>%
+  bind_rows(f_representantes(cmun_2021,q78_6,"2021","6")) %>%
+  bind_rows(f_representantes(cmun_2021,q78_99,"2021","7")) %>%
 
-  bind_rows(f_representantes(cmun_2022,q78_1,"2022","1")) %>%
-  bind_rows(f_representantes(cmun_2022,q78_2,"2022","2")) %>%
-  bind_rows(f_representantes(cmun_2022,q78_3,"2022","3")) %>%
-  bind_rows(f_representantes(cmun_2022,q78_4,"2022","4")) %>%
-  bind_rows(f_representantes(cmun_2022,q78_5,"2022","5")) %>%
-  bind_rows(f_representantes(cmun_2022,q78_6,"2022","6")) %>%
-  bind_rows(f_representantes(cmun_2022,q78_99,"2022","7")) %>%
+#  bind_rows(f_representantes(cmun_2022,q78_1,"2022","1")) %>%
+#  bind_rows(f_representantes(cmun_2022,q78_2,"2022","2")) %>%
+#  bind_rows(f_representantes(cmun_2022,q78_3,"2022","3")) %>%
+#  bind_rows(f_representantes(cmun_2022,q78_4,"2022","4")) %>%
+#  bind_rows(f_representantes(cmun_2022,q78_5,"2022","5")) %>%
+#  bind_rows(f_representantes(cmun_2022,q78_6,"2022","6")) %>%
+#  bind_rows(f_representantes(cmun_2022,q78_99,"2022","7")) %>%
 
   bind_rows(f_representantes(cmun_2023,q65_1,"2023","1")) %>%
   bind_rows(f_representantes(cmun_2023,q65_2,"2023","2")) %>%
@@ -884,7 +890,9 @@ grafico<-tabela %>%
 grafico
 ```
 
-Em relação à representação de trabalhadoras/es nos Conselhos Estaduais de Assistência Social, a categoria mais presente é a das/os representantes de conselhos de classe profissional (CRESS, CFP e outros conselhos de classe), presente em 96% dos Conselhos. A segunda categoria mais presente, que estavam em 65% dos Conselhos em 2023, é a de representantes de sindicato de trabalhadoras/es (@fig-trab_rep).
+Em relação à representação das trabalhadoras e dos trabalhadores nos Conselhos Estaduais de Assistência Social, a categoria mais presente é a de representantes de conselhos de classe profissional (CRESS, CFP e outros conselhos de classe), presente em 92% dos Conselhos em 2024. A segunda categoria mais frequente é a de representantes de sindicatos de trabalhadoras e trabalhadores, presente em 58% dos Conselhos no mesmo ano (@fig-trab_rep).
+
+Esses dados evidenciam o protagonismo das entidades de representação profissional e sindical na composição do segmento de trabalhadores nos Conselhos Estaduais de Assistência Social.
 
 ```{r}
 f_rep_trab= function(df, q, ano, cod_categoria){
@@ -914,7 +922,7 @@ f_rep_trab= function(df, q, ano, cod_categoria){
 ```{r fig-trab_rep, fig.cap = "Percentual de Conselhos Estaduais de Assistência Social segundo presença de categorias de representação de trabalhadoras/es - Brasil, 2018 a 2024", fig.footer = "Fonte: MDS, Censo SUAS."}
 # #| fig-height: 5.5
 
-tabela <- f_rep_trab(cest_2018,q_69_1,"2018","1") %>%
+ tabela <- f_rep_trab(cest_2018,q_69_1,"2018","1") %>%
   bind_rows(f_rep_trab(cest_2018,q_69_2,"2018","2")) %>%
   bind_rows(f_rep_trab(cest_2018,q_69_3,"2018","3")) %>%
   bind_rows(f_rep_trab(cest_2018,q_69_4,"2018","4")) %>%
@@ -980,7 +988,9 @@ grafico<-tabela %>%
 grafico
 ```
 
-Já nos Conselhos Municipais, a categoria de representação mais presente é a das/os próprias/os trabalhadoras/es do SUAS, sem vinculação a nenhum coletivo, presente em 67% dos Conselhos. As demais categorias estão presentes em percentuais bem menores de Conselhos, de no máximo 27%, no caso da presença das/os representantes de conselhos de classe profissional (CRESS, CFP e outros conselhos de classe), que é a categoria mais presente nos Conselhos Estaduais (@fig-trab_cmun).
+Já nos Conselhos Municipais, a categoria de representação mais presente é a das próprias trabalhadoras e dos próprios trabalhadores do SUAS, sem vinculação a coletivos ou entidades representativas, presente em 68% dos Conselhos em 2024, o que representa um aumento de um ponto percentual em relação a 2023. As demais categorias de representação estão presentes em percentuais significativamente menores de Conselhos, alcançando, no máximo, 24%, no caso das/os representantes de conselhos de classe profissional (CRESS, CFP e outros conselhos de classe), que constituem justamente a categoria mais presente nos Conselhos Estaduais (@fig-trab_cmun).
+
+Esse resultado evidencia diferenças importantes na organização da representação das trabalhadoras e dos trabalhadores entre as esferas estadual e municipal, sendo os Conselhos Municipais mais marcados pela participação direta de trabalhadoras e trabalhadores do SUAS, enquanto os Conselhos Estaduais apresentam maior presença de entidades representativas de caráter profissional.
 
 ```{r fig-trab_cmun, fig.cap = "Percentual de Conselhos Municipais de Assistência Social segundo presença de categorias de representação de trabalhadoras/es - Brasil, 2018 a 2024", fig.footer = "Fonte: MDS, Censo SUAS."}
 # #| fig-height: 6
