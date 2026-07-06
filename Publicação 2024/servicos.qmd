@@ -1110,11 +1110,11 @@ grafico
 
 ## Benefícios Eventuais
 
-Os [Benefícios Eventuais](https://www.mds.gov.br/webarquivos/publicacao/assistencia_social/Cadernos/SNAS_Cartilha_Par%C3%A2metros_Atua%C3%A7%C3%A3o_SUAS.pdf) são um tipo de proteção social que se caracteriza por sua oferta de natureza temporária para prevenir e enfrentar situações provisórias de vulnerabilidade decorrentes ou agravadas por nascimentos, mortes, vulnerabilidades temporárias e calamidades. O Conselho Nacional de Assistência Social, através de um amplo debate e processo de consulta pública atualizou a resolução prevista através: CNAS/MDS Nº 212 de outubro de 2025.
+Os [Benefícios Eventuais](https://www.mds.gov.br/webarquivos/publicacao/assistencia_social/Cadernos/SNAS_Cartilha_Par%C3%A2metros_Atua%C3%A7%C3%A3o_SUAS.pdf) constituem uma modalidade de proteção social de caráter temporário, destinada à prevenção e ao enfrentamento de situações transitórias de vulnerabilidade social decorrentes ou agravadas por nascimento, morte, vulnerabilidade temporária ou calamidade pública. Com o objetivo de atualizar as diretrizes para sua oferta, o Conselho Nacional de Assistência Social (CNAS), após amplo processo de debate e consulta pública, publicou a Resolução CNAS/MDS nº 212, de outubro de 2025.
 
-Destaca-se que a oferta dos Benefícios Eventuais caracteriza-se como direito, portanto diferencia-se de doação. A forma e critérios de sua concessão devem ser deliberadas pelo Conselho de Assistência Social local.
+Cabe destacar que os Benefícios Eventuais configuram um direito socioassistencial, distinguindo-se, portanto, de ações de caráter assistencialista ou de doações. Sua regulamentação, incluindo as formas, os critérios e os procedimentos para concessão, deve ser definida em âmbito local pelo respectivo Conselho de Assistência Social.
 
-Observamos no @fig-be-munic que em 2023 se manteve o percentual de Municípios de 2022 que concediam Benefícios Eventuais, exceto em situações de calamidade pública, em que houve um recuo de 2 pontos percentuais.
+Conforme apresentado na @fig-be-munic, observa-se que, em 2024, houve redução de 2 pontos percentuais na proporção de municípios que concederam o benefício por situação de calamidade pública e de 1 ponto percentual na concessão do benefício por situação de natalidade. Em contrapartida, os benefícios concedidos por vulnerabilidade temporária e por morte permaneceram praticamente estáveis desde 2022.
 
 ```{r fig-be-munic, fig.cap = "Percentual de Municípios que concedem Benefícios Eventuais, segundo situação de vulnerabilidade - Brasil, 2012, 2017, 2022, 2023 e 2024", fig.footer = "Fonte: MDS, Censo SUAS."}
 
@@ -1180,7 +1180,7 @@ grafico<-tabela %>%
 grafico
 ```
 
-Em relação aos locais onde os benefícios são concedidos nos Municípios, @fig-be-local, vemos uma redução na concessão realizada apenas na sede do Órgão Gestor, com aumento da concessão realizada em unidades da rede socioassistencial ou em ambos os locais.
+Quanto aos locais de concessão dos Benefícios Eventuais nos municípios (@fig-be-local), verifica-se redução da concessão realizada exclusivamente na sede do órgão gestor, acompanhada de aumento da concessão nas unidades da rede socioassistencial ou em ambos os locais.
 
 ```{r fig-be-local, fig.cap = "Percentual dos locais onde os benefícios são concedidos nos Municípios que concedem Benefícios Eventuais, segundo situação de vulnerabilidade - Brasil, 2013, 2018, 2022, 2023 e 2024", fig.footer = "Fonte: MDS, Censo SUAS."}
 
