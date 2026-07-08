@@ -19,6 +19,7 @@ library("scales")
 
 library("reticulate")
 # py_install("seaborn") #só precisa executar uma vez
+py_require(c("seaborn"))
 seaborn <- import("seaborn")
 
 # Paletas de cores disponíveis:
