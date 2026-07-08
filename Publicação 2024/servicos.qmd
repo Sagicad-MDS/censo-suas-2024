@@ -107,27 +107,27 @@ paif_cras= function(df, q, ano, cod_categoria){
   bind_rows(paif_cras(cras_2015,q13_17,"2015","17")) %>%
 
 #  bind_rows(paif_cras(cras_2022,q13_1,"2022","1")) %>%
-  bind_rows(paif_cras(cras_2022,q13_2,"2022","2")) %>%
-  bind_rows(paif_cras(cras_2022,q13_3,"2022","5")) %>%
+#  bind_rows(paif_cras(cras_2022,q13_2,"2022","2")) %>%
+#  bind_rows(paif_cras(cras_2022,q13_3,"2022","5")) %>%
 #  bind_rows(paif_cras(cras_2022,q13_4,"2022","8")) %>%
 #  bind_rows(paif_cras(cras_2022,q13_5,"2022","10")) %>%
 #  bind_rows(paif_cras(cras_2022,q13_6,"2022","11")) %>%
-  bind_rows(paif_cras(cras_2022,q13_7,"2022","9")) %>%
-  bind_rows(paif_cras(cras_2022,q13_8,"2022","8A")) %>%
-  bind_rows(paif_cras(cras_2022,q13_9,"2022","14")) %>%
+#  bind_rows(paif_cras(cras_2022,q13_7,"2022","9")) %>%
+#  bind_rows(paif_cras(cras_2022,q13_8,"2022","8A")) %>%
+#  bind_rows(paif_cras(cras_2022,q13_9,"2022","14")) %>%
 #  bind_rows(paif_cras(cras_2022,q13_10,"2022","10A")) %>%
-  bind_rows(paif_cras(cras_2022,q13_11,"2022","15")) %>%
+#  bind_rows(paif_cras(cras_2022,q13_11,"2022","15")) %>%
 #  bind_rows(paif_cras(cras_2022,q13_12,"2022","12A")) %>%
 #  bind_rows(paif_cras(cras_2022,q13_13,"2022","13A")) %>%
-  bind_rows(paif_cras(cras_2022,q13_14,"2022","17")) %>%
-  bind_rows(paif_cras(cras_2022,q13_15,"2022","4")) %>%
-  bind_rows(paif_cras(cras_2022,q13_16,"2022","3")) %>%
+#  bind_rows(paif_cras(cras_2022,q13_14,"2022","17")) %>%
+#  bind_rows(paif_cras(cras_2022,q13_15,"2022","4")) %>%
+#  bind_rows(paif_cras(cras_2022,q13_16,"2022","3")) %>%
 #  bind_rows(paif_cras(cras_2022,q13_17,"2022","7")) %>%
 #  bind_rows(paif_cras(cras_2022,q13_18,"2022","18")) %>%
 #  bind_rows(paif_cras(cras_2022,q13_19,"2022","19")) %>%
 #  bind_rows(paif_cras(cras_2022,q13_20,"2022","6")) %>%
 #  bind_rows(paif_cras(cras_2022,q13_21,"2022","21")) %>%
-  bind_rows(paif_cras(cras_2022,q13_22,"2022","12")) %>%
+#  bind_rows(paif_cras(cras_2022,q13_22,"2022","12")) %>%
 #  bind_rows(paif_cras(cras_2022,q13_23,"2022","23")) %>%
 #  bind_rows(paif_cras(cras_2022,q13_24,"2022","16")) %>%
 #  bind_rows(paif_cras(cras_2022,q13_25,"2022","25")) %>%
@@ -222,12 +222,12 @@ Já o @fig-paif_cras-menores apresenta as atividades do PAIF que registraram os 
   bind_rows(paif_cras(cras_2015,q13_16,"2015","16")) %>% 
 #  bind_rows(paif_cras(cras_2015,q13_17,"2015","17")) %>%
 
-  bind_rows(paif_cras(cras_2022,q13_1,"2022","1")) %>%
+#  bind_rows(paif_cras(cras_2022,q13_1,"2022","1")) %>%
 #  bind_rows(paif_cras(cras_2022,q13_2,"2022","2")) %>%
 #  bind_rows(paif_cras(cras_2022,q13_3,"2022","5")) %>%
-  bind_rows(paif_cras(cras_2022,q13_4,"2022","8")) %>%
-  bind_rows(paif_cras(cras_2022,q13_5,"2022","10")) %>%
-  bind_rows(paif_cras(cras_2022,q13_6,"2022","11")) %>%
+#  bind_rows(paif_cras(cras_2022,q13_4,"2022","8")) %>%
+#  bind_rows(paif_cras(cras_2022,q13_5,"2022","10")) %>%
+#  bind_rows(paif_cras(cras_2022,q13_6,"2022","11")) %>%
 #  bind_rows(paif_cras(cras_2022,q13_7,"2022","9")) %>%
 #  bind_rows(paif_cras(cras_2022,q13_8,"2022","8A")) %>%
 #  bind_rows(paif_cras(cras_2022,q13_9,"2022","14")) %>%
@@ -238,14 +238,14 @@ Já o @fig-paif_cras-menores apresenta as atividades do PAIF que registraram os 
 #  bind_rows(paif_cras(cras_2022,q13_14,"2022","17")) %>%
 #  bind_rows(paif_cras(cras_2022,q13_15,"2022","4")) %>%
 #  bind_rows(paif_cras(cras_2022,q13_16,"2022","3")) %>%
-  bind_rows(paif_cras(cras_2022,q13_17,"2022","7")) %>%
-  bind_rows(paif_cras(cras_2022,q13_18,"2022","18")) %>%
+#  bind_rows(paif_cras(cras_2022,q13_17,"2022","7")) %>%
+#  bind_rows(paif_cras(cras_2022,q13_18,"2022","18")) %>%
 #  bind_rows(paif_cras(cras_2022,q13_19,"2022","19")) %>%
-  bind_rows(paif_cras(cras_2022,q13_20,"2022","6")) %>%
+#  bind_rows(paif_cras(cras_2022,q13_20,"2022","6")) %>%
 #  bind_rows(paif_cras(cras_2022,q13_21,"2022","21")) %>%
 #  bind_rows(paif_cras(cras_2022,q13_22,"2022","12")) %>%
-  bind_rows(paif_cras(cras_2022,q13_23,"2022","23")) %>%
-  bind_rows(paif_cras(cras_2022,q13_24,"2022","16")) %>%
+#  bind_rows(paif_cras(cras_2022,q13_23,"2022","23")) %>%
+#  bind_rows(paif_cras(cras_2022,q13_24,"2022","16")) %>%
 #  bind_rows(paif_cras(cras_2022,q13_25,"2022","25")) %>%
 #  bind_rows(paif_cras(cras_2022,q13_26,"2022","26")) %>%
 #  bind_rows(paif_cras(cras_2022,q13_27,"2022","27")) %>%
@@ -432,7 +432,7 @@ Nos tópicos a seguir, os percentuais apresentados resultam da soma dos CREAS Re
 
 O PAEFI é tipificado como o "serviço de apoio, orientação e acompanhamento a famílias com um ou mais de seus membros em situação de ameaça ou violação de direitos", e "compreende atenções e orientações direcionadas para a promoção de direitos, a preservação e o fortalecimento de vínculos familiares, comunitários e sociais e para o fortalecimento da função protetiva das famílias diante do conjunto de condições que as vulnerabilizam e/ou as submetem a situações de risco pessoal e social".
 
-O @fig-paefi_creas apresenta as situações e os perfis que concentraram os maiores percentuais de CREAS que relataram a realização de atendimentos em 2024. Observa-se que todos os percentuais registrados nesse ano apresentaram redução em relação a 2019, bem como em comparação com 2022, à exceção do percentual de CREAS que atenderam pessoas idosas em situação de risco de violência patrimonial, que se manteve estável. Em relação a 2023, apenas uma situação apresentou aumento no percentual de CREAS, três mantiveram-se estáveis e cinco registraram diminuição, com variações limitadas entre 1 e 2 pontos percentuais.
+O @fig-paefi_creas apresenta as situações e os perfis que concentraram os maiores percentuais de CREAS que relataram a realização de atendimentos em 2024. Observa-se que todos os percentuais registrados nesse ano apresentaram redução em relação a 2019. Em relação a 2023, apenas uma situação apresentou aumento no percentual de CREAS, três mantiveram-se estáveis e cinco registraram diminuição, com variações limitadas entre 1 e 2 pontos percentuais.
 
 As situações e os perfis com os maiores percentuais de CREAS que realizaram atendimentos foram aquelas relacionadas a crianças e adolescentes - abuso ou violência sexual (95%), violência psicológica (92%) e violência física (90%) - e a mulheres em situações de violência psicológica (91%) e violência física (91%).
 
@@ -498,17 +498,17 @@ paefi_creas= function(df, q, ano, cod_categoria_A, cod_categoria_B){
 #  bind_rows(paefi_creas(creas_2019,q12_12_2,"2019","14","2")) %>%
 #  bind_rows(paefi_creas(creas_2019,q12_12_4,"2019","14","4")) %>%
 
-  bind_rows(paefi_creas(creas_2022,q16_1_1,"2022","1","1")) %>%
-  bind_rows(paefi_creas(creas_2022,q16_1_2,"2022","1","2")) %>%
+#  bind_rows(paefi_creas(creas_2022,q16_1_1,"2022","1","1")) %>%
+#  bind_rows(paefi_creas(creas_2022,q16_1_2,"2022","1","2")) %>%
 #  bind_rows(paefi_creas(creas_2022,q16_1_4,"2022","1","4")) %>%
-  bind_rows(paefi_creas(creas_2022,q16_2_1,"2022","2","1")) %>%
-  bind_rows(paefi_creas(creas_2022,q16_2_2,"2022","2","2")) %>%
-  bind_rows(paefi_creas(creas_2022,q16_2_4,"2022","2","4")) %>%
-  bind_rows(paefi_creas(creas_2022,q16_3_1,"2022","3","1")) %>%
+#  bind_rows(paefi_creas(creas_2022,q16_2_1,"2022","2","1")) %>%
+#  bind_rows(paefi_creas(creas_2022,q16_2_2,"2022","2","2")) %>%
+#  bind_rows(paefi_creas(creas_2022,q16_2_4,"2022","2","4")) %>%
+#  bind_rows(paefi_creas(creas_2022,q16_3_1,"2022","3","1")) %>%
 #  bind_rows(paefi_creas(creas_2022,q16_4_1,"2022","4","1")) %>%
-  bind_rows(paefi_creas(creas_2022,q16_5_1,"2022","5","1")) %>%
-  bind_rows(paefi_creas(creas_2022,q16_5_4,"2022","5","4")) %>%
-  bind_rows(paefi_creas(creas_2022,q16_6_4,"2022","6","4")) %>%
+#  bind_rows(paefi_creas(creas_2022,q16_5_1,"2022","5","1")) %>%
+#  bind_rows(paefi_creas(creas_2022,q16_5_4,"2022","5","4")) %>%
+#  bind_rows(paefi_creas(creas_2022,q16_6_4,"2022","6","4")) %>%
 #  bind_rows(paefi_creas(creas_2022,q16_9_1,"2022","9","1")) %>%
 #  bind_rows(paefi_creas(creas_2022,q16_10_3,"2022","10","3")) %>%
 #  bind_rows(paefi_creas(creas_2022,q16_13_2,"2022","14","2")) %>%
@@ -831,7 +831,7 @@ Em seguida, destacam-se as comunidades quilombolas, com maior participação dos
 Ressalta-se ainda o elevado percentual de CREAS da Região Norte que atenderam comunidades ribeirinhas (50%) e comunidades extrativistas (20%).
 
 ```{r fig-creas-tradicionais, fig.cap = "Percentual de CREAS segundo realização de atendimento de povos e comunidades tradicionais - Brasil e Grandes Regiões, 2024", fig.footer = "Fonte: MDS, Censo SUAS."}
-# #| fig-height: 8
+#| fig-height: 8
 
 tabela <- 
   f_selecao_regiao_grupo_com_na (creas_2024, q42_1, "Sim", Região, "Povos Indígenas") %>%
@@ -1061,10 +1061,10 @@ O @fig-fam_acolhedora mostra um crescimento contínuo do percentual de municípi
 grafico <- 
   f_percentual_municipios_regiao_ano(famacolfam_2017, IBGE, "2017") %>%
 #  bind_rows(f_percentual_municipios_regiao_ano(famacolfam_2018, IBGE, "2018")) %>%
-  bind_rows(f_percentual_municipios_regiao_ano(famacolfam_2019, IBGE, "2019")) %>%
-#  bind_rows(f_percentual_municipios_regiao_ano(famacolfam_2020, codigo_ibge, "2020")) %>%
-  bind_rows(f_percentual_municipios_regiao_ano(famacolfam_2021, codigo_ibge, "2021")) %>%
-  bind_rows(f_percentual_municipios_regiao_ano(famacolfam_2022, IBGE7, "2022")) %>%
+#  bind_rows(f_percentual_municipios_regiao_ano(famacolfam_2019, IBGE, "2019")) %>%
+  bind_rows(f_percentual_municipios_regiao_ano(famacolfam_2020, codigo_ibge, "2020")) %>%
+#  bind_rows(f_percentual_municipios_regiao_ano(famacolfam_2021, codigo_ibge, "2021")) %>%
+#  bind_rows(f_percentual_municipios_regiao_ano(famacolfam_2022, IBGE7, "2022")) %>%
   bind_rows(f_percentual_municipios_regiao_ano(famacolfam_2023, IBGE, "2023")) %>%
   bind_rows(f_percentual_municipios_regiao_ano(famacolfam_2024, IBGE, "2024")) %>%
   
