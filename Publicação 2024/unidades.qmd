@@ -1212,8 +1212,7 @@ posto_cadunico = function(df, q, ano){
   ano <- quo_name(ano)
 
   df %>%
-    select(!! ano := !! q) %>%
-    gather("Grupo","Eixo_x") %>%
+    select("Eixo_x" = !! q) %>%
     mutate(Eixo_x = case_when(
       Eixo_x == "Sede da Secretaria da Assistência Social ou congênere;"~"Sede da Secretaria da Assistência Social ou congênere",
       Eixo_x == "Outra unidade administrativa (Sede da Prefeitura, Sede de Outra Secretaria, Administração Regional, Sub-Prefeituras," |
@@ -1227,9 +1226,10 @@ posto_cadunico = function(df, q, ano){
       Eixo_x == "Outro."~"Outro",
       TRUE ~ Eixo_x)) %>%
 
-    group_by(Grupo, Eixo_x) %>%
+    group_by(Eixo_x) %>%
     summarise(n=n()) %>%
-    mutate(Percentual = n/sum(n))
+    mutate(Percentual = n/sum(n)) %>%
+    mutate(Grupo = !! ano)
 }
 
  tabela <- posto_cadunico (posto_cadunico_2020, q1_0, "2020") %>%
