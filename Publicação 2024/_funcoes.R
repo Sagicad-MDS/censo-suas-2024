@@ -369,32 +369,6 @@ f_quantitativo_niveis = function(df, q_grupo, eixo_x, niveis){
     mutate("Grupo" = !! q_grupo)
 }
 
-f_sim_nao  = function(df, q, ano){
-  q <- enquo(q)
-  ano <- quo_name(ano)
-  
-  df %>%
-    select(!! ano := !! q) %>%
-    gather("Categoria","Nível") %>%
-    mutate(Nível = case_when(Nível == "sim" |
-                               Nível == '    "Sim"'~"Sim",
-                             Nível == "Não possui" |
-                               Nível == "não" |
-                               Nível == '    "Não"'~"Não",
-                             Nível == "Não Sabe" |
-                               Nível == '    "Não sabe"' |
-                               Nível == "99" ~ "Não sabe",
-                             TRUE ~ Nível)) %>%
-    filter(!is.na(Nível)) %>%
-    mutate(Nível = factor(Nível, levels = c("Sim",
-                                            "Não",
-                                            "Não sabe"))) %>%
-    group_by(Categoria, Nível) %>%
-    summarise(n=n()) %>%
-    group_by(Categoria) %>%
-    mutate(Percentual = n/sum(n))
-}
-
 f_sim  = function(df, q, ano){
   q <- enquo(q)
   ano <- quo_name(ano)
