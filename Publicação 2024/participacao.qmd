@@ -802,7 +802,7 @@ f_representantes= function(df, q, ano, cod_categoria){
   mutate(Categoria=str_wrap(Categoria,width=42))
 
 ordenado<-tabela %>%
-  filter(Ano == "2024") %>%
+  filter(Ano == ano_atual) %>%
   arrange(Percentual) %>%
   pull(Categoria)
 
@@ -879,7 +879,7 @@ tabela <-f_representantes(cmun_2018,q_68_1,"2018","1") %>%
   mutate(Categoria=str_wrap(Categoria,width=42))
 
 ordenado<-tabela %>%
-  filter(Ano == "2024") %>%
+  filter(Ano == ano_atual) %>%
   arrange(Percentual) %>%
   pull(Categoria)
 
@@ -977,7 +977,7 @@ f_rep_trab= function(df, q, ano, cod_categoria){
   mutate(Categoria=str_wrap(Categoria,width=49))
 
 ordenado<-tabela %>%
-  filter(Ano == "2024") %>%
+  filter(Ano == ano_atual) %>%
   arrange(Percentual) %>%
   pull(Categoria)
 
@@ -1048,7 +1048,7 @@ tabela <- f_rep_trab(cmun_2018,q_69_1,"2018","1") %>%
   mutate(Categoria=str_wrap(Categoria,width=49))
 
 ordenado<-tabela %>%
-  filter(Ano == "2024") %>%
+  filter(Ano == ano_atual) %>%
   arrange(Percentual) %>%
   pull(Categoria)
 
@@ -1182,7 +1182,7 @@ cmun_usu= function(df, q, ano, cod_categoria){
   mutate(Categoria=str_wrap(Categoria,width=51))
 
 ordenado<-tabela %>%
-  filter(Ano == "2022") %>%
+  filter(Ano == ano_atual) %>%
   arrange(Percentual) %>%
   pull(Categoria)
 
@@ -1248,7 +1248,7 @@ ceas_usu= function(df, q, ano, cod_categoria){
   mutate(Categoria=str_wrap(Categoria,width=51))
 
 ordenado<-tabela %>%
-  filter(Ano == "2022") %>%
+  filter(Ano == ano_atual) %>%
   arrange(Percentual) %>%
   pull(Categoria)
 

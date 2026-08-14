@@ -187,7 +187,7 @@ paif_cras= function(df, q, ano, cod_categoria){
   mutate(Categoria=str_wrap(Categoria,width=62))
 
 ordenado<-tabela %>%
-  filter(Ano == "2024") %>%
+  filter(Ano == ano_atual) %>%
   arrange(Percentual) %>%
   pull(Categoria)
 
@@ -302,7 +302,7 @@ Já o @fig-paif_cras-menores apresenta as atividades do PAIF que registraram os 
   mutate(Categoria=str_wrap(Categoria,width=62))
 
 ordenado<-tabela %>%
-  filter(Ano == "2024") %>%
+  filter(Ano == ano_atual) %>%
   arrange(Percentual) %>%
   pull(Categoria)
 
@@ -629,7 +629,7 @@ paefi_creas= function(df, q, ano, cod_categoria_A, cod_categoria_B){
   mutate(Categoria=str_wrap(Categoria,width=51))
 
 ordenado<-tabela %>%
-  filter(Ano == "2024") %>%
+  filter(Ano == ano_atual) %>%
   arrange(Percentual) %>%
   pull(Categoria)
 
@@ -677,7 +677,7 @@ tabela <-
   mutate(Categoria=str_wrap(Categoria,width=45))
 
 ordenado<-tabela %>%
-  filter(Ano == "2024") %>%
+  filter(Ano == ano_atual) %>%
   arrange(Percentual) %>%
   pull(Categoria)
 
@@ -707,7 +707,7 @@ grafico
   mutate(Categoria=str_wrap(Categoria,width=51))
 
 ordenado<-tabela %>%
-  filter(Ano == "2022") %>%
+  filter(Ano == ano_atual) %>%
   arrange(Percentual) %>%
   pull(Categoria)
 
@@ -737,7 +737,7 @@ grafico
   mutate(Categoria=str_wrap(Categoria,width=51))
 
 ordenado<-tabela %>%
-  filter(Ano == "2022") %>%
+  filter(Ano == ano_atual) %>%
   arrange(Percentual) %>%
   pull(Categoria)
 
@@ -767,7 +767,7 @@ grafico
   mutate(Categoria=str_wrap(Categoria,width=51))
 
 ordenado<-tabela %>%
-  filter(Ano == "2022") %>%
+  filter(Ano == ano_atual) %>%
   arrange(Percentual) %>%
   pull(Categoria)
 
@@ -813,7 +813,7 @@ Observa-se que, após aumentos registrados em 2022, houve quedas em todos os per
   mutate(Categoria=str_wrap(Categoria,width=51))
 
 ordenado<-tabela %>%
-  filter(Ano == "2024") %>%
+  filter(Ano == ano_atual) %>%
   arrange(Percentual) %>%
   pull(Categoria)
 
@@ -900,7 +900,7 @@ paefi7_creas= function(df, q, ano, cod_categoria){
   mutate(Categoria=str_wrap(Categoria,width=51))
 
 ordenado<-tabela %>%
-  filter(Ano == "2022") %>%
+  filter(Ano == ano_atual) %>%
   arrange(Percentual) %>%
   pull(Categoria)
 
@@ -972,7 +972,7 @@ tabela <-
   bind_rows(creas_pse(creas_2024, q31, "2024"))
 
   ordenado<-tabela %>%
-  filter(Ano == "2024") %>%
+  filter(Ano == ano_atual) %>%
   arrange(Percentual) %>%
   pull(Grupo)
 
@@ -1169,7 +1169,7 @@ beneficios_eventuais = function(df, q, ano, cod_categoria){
   ungroup()
 
 ordenado<-tabela %>%
-  filter(Ano == "2024") %>%
+  filter(Ano == ano_atual) %>%
   arrange(Percentual) %>%
   pull(Categoria)
 

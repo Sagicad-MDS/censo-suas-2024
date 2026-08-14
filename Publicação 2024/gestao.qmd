@@ -351,7 +351,7 @@ tabela <-
   mutate(Categoria=str_wrap(Categoria,width=28))
 
 ordenado<-tabela %>%
-  filter(Ano == "2024") %>%
+  filter(Ano == ano_atual) %>%
   filter(Grupo == str_wrap("Constituída formalmente", width=w_grupo)) %>%
   arrange(Percentual) %>%
   pull(Categoria)
@@ -519,7 +519,7 @@ tabela <-
   mutate(Categoria=str_wrap(Categoria,width=49))
 
 ordenado<-tabela %>%
-  filter(Ano == "2024") %>%
+  filter(Ano == ano_atual) %>%
   filter(Grupo == str_wrap("Constituída formalmente", width=w_grupo)) %>%
   arrange(Percentual) %>%
   pull(Categoria)
@@ -774,7 +774,7 @@ tabela <- ge_apoio_tecnico(ge_2022, q21_1, "2022", "1") %>%
   mutate(Categoria=str_wrap(Categoria,width=33))
 
 ordenado<-tabela %>%
-  filter(Ano == "2024") %>%
+  filter(Ano == ano_atual) %>%
   arrange(Percentual) %>%
   pull(Categoria)
 
@@ -1212,7 +1212,7 @@ tabela <- ge_destinacao_recursos(ge_2012, q65_1, "2012", "1") %>%
     
 
 ordenado<-tabela %>%
-  filter(Ano == "2024") %>%
+  filter(Ano == ano_atual) %>%
   arrange(n) %>%
   pull(Categoria)
 
@@ -1667,7 +1667,7 @@ tabela <-
   filter(n != 0)
 
 ordenado<-tabela %>%
-  filter(Grupo2 == "2024") %>%
+  filter(Grupo2 == ano_atual) %>%
   arrange(n) %>%
   pull(Grupo1)
 
@@ -1729,7 +1729,7 @@ tabela <-
   bind_rows(posto_local(posto_cadunico_2024, q1, "2024"))
 
 ordenado<-tabela %>%
-  filter(Categoria == "2024") %>%
+  filter(Categoria == ano_atual) %>%
   arrange(n) %>%
   pull(Nível)
 
@@ -1802,7 +1802,7 @@ gestao_cad= function(df, q, ano, cod_categoria){
   mutate(Categoria=str_wrap(Categoria,width=51))
 
 ordenado<-tabela %>%
-  filter(Ano == "2022") %>%
+  filter(Ano == ano_atual) %>%
   arrange(Percentual) %>%
   pull(Categoria)
 
@@ -1883,7 +1883,7 @@ capac_cad= function(df, q, ano, cod_categoria){
   mutate(Categoria=str_wrap(Categoria,width=38))
 
 ordenado<-tabela %>%
-  filter(Ano == "2024") %>%
+  filter(Ano == ano_atual) %>%
   arrange(Percentual) %>%
   pull(Categoria)
 
@@ -1963,7 +1963,7 @@ acoes_cad= function(df, q, ano, cod_categoria){
   mutate(Categoria=str_wrap(Categoria,width=51))
 
 ordenado<-tabela %>%
-  filter(Ano == "2020") %>%
+  filter(Ano == ano_atual) %>%
   arrange(Percentual) %>%
   pull(Categoria)
 
@@ -2039,7 +2039,7 @@ ave_cad= function(df, q, ano, cod_categoria){
   mutate(Categoria=str_wrap(Categoria,width=37))
 
 ordenado<-tabela %>%
-  filter(Ano == "2024") %>%
+  filter(Ano == ano_atual) %>%
   arrange(Percentual) %>%
   pull(Categoria)
 
@@ -2144,7 +2144,7 @@ visit_dom= function(df, q, ano, cod_categoria){
   mutate(Categoria=str_wrap(Categoria,width=51))
 
 ordenado<-tabela %>%
-  filter(Ano == "2024") %>%
+  filter(Ano == ano_atual) %>%
   arrange(Percentual) %>%
   pull(Categoria)
 
@@ -2226,7 +2226,7 @@ rede_suas= function(df, q, ano, cod_categoria){
   mutate(Categoria=str_wrap(Categoria,width=58))
 
 ordenado<-tabela %>%
-  filter(Ano == "2024") %>%
+  filter(Ano == ano_atual) %>%
   arrange(Percentual) %>%
   pull(Categoria)
 

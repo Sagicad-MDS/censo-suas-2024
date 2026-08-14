@@ -17,6 +17,9 @@ library("readODS")
 library("prismatic")
 library("scales")
 
+# Ano atual da publicação, para uso principalmente como o ano a ser utilizado na ordenação de categorias em gráficos com vários anos em que as categorias são ordenadas de acordo com a frequencia de cada categoria, para melhor visualização do que é mais e do que é menos frequente. Esta configuração é para facilitar a produção de uma nova edição da publicação, pois com a atualização do ano em apenas aqui se atualiza todo o projeto, evitando erros na geração dos gráficos por não atualização do ano que deve ser utilizado para a ordenação, principalmente quando o ano utilizado para ordenação na edição anterior é retirado no gráfico da nova edição.
+ano_atual <- "2024"
+
 library("reticulate")
 # py_install("seaborn") #só precisa executar uma vez
 py_require(c("seaborn"))

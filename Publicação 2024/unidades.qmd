@@ -231,7 +231,7 @@ tabela <- equip_acessibilidade(cras_2012, q10a, "2012", "1") %>%
   mutate(Categoria=str_wrap(Categoria,width=34))
 
 ordenado<-tabela %>%
-  filter(Ano == "2024") %>%
+  filter(Ano == ano_atual) %>%
   arrange(Percentual) %>%
   pull(Categoria)
 
@@ -580,7 +580,7 @@ O @fig-creas-acessibilidade, que apresenta as condições de acessibilidade das 
   mutate(Categoria=str_wrap(Categoria,width=34))
 
 ordenado<-tabela %>%
-  filter(Ano == 2024) %>%
+  filter(Ano == ano_atual) %>%
   arrange(Percentual) %>%
   pull(Categoria)
 
@@ -894,7 +894,7 @@ tabela <- equip_acessibilidade(cedia_2015, q20_1, "2015", "1") %>%
   mutate(Categoria=str_wrap(Categoria,width=34))
 
 ordenado<-tabela %>%
-  filter(Ano == 2024) %>%
+  filter(Ano == ano_atual) %>%
   arrange(Percentual) %>%
   pull(Categoria)
 
@@ -1002,7 +1002,7 @@ cdia_adp= function(df, q, ano, cod_categoria){
   mutate(Categoria=str_wrap(Categoria,width=48))
 
 ordenado<-tabela %>%
-  filter(Ano == "2024") %>%
+  filter(Ano == ano_atual) %>%
   arrange(Percentual) %>%
   pull(Categoria)
 
@@ -1154,7 +1154,7 @@ tabela <-
   mutate(Categoria=str_wrap(Categoria,width=34))
 
 ordenado<-tabela %>%
-  filter(Ano == "2024") %>%
+  filter(Ano == ano_atual) %>%
   arrange(Percentual) %>%
   pull(Categoria)
 
@@ -1241,7 +1241,7 @@ posto_cadunico = function(df, q, ano){
   mutate(Eixo_x=str_wrap(Eixo_x,width=58))
 
 ordenado<-tabela %>%
-  filter(Grupo == "2024") %>%
+  filter(Grupo == ano_atual) %>%
   arrange(Percentual) %>%
   pull(Eixo_x)
 
@@ -1288,7 +1288,7 @@ tabela <- equip_acessibilidade(posto_cadunico_2020, q7_1, "2020", "1") %>%
 
 
 ordenado<-tabela %>%
-  filter(Ano == "2024") %>%
+  filter(Ano == ano_atual) %>%
   arrange(Percentual) %>%
   pull(Categoria)
 
