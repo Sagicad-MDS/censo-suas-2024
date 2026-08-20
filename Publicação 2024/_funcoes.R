@@ -432,6 +432,17 @@ f_nomex_grupos_quantitativo = function(df, nomex, grupos){
     mutate("Eixo_x" = !! nomex)
 }
 
+f_eixox_nomegrupo_quantitativo = function(df, eixox, nomegrupo){
+  eixox <- enquo(eixox)
+  nomegrupo <- quo_name(nomegrupo)
+  
+  df %>%
+    select("Eixo_x" = !! eixox) %>%
+    group_by(Eixo_x) %>%
+    summarise("Eixo_y"=n()) %>%
+    mutate("Grupo" = !! nomegrupo)
+}
+
 f_preenche_cores_d = function(grafico, df, grupo) {
   grupo <- enquo(grupo)
 

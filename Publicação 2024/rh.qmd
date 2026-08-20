@@ -6,17 +6,19 @@ source("_funcoes.R")
 
 # Gestão do Trabalho e Recursos Humanos no SUAS
 
-A qualidade da oferta de serviços, programas e benefícios da Assistência Social está diretamente ligada a uma adequada gestão do trabalho no âmbito do SUAS. O dimensionamento das equipes, a capacitação dos trabalhadoras/es e a estruturação das condições de trabalho são fundamentais nesse sentido. Um importante normativo para a gestão do trabalho é a Norma Operacional Básica de Recursos Humanos do SUAS (NOB-RH/SUAS), que traz orientações e diretrizes, além de detalhamentos importantes sobre as equipes de referência, planos de carreira, cargos e salários, cofinanciamento, educação permanente, entre outros aspectos relevantes. A [NOB SUAS 2012](https://www.mds.gov.br/webarquivos/public/NOBSUAS_2012.pdf) em seu Capítulo VIII também trata da Gestão do Trabalho no SUAS no âmbito da União, dos Estados, do Distrito Federal e dos Municípios.
+A qualidade da oferta de serviços, programas e benefícios da Assistência Social está diretamente ligada a uma adequada gestão do trabalho no âmbito do SUAS. O dimensionamento das equipes, a capacitação das trabalhadoras e dos trabalhadores e a estruturação das condições de trabalho são fundamentais nesse sentido. Um importante normativo para a gestão do trabalho é a [Norma Operacional Básica de Recursos Humanos do SUAS (NOB-RH/SUAS)](https://www.mds.gov.br/webarquivos/publicacao/assistencia_social/Normativas/NOB-RH_SUAS_Anotada_Comentada.pdf), que traz orientações e diretrizes, além de detalhamentos importantes sobre as equipes de referência, planos de carreira, cargos e salários, cofinanciamento, educação permanente, entre outros aspectos relevantes. A [NOB SUAS 2012](https://www.mds.gov.br/webarquivos/public/NOBSUAS_2012.pdf) em seu Capítulo VIII também trata da Gestão do Trabalho no SUAS no âmbito da União, dos estados, do Distrito Federal e dos municípios.
 
-Este capítulo apresenta um panorama geral da situação das trabalhadoras e trabalhadores do SUAS, tanto nas unidades da Assistência Social quanto nas gestões municipais e estaduais, apresentando informações sobre quantitativo, tipo de vínculo trabalhista, escolaridade, entre outros aspectos referentes à gestão do trabalho e sua evolução ao longo dos anos.
+Este capítulo apresenta um panorama geral da situação das trabalhadoras e dos trabalhadores do SUAS, tanto nas unidades da Assistência Social quanto nas gestões municipais e estaduais, apresentando informações sobre quantitativo, tipo de vínculo trabalhista, escolaridade, entre outros aspectos referentes à gestão do trabalho e sua evolução ao longo dos anos.
 
-## Evolução na quantidade de trabalhadoras/es, tipo de vínculo e escolaridade no orgão gestor
+## Evolução na quantidade de trabalhadoras e trabalhadores, tipo de vínculo e escolaridade no orgão gestor
 
 Houve uma mudança em 2018 na forma de coleta dos dados das trabalhadoras e trabalhadores nos órgãos gestores. Até 2017 os dados eram coletados de forma agregada (números referentes ao conjunto de trabalhadoras e trabalhadores), e a partir de 2018 passaram a ser coletados dados individuais de cada trabalhadora e trabalhador. Se percebe um impacto significativo dessa mudança nos números obtidos, por isso serão apresentados nesta seção os dados a partir de 2018 apenas, evitando comparações com dados não perfeitamente comparáveis por causa dessa grande diferença na forma de coleta.
 
-A evolução da quantidade de trabalhadoras/es nas Secretarias Estaduais de Assistência Social não apresenta um direcionamento definido de ampliação ou redução a nível nacional, e apresenta direcionamentos diversos em cada Região (@fig-qtd-trab-uf). Nacionalmente vemos que o número reduziu de 2018 a 2020, então cresceu em 2021 para um patamar acima ao que estava em 2018, caiu em 2022 e voltou ao patamar de 2021 em 2023. No Centro-Oeste vemos uma redução em 2020 e 2021 em relação a 2018 e 2019, então uma retomada em 2022 e um crescimento em 2023, quando chegou ao nível máximo da série. Já no Nordeste vemos um crescimento até um grande pico em 2021, seguido de recuos em 2022 e 2023. O Norte manteve um patamar de 2018 a 2020, subiu para outro patamar em 2021 e 2022 e cresceu novamente em 2023 para outro patamar mais acima, sendo a região com maior número de trabalhadoras/es registrados no Censo, 2.084, representando 46% do total de trabalhadoras/es registrados no Brasil todo. No Sudeste vemos uma redução de 2018 a 2020, um crescimento em 2021 e em 2022, seguido de novo recuo em 2023. Finalmente, o Sul apresentou uma redução em 2019 para um patamar mantido até 2022, com um significativo novo recuo em 2023.
+A evolução da quantidade de trabalhadoras e trabalhadores nas secretarias estaduais de Assistência Social não apresenta um direcionamento definido de ampliação ou redução a nível nacional, e apresenta direcionamentos diversos em cada Região (@fig-qtd-trab-uf). Nacionalmente vemos que a quantidade reduziu de 2018 a 2020, quando chegou ao mínimo registrado na série histórica, de 3.625 trabalhadoras e trabalhadores, e então cresceu do mínimo, em 2020, para o máximo da série histórica, em 2021, com o registro de 4.504 trabalhadoras e trabalhadores. Desde então se mantém em um patamar acima do observado entre 2018 e 2020, oscilando de 4.265 para cima, tendo caído de 4.501, em 2023, para 4.290, em 2024.
 
-```{r fig-qtd-trab-uf, fig.cap ="Evolução da quantidade de trabalhadoras/es nas Secretarias Estaduais de Assistência Social - Brasil e grandes regiões, 2018 a 2023", fig.footer = "Fonte: MDS, Censo SUAS."}
+Olhando para as grandes regiões separadamente, vemos que no Centro-Oeste registrou-se em 2024 um novo máximo da série histórica, 438 trabalhadoras e trabalhadores, superando o máximo até então, observado em 2023. Já no Nordeste se destaca na série histórica um pico em 2021, de 1.307 trabalhadoras e trabalhadores, seguido nos anos seguintes por quantidades menores, mas em un nível acima do observado entre 2018 e 2020, tendo sido registrado 1.008 trabalhadoras e trabalhadores em 2024. O Norte é a região com a maior quantidade de trabalhadoras e trabalhadores, quantidade que reduziu, em 2024, para 1.838, após o recorde de 2.084 em 2023. O Sudeste vem em uma tendência de redução na quantidade de trabalhadoras e trabalhadores, chegando ao mínimo da série histórica em 2024, com o registro de 746 trabalhadoras e trabalhadores. Finalmente, o Sul é a região atualmente com a menor quantidade de trabalhadoras e trabalhadores nas secretarias estaduais de Assistência Social, e após registrar o mínimo de sua série histórica em 2023, com 228 trabalhadoras e trabalhadores, registrou uma recuperação em 2024, para 260 trabalhadoras e trabalhadores, quantidade ainda abaixo do patamar observado entre 2018 e 2022.
+
+```{r fig-qtd-trab-uf, fig.cap ="Evolução da quantidade de trabalhadoras e trabalhadores nas secretarias estaduais de Assistência Social - Brasil e grandes regiões, 2018 a 2024", fig.footer = "Fonte: MDS, Censo SUAS."}
 #| fig-height: 6
 
 grafico <- f_quantitativo_regiao_ano(gerh_2018, IBGE, "2018") %>%
@@ -32,9 +34,11 @@ grafico <- f_quantitativo_regiao_ano(gerh_2018, IBGE, "2018") %>%
 grafico
 ```
 
-Já na evolução da quantidade de trabalhadoras/es nas Secretarias Municipais de Assistência Social (@fig-qtd_trab_munic) vemos um direcionamento e um padrão bem definido a nível nacional, que se repete em todas as grandes regiões, que é um crescimento em todos os anos, exceto pelo ano de 2020, quando houve uma grande redução, com o patamar anterior a 2020 sendo praticamente retomado já em 2021.
+Já na evolução da quantidade de trabalhadoras e trabalhadores nas secretarias municipais de Assistência Social (@fig-qtd_trab_munic) vemos uma tendência de crescimento de 2018 a 2023, exceto por uma grande queda em 2020 e exceto pelo Nordeste, que não recuperou após 2020 os níveis dos anos anteriores.
 
-```{r fig-qtd_trab_munic, fig.cap ="Evolução da quantidade de trabalhadoras/es nas Secretarias Municipais de Assistência Social - Brasil e grandes regiões, 2018 a 2024"}
+Já em 2024, vemos uma redução na quantidade de trabalhadoras e trabalhadores nas secretarias municipais de Assistência Social, tanto a nivel nacional quanto nas grandes regiões separadamente, exceto no Centro-Oeste, que continuou crescendo e atingiu o nível mais alto da série histórica.
+
+```{r fig-qtd_trab_munic, fig.cap ="Evolução da quantidade de trabalhadoras e trabalhadores nas secretarias municipais de Assistência Social - Brasil e grandes regiões, 2018 a 2024"}
 #| fig-height: 6
 
 grafico <- f_quantitativo_regiao_ano(gmrh_2018, IBGE, "2018")%>%
@@ -50,9 +54,11 @@ grafico <- f_quantitativo_regiao_ano(gmrh_2018, IBGE, "2018")%>%
 grafico
 ```
 
-O @fig-uf_trab_vin mostra os percentuais das trabalhadoras e trabalhadores das Secretarias Estaduais de Assistência Social segundo o tipo de vínculo. O percentual de servidoras/es estatutárias/os caiu significativamente em 2023, de 46% para 40%. O percentual de comissionadas/os também reduziu, de 29% para 27%. O percentual de outros vínculos não permanentes aumentou, é o maior da série iniciada em 2018 e agora já representa 1/4 dos tipos de vínculo. Finalmente, o percentual de empregadas/os públicas/os (CLT) aumentou de 3,3% para 7,3% e também é o maior desta série histórica.
+O @fig-uf_trab_vin mostra os percentuais das trabalhadoras e trabalhadores das secretarias estaduais de Assistência Social segundo o tipo de vínculo. O percentual de servidoras estatutárias e servidores estatutários, após queda significativa de 5,6 pontos percentuais em 2023, caiu mais 0,3 pontos percentuais em 2024, chegando em 40,0%, o menor percentual da série histórica.
 
-```{r fig-uf_trab_vin, fig.cap ="Percentual de trabalhadoras/es nas Secretarias Estaduais de Assistência Social, segundo tipo de vínculo - Brasil, 2018 a 2024"}
+O percentual de comissionadas e comissionados tem oscilado ao longo da série histórica entre 25,9% e 31,3%, e após redução em 2023 para 27,4%, subiu em 2024 para 29,7%. O percentual de trabalhadoras e trabalhadores com outros vínculos não permanentes, após atingir o máximo da série em 2023, com 25,1%, subiu mais um pouco em 2024, para 25,9%. Finalmente, o percentual de empregadas públicas e empregados públicos (CLT), após também atingir o máximo em 2023, com 7,3%. recuou em 2024 para 4,4%.
+
+```{r fig-uf_trab_vin, fig.cap ="Percentual de trabalhadoras e trabalhadores nas secretarias estaduais de Assistência Social, segundo tipo de vínculo - Brasil, 2018 a 2024"}
 
 # Devido à grande mudança na forma de coleta destes dados em 2018, optei por iniciar a série em 2018, para evitar comparações com os dados anteriores, que apresentam descontinuidade devido a essa mudança e não devido a alteração da realidade investigada.
 
@@ -110,7 +116,7 @@ tabela <-
   f_calcula_percentual(Eixo_x, Grupo, Eixo_y)
 
 ordenado<-tabela %>%
-  filter(Eixo_x == 2023) %>%
+  filter(Eixo_x == ano_atual) %>%
   arrange(Percentual) %>%
   pull(Grupo)
 
@@ -121,9 +127,9 @@ grafico<-tabela %>%
 grafico
 ```
 
-Já em relação aos percentuais de tipos de vínculo das/os trabalhadoras/es nas Secretarias Municipais de Assistência Social, @fig-munic_trab_vin, vemos uma grande estabilidade na distribuição dos percentuais desde 2018, com pequenas oscilações: pouco mais de 1/3 de servidoras/es estatutárias/os, pouco menos de 1/3 de comissionadas/os e também de outros vínculos não permanentes, e em torno de 5% de empregadas/os públicas/os (CLT).
+Em relação aos percentuais de tipos de vínculo das trabalhadoras e dos trabalhadores nas secretarias municipais de Assistência Social, @fig-munic_trab_vin, vemos uma relativa estabilidade na distribuição dos percentuais desde 2018. Em 2024, o percentual de servidoras estatutárias e servidores estatutários e o percentual de comissionadas e comissionados oscilou dentro da margem de variação ao longo desses anos. Já o percentual de trabalhadoras e trabalhadores com outros vínculos não permanentes oscilou para cima e foi o maior observado na série hisórica, 30,0%, enquanto o percentual de empregadas públicas e empregados públicos (CLT) oscilou para baixo e foi o menor da série, com 4,4%.
 
-```{r fig-munic_trab_vin, fig.cap ="Percentual de trabalhadoras/es nas Secretarias Municipais de Assistência Social, segundo tipo de vínculo - Brasil, 2018 a 2024"}
+```{r fig-munic_trab_vin, fig.cap ="Percentual de trabalhadoras e trabalhadores nas secretarias municipais de Assistência Social, segundo tipo de vínculo - Brasil, 2018 a 2024"}
 
 tabela <-
 #  f_nomex_somay_nomegrupo(gm_2013, "2013", q42a_4, "Estatutários") %>%
@@ -163,7 +169,7 @@ tabela <-
   f_calcula_percentual(Eixo_x, Grupo, Eixo_y)
 
 ordenado<-tabela %>%
-  filter(Eixo_x == 2024) %>%
+  filter(Eixo_x == ano_atual) %>%
   arrange(Percentual) %>%
   pull(Grupo)
 
@@ -174,9 +180,9 @@ grafico<-tabela %>%
 grafico
 ```
 
-Quanto à escolaridade das/os trabalhadoras/es das Secretarias Estaduais de Assistência Social observa-se em 2023 a manutenção da distribuição observada em 2022, apenas com um pequeno aumento no percentual de trabalhadoras/es com Nível Fundamental, de 6,2% para 6,6%, acompanhado de pequena redução no percentual de trabalhadoras/es com Nível Médio, de 31% para 30% (@fig-uf_trab_form). Vemos também que esta distribuição pouco mudou desde 2018, embora se perceba uma tendência de redução no percentual de trabalhadoras/es com Nível Fundamental e aumento no percentual trabalhadoras/es com Nível Superior.
+Observa-se uma relativa estabilidade ao longo dos anos na distribuição percentual por nível de escolaridade das trabalhadoras e dos trabalhadores das secretarias estaduais de Assistência Social (@fig-uf_trab_form). Em 2024 o Censo registrou uma pequena redução de 0,4 pontos percentuais de trabalhadoras e trabalhadores com nível fundamental, de 6,6% para 6,2%, que é o menor percentual da série. Esta redução foi compensada por um aumento de 0,2 pontos percentuais tanto no percentual de trabalhadoras e trabalhadores com nível médio (de 30,1% para 30,3%), quanto no percentual de trabalhadoras e trabalhadores com nível superior (aumento de 63,3% para 63,5%).
 
-```{r fig-uf_trab_form, fig.cap ="Percentual de trabalhadoras/es nas Secretarias Estaduais de Assistência Social segundo escolaridade - Brasil, 2018 a 2024"}
+```{r fig-uf_trab_form, fig.cap ="Percentual de trabalhadoras e trabalhadores nas secretarias estaduais de Assistência Social segundo escolaridade - Brasil, 2018 a 2024"}
 
 grafico <- 
 #  f_nomex_somay_nomegrupo(ge_2012, "2012", q55e_1, "Nível Fundamental") %>%
@@ -203,11 +209,11 @@ grafico <-
 grafico
 ```
 
-Para as/os trabalhadoras/es nas Secretarias municipais observa-se cenário parecido na distribuição dessas/es trabalhadoras/es por nível de escolaridade, com uma distribuição relativamente estável ao longo dos anos, mas com uma tendência de aumento do percentual de trabalhadoras/es com Nível Superior e redução do percentual de trabalhadoras/es com Nível Fundamental, sendo no caso municipal essas tendências até um pouco mais definidas do que no caso estadual (@fig-munic_trab_form).
+Para as trabalhadoras e os trabalhadores nas secretarias municipais observa-se cenário parecido na distribuição dessas trabalhadoras e desses trabalhadores por nível de escolaridade, com uma distribuição relativamente estável ao longo dos anos. Observa-se também uma tendência de aumento do percentual de trabalhadoras e trabalhadores com nível superior, e redução do percentual de trabalhadoras e trabalhadores com nível fundamental (@fig-munic_trab_form).
 
-Apesar das semelhanças nas tendências, observa-se uma diferença significativa na distribuição por escolaridade entre as/os trabalhadoras/es das Secretarias estaduais e as/os das Secretarias municipais, com o percentual das/os trabalhadoras/es com Nível Superior nas Secretarias estaduais sendo 11 pontos percentuais superior ao percentual dessas/es trabalhadoras/es nas Secretarias municipais. O percentual das/os trabalhadoras/es com Nível Médio é 10 pontos percentuais maior nas Secretarias municipais do que nas Secretarias estaduais, e com Nível Fundamental é 1,8 pontos percentuais maior nas Secretarias municipais também.
+No entanto, observa-se uma diferença significativa na distribuição por escolaridade entre as trabalhadoras e os trabalhadores das secretarias estaduais e as trabalhadoreas e os trabalhadores das secretarias municipais: o percentual das trabalhadoras e dos trabalhadores com nível superior nas secretarias estaduais, 63,5% em 2024, é significativamente superior ao percentual dessas trabalhadoras e desses trabalhadores nas secretarias municipais, 52,5% em 2024. A maior parte dessa diferença é compensada nas secreatarias municipais por um maior percentual de trabalhadoras e trabalhadores com nível médio, percentual que foi de 39,3% em 2024 (enquanto nas secretarias estaduais esse percentual foi de 30,3%).
 
-```{r fig-munic_trab_form, fig.cap ="Percentual de trabalhadoras/es nas Secretarias municipais, segundo escolaridade - Brasil, 2018 a 2024"}
+```{r fig-munic_trab_form, fig.cap ="Percentual de trabalhadoras e trabalhadores nas secretarias municipais, segundo escolaridade - Brasil, 2018 a 2024"}
 
  grafico <- 
 #  f_nomex_somay_nomegrupo(gm_2013, "2013", q41e_1, "Nível Fundamental") %>%
@@ -245,8 +251,6 @@ Apesar das semelhanças nas tendências, observa-se uma diferença significativa
 grafico
 ```
 
-O @fig-uf_trab_prof mostra os percentuais de trabalhadoras/es das Secretarias estaduais de Assistência Social, segundo área de formação, das formações mais frequentes. Observamos uma tendência de redução nos percentuais de advogadas/os e sociólogas/os, enquanto se mantém em 2023 um percentual mais elevado em relação a 2018 nos percentuais de psicólogas/os, pedagogas/os e administradoras/es. As/os assistentes sociais, a formação mais frequente, constituem aproximadamente 1/5 das/os profissionais, enquanto as/os demais profissionais somam 60%.
-
 ```{r}
 f_total_para_outros = function(df, grupo){
   grupo <- quo_name(grupo)
@@ -266,66 +270,108 @@ f_total_para_outros = function(df, grupo){
     filter(Grupo != !! grupo | Eixo_x != "Outros")
 }
 
-f_formacao = function(df, formacao, ano){
+# Padronização das respostas sobre formação
+
+f_formacao = function(df, formacao){
   formacao <- enquo(formacao)
-  ano <- quo_name(ano)
 
   df %>%
-    select(Eixo_x = !! formacao) %>%
-    group_by(Eixo_x) %>%
-    summarise(Eixo_y=n()) %>%
-    mutate(Grupo = !! ano)
+    mutate(!! formacao := case_when(
+      !! formacao == "Psicóloga(o)" |
+      !! formacao == "Psicólogo(a)" |
+      !! formacao == "Psicólogo"~"Psicóloga/o",
+
+      !! formacao == "Pedagoga(o)" |
+      !! formacao == "Pedagogo(a)" |
+      !! formacao == "Pedagogo"~"Pedagoga/o",
+
+      !! formacao == "Advogada(o)" |
+      !! formacao == "Advogado(a)" |
+      !! formacao == "Advogado"~"Advogada/o",
+
+      !! formacao == "Socióloga(o)" |
+      !! formacao == "Sociólogo(a)"~"Socióloga/o",
+
+      !! formacao == "Administrador(a)" |
+      !! formacao == "Administrador (a)"~"Administrador/a",
+
+      !! formacao == "Contador(a)" |
+      !! formacao == "Contador"~"Contador/a",
+
+      !! formacao == "Administração Pública/Gestão Pública"~"Administrador/a Público/a ou Gestor/a Público/a",
+
+      !! formacao == "Analista de sistema"~"Analista de Sistema",
+        
+      !! formacao == "Enfermeira(o)"~"Enfermeira/o",
+        
+      !! formacao == "Profissional de educação física"~"Profissional de Educação Física",
+        
+      !! formacao == "Cientista Política(o)" |
+      !! formacao == "Cientista política(o)"~"Cientista Política/o",
+        
+      !! formacao == "Estatistico"~"Estatista/Estatístico",
+        
+      !! formacao == "Programador(a)"~"Programador/a",
+        
+      !! formacao == "Antropólogo(a)" |
+      !! formacao == "Antropóloga(o)" |
+      !! formacao == "Antropólogo"~"Antropóloga/o",
+        
+      !! formacao == "Geógrafo"~"Geógrafa/o",
+        
+      !! formacao == "Médica(o)"~"Médica/o",
+        
+      !! formacao == "Economista Doméstico" |
+      !! formacao == "Economista Doméstica(o)"~"Economista Doméstica/o",
+        
+      !! formacao == "Sem formação profissional" |
+      !! formacao == "Profissional de nível médio" |
+      !! formacao == "Outra(o) profissional de nível superior" |
+      !! formacao == "Outro profissional de nivel superior"~"Outras formações, sem formação ou não informado",
+      TRUE ~ as.character(!! formacao)))
 }
 ```
 
-```{r fig-uf_trab_prof, fig.cap ="Percentual de trabalhadoras/es nas Secretarias estaduais de Assistência Social, segundo área de formação - Brasil, 2018, 2022,2023 e 2024"}
+O @fig-uf_trab_prof mostra os percentuais das áreas de formação mais frequentes das trabalhadoras e dos trabalhadores das secretarias estaduais de Assistência Social. Observa-se pequenas oscilações nesses percentuais, sendo que em 2024 houve pequeno aumento no percentual de assistentes sociais, a formação mais frequente, de 19,0% para 19,5%. Na segunda formação mais frequente, de psicólogas e psicólogos, houve uma redução em 2024 de 6,3% para 5,7%. As outras formações mais frequentes continuaram, com pequenas variações em cada uma, na mesma ordem: pedagogas e pedagogos, administradoras e administradores, advogadas e advogados, e sociólogas e sociólogos.
+
+```{r fig-uf_trab_prof, fig.cap ="Percentual de trabalhadoras e trabalhadores nas secretarias estaduais de Assistência Social, segundo área de formação - Brasil; 2018, 2023 e 2024"}
 # #| fig-height: 9
 
-f_profissao = function(df, profissao){
-  profissao <- enquo(profissao)
+# Seleção das formações que não serão incluídas separadamente no gráfico e que serão incluídas em "Outras formações, sem formação ou não informado". Sugere-se a cada nova edição da publicação rodar os gráficos incluindo todas as formações informadas para selecionar as profissões mais frequentes a serem incluídas separadamente no gráfico.
+
+f_seleciona_formacao = function(df, formacao){
+  formacao <- enquo(formacao)
 
   df %>%
-    mutate(!! profissao := case_when(
-      !! profissao == "Psicóloga(o)" |
-      !! profissao == "Psicólogo(a)" |
-      !! profissao == "Psicólogo"~"Psicóloga/o",
-      !! profissao == "Pedagoga(o)" |
-      !! profissao == "Pedagogo(a)" |
-      !! profissao == "Pedagogo"~"Pedagoga/o",
-      !! profissao == "Advogada(o)" |
-      !! profissao == "Advogado(a)" |
-      !! profissao == "Advogado"~"Advogada/o",
-      !! profissao == "Antropólogo(a)" |
-      !! profissao == "Antropólogo"~"Antropóloga/o",
-      !! profissao == "Socióloga(o)" |
-      !! profissao == "Sociólogo(a)"~"Socióloga/o",
-      !! profissao == "Contador(a)"~"Contador/a",
-      !! profissao == "Administrador(a)" |
-      !! profissao == "Administrador (a)"~"Administrador/a",
-      !! profissao == "Contador" | #~"Contador/a",
-      !! profissao == "Economista" |
-      !! profissao == "Nutricionista" |
-      !! profissao == "Administração Pública/Gestão Pública" | #~"Administrador/a Público/a ou Gestor/a Público/a",
-      !! profissao == "Analista de Sistema" |
-      !! profissao == "Analista de sistema" | #~"Analista de Sistema",
-      !! profissao == "Fisioterapeuta" |
-      !! profissao == "Enfermeira(o)" | #~"Enfermeira/o",
-      !! profissao == "Profissional de educação física" | #~"Profissional de Educação Física",
-      !! profissao == "Cientista Política(o)" |
-      !! profissao == "Cientista política(o)" | #~"Cientista Política/o",
-      !! profissao == "Estatistico" | #~"Estatista/Estatístico",
-      !! profissao == "Terapeuta Ocupacional" |
-      !! profissao == "Programador(a)" | #~"Programador/a",
-      !! profissao == "Antropóloga(o)" | #~"Antropóloga/o",
-      !! profissao == "Geógrafo" | #~"Geógrafa/o",
-      !! profissao == "Médica(o)" | #~"Médica/o",
-      !! profissao == "Economista Doméstica(o)" | #~"Economista Doméstica/o",
-      !! profissao == "Sem formação profissional" |
-      !! profissao == "Profissional de nível médio" |
-      !! profissao == "Outra(o) profissional de nível superior" |
-      !! profissao == "Outro profissional de nivel superior"~"Outras formações, sem formação ou não informado",
-      TRUE ~ as.character(!! profissao))) %>%
-  mutate(!! profissao := str_wrap(!! profissao, width=25))
+    mutate(!! formacao := case_when(
+# Para selecionar, comentar as linhas das formações que se deseja incluir no gráfico separadamente. As que não forem comentadas serão incluídas em "Outras formações, sem formação ou não informado"
+#      !! formacao == "Assistente Social" |
+#      !! formacao == "Psicóloga/o" |
+#      !! formacao == "Pedagoga/o" |
+#      !! formacao == "Advogada/o" |
+#      !! formacao == "Socióloga/o" |
+#      !! formacao == "Administrador/a" |
+      !! formacao == "Contador/a" |
+      !! formacao == "Economista" |
+      !! formacao == "Nutricionista" |
+      !! formacao == "Administrador/a Público/a ou Gestor/a Público/a" |
+      !! formacao == "Analista de Sistema" |
+      !! formacao == "Fisioterapeuta" |
+      !! formacao == "Enfermeira/o" |
+      !! formacao == "Profissional de Educação Física" |
+      !! formacao == "Cientista Política/o" |
+      !! formacao == "Estatista/Estatístico" |
+      !! formacao == "Terapeuta Ocupacional" |
+      !! formacao == "Programador/a" |
+      !! formacao == "Antropóloga/o" |
+      !! formacao == "Geógrafa/o" |
+      !! formacao == "Médica/o" |
+      !! formacao == "Economista Doméstica/o" |
+      !! formacao == "Musicoterapeuta" |
+        
+      !! formacao == ""~"Outras formações, sem formação ou não informado",
+      TRUE ~ as.character(!! formacao))) %>%
+  mutate(!! formacao := str_wrap(!! formacao, width=25))
 }
 
 #tabela <- f_nomex_somay_nomegrupo(ge_2012, "Assistente Social", q56a, "2012") %>%
@@ -365,20 +411,22 @@ f_profissao = function(df, profissao){
 
 # Em 2017: Avaliar se deve ser usado o total de trabalhadores de ensino superior informado na questão 11 ou o informado na questão 12.
 
-# Em 2022: Utilizando d_51_10, que é a variável que aparece no arquivo de Tabelas como "Profissão agregada". No entanto, essa variável está calculada errada, pois estão contabilizados como "Outro profissional de nível superior" todos os profissionais cuja resposta em q51_10 foi "Sem formação profissional", sendo que entre os profissionais marcados como "Sem formação profissional" existem profissionais com Nível Fundamental e com Nível Médio, conforme informado em q51_9 e d_51_9. Outra questão com a variável d_51_10 é que ela seleciona algumas profissões para mostrar, colocando as demais dentro da categoria "Outro profissional de nível superior", mas, diferente do que se esperaria a princípio, as profissões selecionadas não são todas as mais frequentes, são selecionadas profissões com frequencia bem menor do que outras que ficaram agregadas em "Outro profissional de nível superior". Uma opção alternativa seria usar a variável original, q51_10, em vez de usar a d_51_10, filtrando apenas as pessoas informadaas como tendo nível superior e decidindo o que fazer com os trabalhadores de nível superior marcados em q51_10 como "Profissional de nível médio" e como "Sem formação profissional": se devem ser excluídos da conta ou se devem ser adicionados à categoria "Outros ou não informado".
+# Em 2022: Utilizando d_51_10, que é a variável que aparece no arquivo de Tabelas como "Profissão agregada". No entanto, essa variável está calculada errada, pois estão contabilizados como "Outro profissional de nível superior" todos os profissionais cuja resposta em q51_10 foi "Sem formação profissional", sendo que entre os profissionais marcados como "Sem formação profissional" existem profissionais com nível fundamental e com nível médio, conforme informado em q51_9 e d_51_9. Outra questão com a variável d_51_10 é que ela seleciona algumas profissões para mostrar, colocando as demais dentro da categoria "Outro profissional de nível superior", mas, diferente do que se esperaria a princípio, as profissões selecionadas não são todas as mais frequentes, são selecionadas profissões com frequencia bem menor do que outras que ficaram agregadas em "Outro profissional de nível superior". Uma opção alternativa seria usar a variável original, q51_10, em vez de usar a d_51_10, filtrando apenas as pessoas informadaas como tendo nível superior e decidindo o que fazer com os trabalhadores de nível superior marcados em q51_10 como "Profissional de nível médio" e como "Sem formação profissional": se devem ser excluídos da conta ou se devem ser adicionados à categoria "Outros ou não informado".
 
 # Decisão para a Publicação 2023: Utilizar apenas os dados a partir de 2018, devido à mudança na forma de coleta desses dados, e mostrar neste gráfico apenas as profissões, excluindo dele os números de não informado (para não precisar avaliar e decidir o que entra ou o que não entra em não informado). Assim fica um gráfico mais consistente, mostrando apenas o que está bem definido e que é a informação mais relevante para esse gráfico.
 
 tabela <- 
-  f_formacao(gerh_2018, q_37_10, "2018") %>%
-  bind_rows(f_formacao(gerh_2022, q51_10, "2022")) %>%
-  bind_rows(f_formacao(gerh_2023, q31_10, "2023")) %>%
-  bind_rows(f_formacao(gerh_2024, q41_10, "2024")) %>%
-  f_profissao(Eixo_x) %>%
+  f_eixox_nomegrupo_quantitativo(gerh_2018, q_37_10, "2018") %>%
+#  bind_rows(f_eixox_nomegrupo_quantitativo(gerh_2022, q51_10, "2022")) %>%
+  bind_rows(f_eixox_nomegrupo_quantitativo(gerh_2023, q31_10, "2023")) %>%
+  bind_rows(f_eixox_nomegrupo_quantitativo(gerh_2024, q41_10, "2024")) %>%
+
+  f_formacao(Eixo_x) %>%
+  f_seleciona_formacao(Eixo_x) %>%
   f_calcula_percentual(Grupo, Eixo_x, Eixo_y)
 
 ordenado<-tabela %>%
-  filter(Grupo == "2024") %>%
+  filter(Grupo == ano_atual) %>%
   arrange(Eixo_y) %>%
   pull(Eixo_x)
 
@@ -389,60 +437,50 @@ grafico <- tabela %>%
 grafico
 ```
 
-No @fig-munic_trab_prof, vemos a mesma informação sobre as áreas de formação das/os trabalhadoras/es, das formações mais frequentes, mas agora para as/os trabalhadoras/es das Secretarias municipais de Assistência Social. Assim como nos Estados, a formação mais frequente, de Assistente Social, é quase 1/5 das/os trabalhadoras/es. Vemos em 2023 uma pequena redução no percentual da segunda formação mais frequente, a de pedagogas/os, indo de 5,4% para 5,2%. As/os psicólogas/os, que são a segunda formação mais frequente nos Estados, ocupam a terceira posição nos Municípios, mas o percentual delas/es vem crescendo e chegou a 4,3% em 2023. Assim como nos Estados, as/os administradoras/es são a quarta formação mais frequente nos Municípios, mas com um percentual em torno de 1 ponto percentual menor. As/os advogadas/os também ocupam a mesma posição nos Estados e Municípios, sendo a quinta formação mais frequente, mas nos Municípios a tendência parece ser de crescimento, enquanto nos Estados parece ser de queda. Ainda assim o percentual de advogadas/os nos Estados, 3,2%, é um pouco maior que nos Municípios, 3,0%.
+No @fig-munic_trab_prof, vemos a mesma informação sobre as áreas de formação mais frequentes das trabalhadoras e dos trabalhadores, agora nas secretarias municipais de Assistência Social. Assim como nos estados, a formação mais frequente, de Assistente Social, é quase 1/5 das trabalhadoras e dos trabalhadores, e teve pequena queda em 2024, de 19,2% para 19,1%. A mesma redução de 0,1 pontos percentuais foi registrada na segunda formação mais frequente, a de pedagogas e pedagogos, de 5,2% para 5,1%.
 
-Uma grande diferença na formação das/os trabalhadoras/es dos Municípios para as/os trabalhadoras/es do Estado é que a formação de socióloga/o, sexta mais frequenta nos Estados, não aparece entre as formações mais frequentes nos Municípios, e outras 5 formações são mais frequentes nos Municípios do que a formação de socióloga/o (Administrador/a Público/a ou Gestor/a Público/a, Contador/a, Nutricionista, Enfermeira/o e Profissional de Educação Física).
+As psicólogas e psicólogos, que são a segunda formação mais frequente nos estados, ocupam a terceira posição nos municípios, mas o percentual desses profissionais vem crescendo e chegou a 4,5% em 2024. Assim como nos estados, as administradoras e administradores são a quarta formação mais frequente nos municípios, mas com um percentual em torno de 1 ponto percentual menor. As advogadas e os advogado também ocupam a mesma posição nos estados e municípios, sendo a quinta formação mais frequente, ambos na casa dos 3%.
 
-```{r fig-munic_trab_prof, fig.cap ="Percentual de trabalhadoras/es nas Secretarias municipais de Assistência Social, segundo área de formação - Brasil, 2018, 2022 2023 e 2024"}
+Uma grande diferença na formação das trabalhadoras e dos trabalhadores dos municípios para as trabalhadoras e trabalhadores dos estados é que a formação de socióloga e sociólogo, sexta mais frequenta nos estados, não aparece entre as formações mais frequentes nos municípios, e outras 6 formações são mais frequentes nos municípios do que a formação de socióloga e sociólogo (administradora pública ou gestora pública e administrador público ou gestor público, contador e contadora, nutricionista, enfermeira e enfermeiro, profissional de educação física e analista de sistema).
+
+```{r fig-munic_trab_prof, fig.cap ="Percentual de trabalhadoras/es nas secretarias municipais de Assistência Social, segundo área de formação - Brasil; 2018, 2023 e 2024"}
 # #| fig-height: 10
 
-f_profissao = function(df, profissao){
-  profissao <- enquo(profissao)
+# Seleção das formações que não serão incluídas separadamente no gráfico e que serão incluídas em "Outras formações, sem formação ou não informado". Sugere-se a cada nova edição da publicação rodar os gráficos incluindo todas as formações informadas para selecionar as profissões mais frequentes a serem incluídas separadamente no gráfico.
+
+f_seleciona_formacao = function(df, formacao){
+  formacao <- enquo(formacao)
 
   df %>%
-    mutate(!! profissao := case_when(
-      !! profissao == "Psicóloga(o)" |
-      !! profissao == "Psicólogo(a)" |
-      !! profissao == "Psicólogo"~"Psicóloga/o",
-      !! profissao == "Pedagoga(o)" |
-      !! profissao == "Pedagogo(a)" |
-      !! profissao == "Pedagogo"~"Pedagoga/o",
-      !! profissao == "Advogada(o)" |
-      !! profissao == "Advogado(a)" |
-      !! profissao == "Advogado"~"Advogada/o",
-      !! profissao == "Antropólogo(a)" |
-      !! profissao == "Antropólogo"~"Antropóloga/o",
-      !! profissao == "Contador(a)"~"Contador/a",
-      !! profissao == "Administrador(a)" |
-      !! profissao == "Administrador (a)"~"Administrador/a",
-      !! profissao == "Administração Pública/Gestão Pública" | #~"Administrador/a Público/a ou Gestor/a Público/a",
-      !! profissao == "Contador" | #~"Contador/a",
-      !! profissao == "Nutricionista" |
-      !! profissao == "Enfermeira(o)" | #~"Enfermeira/o",
-      !! profissao == "Profissional de educação física" | #~"Profissional de Educação Física",
-      !! profissao == "Socióloga(o)" |
-      !! profissao == "Sociólogo(a)" | #~"Socióloga/o",
-      !! profissao == "Analista de Sistema" |
-      !! profissao == "Analista de sistema" | #~"Analista de Sistema",
-      !! profissao == "Economista" |
-      !! profissao == "Fisioterapeuta" |
-      !! profissao == "Geógrafo" | #~"Geógrafa/o",
-      !! profissao == "Terapeuta Ocupacional" |
-      !! profissao == "Programador(a)" | #~"Programador/a",
-      !! profissao == "Cientista Política(o)" |
-      !! profissao == "Cientista política(o)" | #~"Cientista Política/o",
-      !! profissao == "Estatistico" | #~"Estatista/Estatístico",
-      !! profissao == "Economista Doméstico" |
-      !! profissao == "Economista Doméstica(o)" | #~"Economista Doméstica/o",
-      !! profissao == "Médica(o)" | #~"Médica/o",
-      !! profissao == "Antropóloga(o)" | #~"Antropóloga/o",
-      !! profissao == "Musicoterapeuta" |
-      !! profissao == "Sem formação profissional" |
-      !! profissao == "Profissional de nível médio" |
-      !! profissao == "Outra(o) profissional de nível superior" |
-      !! profissao == "Outro profissional de nivel superior"~"Outras formações, sem formação ou não informado",
-      TRUE ~ as.character(!! profissao))) %>%
-  mutate(!! profissao := str_wrap(!! profissao, width=25))
+    mutate(!! formacao := case_when(
+# Para selecionar, comentar as linhas das formações que se deseja incluir no gráfico separadamente. As que não forem comentadas serão incluídas em "Outras formações, sem formação ou não informado"
+#      !! formacao == "Assistente Social" |
+#      !! formacao == "Psicóloga/o" |
+#      !! formacao == "Pedagoga/o" |
+#      !! formacao == "Advogada/o" |
+      !! formacao == "Socióloga/o" |
+#      !! formacao == "Administrador/a" |
+      !! formacao == "Contador/a" |
+      !! formacao == "Economista" |
+      !! formacao == "Nutricionista" |
+      !! formacao == "Administrador/a Público/a ou Gestor/a Público/a" |
+      !! formacao == "Analista de Sistema" |
+      !! formacao == "Fisioterapeuta" |
+      !! formacao == "Enfermeira/o" |
+      !! formacao == "Profissional de Educação Física" |
+      !! formacao == "Cientista Política/o" |
+      !! formacao == "Estatista/Estatístico" |
+      !! formacao == "Terapeuta Ocupacional" |
+      !! formacao == "Programador/a" |
+      !! formacao == "Antropóloga/o" |
+      !! formacao == "Geógrafa/o" |
+      !! formacao == "Médica/o" |
+      !! formacao == "Economista Doméstica/o" |
+      !! formacao == "Musicoterapeuta" |
+        
+      !! formacao == ""~"Outras formações, sem formação ou não informado",
+      TRUE ~ as.character(!! formacao))) %>%
+  mutate(!! formacao := str_wrap(!! formacao, width=25))
 }
 
 #tabela <- 
@@ -484,15 +522,16 @@ f_profissao = function(df, profissao){
 # Em 2017: Avaliar se deve ser usado o total de trabalhadores de ensino superior informado na questão 11 ou o informado na questão 12.
 
 tabela <- 
-  f_formacao(gmrh_2018, q_62_10, "2018") %>%
-  bind_rows(f_formacao(gmrh_2022, q81_10, "2022")) %>%
-  bind_rows(f_formacao(gmrh_2023, q66_10, "2023")) %>%
-  bind_rows(f_formacao(gmrh_2024, q76_10, "2024")) %>%
-  f_profissao(Eixo_x) %>%
+  f_eixox_nomegrupo_quantitativo(gmrh_2018, q_62_10, "2018") %>%
+#  bind_rows(f_eixox_nomegrupo_quantitativo(gmrh_2022, q81_10, "2022")) %>%
+  bind_rows(f_eixox_nomegrupo_quantitativo(gmrh_2023, q66_10, "2023")) %>%
+  bind_rows(f_eixox_nomegrupo_quantitativo(gmrh_2024, q76_10, "2024")) %>%
+  f_formacao(Eixo_x) %>%
+  f_seleciona_formacao(Eixo_x) %>%
   f_calcula_percentual(Grupo, Eixo_x, Eixo_y)
 
 ordenado<-tabela %>%
-  filter(Grupo == "2024") %>%
+  filter(Grupo == ano_atual) %>%
   arrange(Eixo_y) %>%
   pull(Eixo_x)
 
@@ -503,26 +542,30 @@ grafico <- tabela %>%
 grafico
 ```
 
-## Evolução da quantidade de trabalhadoras/es nas Unidades do SUAS
+## Evolução da quantidade de trabalhadoras e trabalhadores nas Unidades do SUAS
 
-O Artigo 6º da Lei Orgânica de Assistência Social (LOAS) estabelece que os recursos do cofinanciamento do SUAS poderão ser aplicados no pagamento dos profissionais que integrarem as equipes de referência.
+O [Artigo 6º-E da Lei Orgânica de Assistência Social (LOAS)](https://www.planalto.gov.br/ccivil_03/leis/l8742.htm#art6e) estabelece que os recursos do cofinanciamento do SUAS poderão ser aplicados no pagamento dos profissionais que integrarem as equipes de referência.
 
-O @fig-trab-unidades mostra um crescimento contínuo na quantidade de trabalhadoras/es nas unidades socioassistenciais. Em 2023 o número de trabalhadoras/es nos CRAS cresceu de 115.149 (em 2022) para 117.376, um acréscimo de 2.227 (1,9%) trabalhadoras/es em um ano. Nos CREAS o número de trabalhadoras/es cresceu de 27.084 (em 2022) para 27.875, aumento de 791 (2,9%) trabalhadoras/es. E nos Centros POP cresceu de 3.628 (em 2022) para 3.982, ou seja, um adicional de 354 (9,8%) trabalhadoras/es nesse equipamento.
+O @fig-trab-unidades mostra um crescimento contínuo na quantidade de trabalhadoras e trabalhadores dos CREAS e dos Centros POP, e um recuo em 2024 na quantidade de trabalhadoras e trabalhadores nos CRAS, de 117.376 em 2023 para 116.821 em 2024, um decréscimo de 555 (0,5%) trabalhadoras e trabalhadores. Nos CREAS o número de trabalhadoras e trabalhadores cresceu de 27.875, em 2023, para 28.068, em 2024, um  aumento de 193 (0,7%) trabalhadoras e trabalhadores. E nos Centros POP cresceu de 3.982, em 2023, para 4.195, em 2024, ou seja, um adicional de 213 (5,3%) trabalhadoras e trabalhadores nesse equipamento de atendimento à população em situação de rua.
 
-```{r fig-trab-unidades, fig.cap ="Evolução da quantidade de trabalhadoras/es dos CRAS, CREAS e Centro POP - Brasil; 2012, 2017, 2022, 2023 e 2024" }
+```{r fig-trab-unidades, fig.cap ="Evolução da quantidade de trabalhadoras/es dos CRAS, CREAS e Centro POP - Brasil; 2012, 2018, 2023 e 2024" }
 
 grafico <-
   f_quantitativo_em_2_grupos(crasrh_2012, "CRAS", "2012") %>%
   bind_rows(f_quantitativo_em_2_grupos(creasrh_2012, "CREAS", "2012")) %>%
   bind_rows(f_quantitativo_em_2_grupos(cpoprh_2012, "Centro POP", "2012")) %>%
 
-  bind_rows(f_quantitativo_em_2_grupos(crasrh_2017, "CRAS", "2017")) %>%
-  bind_rows(f_quantitativo_em_2_grupos(creasrh_2017, "CREAS", "2017")) %>%
-  bind_rows(f_quantitativo_em_2_grupos(cpoprh_2017, "Centro POP", "2017")) %>%
+#  bind_rows(f_quantitativo_em_2_grupos(crasrh_2017, "CRAS", "2017")) %>%
+#  bind_rows(f_quantitativo_em_2_grupos(creasrh_2017, "CREAS", "2017")) %>%
+#  bind_rows(f_quantitativo_em_2_grupos(cpoprh_2017, "Centro POP", "2017")) %>%
 
-  bind_rows(f_quantitativo_em_2_grupos(crasrh_2022, "CRAS", "2022")) %>%
-  bind_rows(f_quantitativo_em_2_grupos(creasrh_2022, "CREAS", "2022")) %>%
-  bind_rows(f_quantitativo_em_2_grupos(cpoprh_2022, "Centro POP", "2022")) %>%
+  bind_rows(f_quantitativo_em_2_grupos(crasrh_2018, "CRAS", "2018")) %>%
+  bind_rows(f_quantitativo_em_2_grupos(creasrh_2018, "CREAS", "2018")) %>%
+  bind_rows(f_quantitativo_em_2_grupos(cpoprh_2018, "Centro POP", "2018")) %>%
+
+#  bind_rows(f_quantitativo_em_2_grupos(crasrh_2022, "CRAS", "2022")) %>%
+#  bind_rows(f_quantitativo_em_2_grupos(creasrh_2022, "CREAS", "2022")) %>%
+#  bind_rows(f_quantitativo_em_2_grupos(cpoprh_2022, "Centro POP", "2022")) %>%
   
   bind_rows(f_quantitativo_em_2_grupos(crasrh_2023, "CRAS", "2023")) %>%
   bind_rows(f_quantitativo_em_2_grupos(creasrh_2023, "CREAS", "2023")) %>%
@@ -597,7 +640,7 @@ grafico <- f_sim(ge_2013, q68a_1, "2013") %>%
 grafico
 ```
 
-Em relação à realização de concursos públicos pelos Municípios o @fig-conc_munic mostra o percentual de Municípios que realizaram concurso público para trabalhadoras/es de nível superior no SUAS. Vemos entre 2012 e 2015 os maiores percentuais de Municípios que realizaram concursos, com um pico de 27% dos Municípios em 2013. Em 2023 o percentual aumentou em relação a 2022, com 5,2% dos Municípios realizando concurso público, percentual que ficou acima também do observado em 2021 e em 2018.
+Em relação à realização de concursos públicos pelos municípios, o @fig-conc_munic mostra o percentual de municípios que realizaram concurso público para trabalhadoras e trabalhadores de nível superior no SUAS. Vemos entre 2012 e 2015 os maiores percentuais de municípios que realizaram concursos, com um pico de 26,8% dos municípios em 2013. Em 2024 o percentual aumentou em relação a 2023, com 7,0% dos municípios realizando concurso público, maior percentual desde 2017, quanto 7,2% dos municípios realizaram concurso público.
 
 ```{r fig-conc_munic, fig.cap = "Percentual de municípios que realizaram concursos para trabalhadores de nível superior no SUAS - Brasil, 2012 a 2024", fig.footer = "Fonte: MDS, Censo SUAS"}
 
