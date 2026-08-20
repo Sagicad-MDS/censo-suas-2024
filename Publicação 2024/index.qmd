@@ -1,21 +1,17 @@
-# Prefácio {.unnumbered}
+# Apresentação {.unnumbered}
 
-Ao longo de mais de três décadas desde a promulgação da Lei Orgânica da Assistência Social (LOAS) e de vinte anos da implementação do Sistema Único de Assistência Social (SUAS), a Política de Assistência Social tem consolidado avanços expressivos, perceptíveis na vida da população brasileira. Dada a importância e necessidade de aprofundamento de tais avanços, é neessário que eles sejam também mensuráveis, por meio da consolidação de processos contínuos e consistentes de gestão da informação, monitoramento e avaliação.
+Integrante do tripé da Seguridade Social, ao lado das políticas de Saúde e de Previdência Social, a Assistência Social constitui-se como um direito do cidadão e um dever do Estado. Como toda política pública, o SUAS encontra-se em permanente processo de aprimoramento, exigindo atualizações e adequações contínuas diante das transformações sociais e das novas demandas da conjuntura.
 
-Garantir o pleno funcionamento do ciclo das políticas públicas é um compromisso permanente do nosso governo. No âmbito da Assistência Social, essa responsabilidade é exercida por meio da Vigilância Socioassistencial, que abrange a coleta de dados, o monitoramento, a avaliação e a ampla disseminação das informações produzidas — tanto para aqueles que as geram quanto para os que as utilizam, incluindo gestores, pesquisadores, instâncias de Controle Social e a sociedade em geral. 
+O Censo SUAS constitui o retrato mais abrangente, consistente e sistemático da Assistência Social no Brasil. Previsto no Decreto nº 7.334/2010, consolida-se como instrumento essencial de monitoramento e avaliação da política. A publicação anual de seus resultados busca oferecer um conjunto qualificado de análises e reflexões que contribuam para o aprimoramento contínuo e o fortalecimento histórico do SUAS, além de evidenciar avanços, identificar desafios e apontar caminhos para os rumos e pactos que orientam a política de Assistência Social em todo o país.
 
-O Censo SUAS é essencial para qualificar a compreensão sobre a Política de Assistência Social. Uma fonte única de informações, ele permite o acompanhamento da gestão financeira e orçamentária, da estrutura administrativa e do funcionamento das instâncias responsáveis pelo Cadastro Único nos estados, municípios e no Distrito Federal, bem como da gestão do trabalho, da oferta e da qualidade dos serviços e unidades que compõem o SUAS.
+Chegamos a mais de 30 anos da LOAS (Lei Orgânica da Assistência Social) com uma rede que ultrapassa 31 mil unidades públicas e conta também com a atuação de Organizações da Sociedade Civil (OSCs), reunindo **mais de 410 mil trabalhadores e trabalhadoras**. Trata-se de um sistema federativo e participativo, no qual as responsabilidades são compartilhadas entre os três entes federados, sob a direção e deliberação do controle social. A @tbl-marcos apresenta o marco normativo que institucionaliza e orienta a conformação desta política pública.
 
-O Censo reúne informações sobre a execução de serviços, benefícios e programas socioassistenciais, além de evidenciar o papel do Controle Social na política — contribuindo, assim, para o aprimoramento das ações e para um atendimento cada vez mais qualificado à população.
+| 1988 | 1993 | 2001 | 2003 | 2004 | 2005 | 2006 | 2009 | 2011 | 2012 | 2016 |
+|----|:--:|:--:|----|:--:|:--:|:--:|:--:|:--:|:--:|----|
+| CF | LOAS     | Cadastro Único     | Programa Bolsa Família | PNAS     | NOB/ SUAS | NOB/ RH   | Tipificação dos Serviços | Lei 12.435 SUAS | NOB/ SUAS | II Plano Decenal |
 
-Apresentando dados referentes ao ano de 2023 que garantem a atualização de informações longitudinais sobre o SUAS, esta é a décima edição da publicação, cuja primeira versão foi lançada em 2010. Nela, a gestão das informações, foi aprimorada com a adoção do sistema R Markdown, posteriormente atualizado para a ferramenta Quarto — inovação que assegura maior consistência e transparência na geração dos dados e gráficos, por meio do registro preciso, na linguagem R, de todas as etapas de produção.
+: Marcos legais da Assistência Social no Brasil.
 
-Esperamos que esta publicação sirva de subsídio a gestoras(es), trabalhadoras(es), conselheiras(os) e pesquisadoras(es) envolvidas(os) com o SUAS, contribuindo para o fortalecimento dos debates e das práticas no campo da Assistência Social. O Ministério do Desenvolvimento e Assistência Social, Família e Combate à Fome (MDS), por meio da SAGICAD e da SNAS, reafirma seu compromisso com o fortalecimento do SUAS e manifesta profunda estima a todas e todos que, cotidianamente, se dedicam à consolidação e ao avanço dessa política pública essencial.
+São referências essenciais que sustentam o debate apresentado nesta edição. O conteúdo desta publicação traz uma linha histórica — em grande parte a partir de 2012 — que evidencia aspectos relacionados à gestão, às unidades do SUAS, aos serviços e benefícios, à gestão do trabalho, ao controle social e à participação. Além disso, inclui elementos metodológicos que demonstram os avanços na construção dessa linha histórica de forma cada vez mais qualificada, com modernização nos processos de análise e tratamento de dados.
 
-Rafael Osório
-
-Secretário de Avaliação, Gestão da Informação e Cadastro Único
-
-André Quintão
-
-Secretária Nacional de Assistência Social
+Desejamos uma boa leitura e esperamos que esta edição contribua para subsidiar debates qualificados, fortalecendo o aprimoramento contínuo desta política pública.

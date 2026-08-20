@@ -21,7 +21,7 @@ book:
   repo-link-target: "_blank"
   chapters:
     - index.qmd
-    - apresentacao.qmd
+#    - apresentacao.qmd
     - metodologia.qmd
     - gestao.qmd
     - unidades.qmd
