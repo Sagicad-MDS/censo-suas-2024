@@ -7,10 +7,10 @@ O Censo SUAS constitui o retrato mais abrangente, consistente e sistemático da 
 Chegamos a mais de 30 anos da LOAS (Lei Orgânica da Assistência Social) com uma rede que ultrapassa 31 mil unidades públicas e conta também com a atuação de Organizações da Sociedade Civil (OSCs), reunindo **mais de 410 mil trabalhadores e trabalhadoras**. Trata-se de um sistema federativo e participativo, no qual as responsabilidades são compartilhadas entre os três entes federados, sob a direção e deliberação do controle social. A @tbl-marcos apresenta o marco normativo que institucionaliza e orienta a conformação desta política pública.
 
 | 1988 | 1993 | 2001 | 2003 | 2004 | 2005 | 2006 | 2009 | 2011 | 2012 | 2016 |
-|----|:--:|:--:|----|:--:|:--:|:--:|:--:|:--:|:--:|----|
+|--------|:------:|:------:|--------|:------:|:------:|:------:|:------:|:------:|:------:|--------|
 | CF | LOAS     | Cadastro Único     | Programa Bolsa Família | PNAS     | NOB/ SUAS | NOB/ RH   | Tipificação dos Serviços | Lei 12.435 SUAS | NOB/ SUAS | II Plano Decenal |
 
-: Marcos legais da Assistência Social no Brasil.
+: Marcos legais da Assistência Social no Brasil. {#tbl-marcos}
 
 São referências essenciais que sustentam o debate apresentado nesta edição. O conteúdo desta publicação traz uma linha histórica — em grande parte a partir de 2012 — que evidencia aspectos relacionados à gestão, às unidades do SUAS, aos serviços e benefícios, à gestão do trabalho, ao controle social e à participação. Além disso, inclui elementos metodológicos que demonstram os avanços na construção dessa linha histórica de forma cada vez mais qualificada, com modernização nos processos de análise e tratamento de dados.
 
