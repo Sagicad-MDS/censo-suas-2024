@@ -12,8 +12,8 @@ book:
 #    - Ministério do Desenvolvimento e Assistência Social, Família e Combate à Fome
 #  date: "21/06/2024"
 #  search: false
-  cover-image: "CapaCensoSUAS2023imagem 1.png"
-  favicon: "CapaCensoSUAS2023imagem 1.png"
+  cover-image: "CapaCensoSUAS2024imagem.png"
+  favicon: "CapaCensoSUAS2024imagem.png"
   repo-url: https://github.com/Sagicad-MDS/censo-suas-2024
   repo-branch: main
   repo-subdir: "Publicação 2024"
