@@ -1,3 +1,15 @@
+```{r}
+source("_setup.R")
+source("_funcoes.R")
+source("_cras.R")
+source("_creas.R")
+source("_cpop.R")
+source("_unac.R")
+source("_ceconv.R")
+source("_cedia.R")
+source("_posto_cadunico.R")
+```
+
 # Apresentação {.unnumbered}
 
 Integrante do tripé da Seguridade Social, ao lado das políticas de Saúde e de Previdência Social, a Assistência Social constitui-se como um direito do cidadão e um dever do Estado. Como toda política pública, o SUAS encontra-se em permanente processo de aprimoramento, exigindo atualizações e adequações contínuas diante das transformações sociais e das novas demandas da conjuntura.
@@ -5,6 +17,57 @@ Integrante do tripé da Seguridade Social, ao lado das políticas de Saúde e de
 O Censo SUAS constitui o retrato mais abrangente, consistente e sistemático da Assistência Social no Brasil. Previsto no Decreto nº 7.334/2010, consolida-se como instrumento essencial de monitoramento e avaliação da política. A publicação anual de seus resultados busca oferecer um conjunto qualificado de análises e reflexões que contribuam para o aprimoramento contínuo e o fortalecimento histórico do SUAS, além de evidenciar avanços, identificar desafios e apontar caminhos para os rumos e pactos que orientam a política de Assistência Social em todo o país.
 
 Chegamos a mais de 30 anos da LOAS (Lei Orgânica da Assistência Social) com uma rede que ultrapassa 31 mil unidades públicas e conta também com a atuação de Organizações da Sociedade Civil (OSCs), reunindo **mais de 410 mil trabalhadores e trabalhadoras**. Trata-se de um sistema federativo e participativo, no qual as responsabilidades são compartilhadas entre os três entes federados, sob a direção e deliberação do controle social. A @tbl-marcos apresenta o marco normativo que institucionaliza e orienta a conformação desta política pública.
+
+```{r fig-unidades, fig.cap = "Quantidade de unidades públicas registradas no Censo SUAS - Brasil e grandes regiões, 2020 a 2024", fig.footer = "Fonte: MDS, Censo SUAS."}
+
+tabela <- 
+  f_quantitativo_regiao(cras_2020, IBGE) |>
+  bind_rows(f_quantitativo_regiao(creas_2020, IBGE)) |>
+  bind_rows(f_quantitativo_regiao(cpop_2020, IBGE)) |>
+  bind_rows(f_quantitativo_regiao(unac_2020, IBGE)) |>
+  bind_rows(f_quantitativo_regiao(ceconv_2020, IBGE)) |>
+  bind_rows(f_quantitativo_regiao(cedia_2020, IBGE)) |>
+  bind_rows(f_quantitativo_regiao(posto_cadunico_2020, IBGE)) |>
+
+  bind_rows(f_quantitativo_regiao(cras_2021, IBGE)) |>
+  bind_rows(f_quantitativo_regiao(creas_2021, IBGE)) |>
+  bind_rows(f_quantitativo_regiao(cpop_2021, IBGE)) |>
+  bind_rows(f_quantitativo_regiao(unac_2021, IBGE)) |>
+  bind_rows(f_quantitativo_regiao(ceconv_2021, IBGE)) |>
+  bind_rows(f_quantitativo_regiao(cedia_2021, IBGE)) |>
+  bind_rows(f_quantitativo_regiao(posto_cadunico_2021, IBGE)) |>
+
+  bind_rows(f_quantitativo_regiao(cras_2022, IBGE)) |>
+  bind_rows(f_quantitativo_regiao(creas_2022, IBGE)) |>
+  bind_rows(f_quantitativo_regiao(cpop_2022, IBGE)) |>
+  bind_rows(f_quantitativo_regiao(unac_2022, IBGE)) |>
+  bind_rows(f_quantitativo_regiao(ceconv_2022, IBGE)) |>
+  bind_rows(f_quantitativo_regiao(cedia_2022, IBGE)) |>
+  bind_rows(f_quantitativo_regiao(posto_cadunico_2022, IBGE)) |>
+
+  bind_rows(f_quantitativo_regiao(cras_2023, IBGE)) |>
+  bind_rows(f_quantitativo_regiao(creas_2023, IBGE)) |>
+  bind_rows(f_quantitativo_regiao(cpop_2023, IBGE)) |>
+  bind_rows(f_quantitativo_regiao(unac_2023, IBGE)) |>
+  bind_rows(f_quantitativo_regiao(ceconv_2023, IBGE)) |>
+  bind_rows(f_quantitativo_regiao(cedia_2023, IBGE)) |>
+  bind_rows(f_quantitativo_regiao(posto_cadunico_2023, IBGE)) |>
+
+  bind_rows(f_quantitativo_regiao(cras_2024, IBGE)) |>
+  bind_rows(f_quantitativo_regiao(creas_2024, IBGE)) |>
+  bind_rows(f_quantitativo_regiao(cpop_2024, IBGE)) |>
+  bind_rows(f_quantitativo_regiao(unac_2024, IBGE)) |>
+  bind_rows(f_quantitativo_regiao(ceconv_2024, IBGE)) |>
+  bind_rows(f_quantitativo_regiao(cedia_2024, IBGE)) |>
+  bind_rows(f_quantitativo_regiao(posto_cadunico_2024, IBGE)) |>
+
+  summarise(n=sum(n), .by = c(Ano, Região))
+
+grafico<-tabela |>
+  f_grafico_col_group_numero(Região, n, Ano, 1)
+
+grafico
+```
 
 | 1988 | 1993 | 2001 | 2003 | 2004 | 2005 | 2006 | 2009 | 2011 | 2012 | 2016 |
 |--------|:------:|:------:|--------|:------:|:------:|:------:|:------:|:------:|:------:|--------|

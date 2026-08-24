@@ -78,6 +78,25 @@ f_quantitativo_regiao_ano = function(df, regiao, ano){
     mutate("Ano" = !! ano)
 }
 
+f_quantitativo_regiao = function(df, regiao){
+  regiao <- enquo(regiao)
+  
+  df %>%
+    select(!! regiao, Ano) %>%
+    #    filter(!is.na(!! regiao)) %>%
+    mutate(!! regiao := case_when(substr(!! regiao,1,1) == "1"~"Norte",
+                                  substr(!! regiao,1,1) == "2"~"Nordeste",
+                                  substr(!! regiao,1,1) == "3"~"Sudeste",
+                                  substr(!! regiao,1,1) == "4"~"Sul",
+                                  substr(!! regiao,1,1) == "5"~"Centro-Oeste",
+                                  TRUE ~ str_replace(!! regiao, "Região ", ""))) %>%
+#    group_by(!! regiao, Ano) %>%
+    summarise(n=n(), .by = c(IBGE, Ano)) %>%
+    spread(!! regiao, n, fill = 0) %>%
+    mutate("Brasil" = rowSums(.[2:6])) %>%
+    pivot_longer(-Ano, names_to = "Região", values_to = "n")
+}
+
 f_quantitativo_em_2_grupos = function(df, grupo1, grupo2){
   grupo1 <- quo_name(grupo1)
   grupo2 <- quo_name(grupo2)
