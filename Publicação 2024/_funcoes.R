@@ -88,27 +88,6 @@ f_quantitativo_em_2_grupos = function(df, grupo1, grupo2){
     mutate("Grupo2" = !! grupo2)
 }
 
-f_soma_regiao_ano = function(df, q, regiao, ano){
-  q <- enquo(q)
-  regiao <- enquo(regiao)
-  ano <- quo_name(ano)
-  
-  df %>%
-    select(!! q, !! regiao) %>%
-    mutate(!! regiao := case_when(substr(!! regiao,1,1) == "1"~"Norte",
-                                  substr(!! regiao,1,1) == "2"~"Nordeste",
-                                  substr(!! regiao,1,1) == "3"~"Sudeste",
-                                  substr(!! regiao,1,1) == "4"~"Sul",
-                                  substr(!! regiao,1,1) == "5"~"Centro-Oeste",
-                                  TRUE ~ str_replace(!! regiao, "Região ", ""))) %>%
-    group_by(!! regiao) %>%
-    summarise(n=sum(!! q)) %>%
-    spread(!! regiao, n, fill = 0) %>%
-    mutate("Brasil" = rowSums(.[1:5])) %>%
-    gather("Região","n") %>%
-    mutate("Ano" = !! ano)
-}
-
 f_percentual_municipios_regiao_ano = function(df, municipio, ano){
   ano <- quo_name(ano)
   municipio <- enquo(municipio)
