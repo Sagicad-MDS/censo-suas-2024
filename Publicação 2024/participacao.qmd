@@ -1,7 +1,9 @@
 ```{r}
 source("_setup.R")
-source("_carregamento.R")
 source("_funcoes.R")
+source("_municipios.R")
+source("_cmun.R")
+source("_cest.R")
 ```
 
 # Participação e Controle Social no SUAS

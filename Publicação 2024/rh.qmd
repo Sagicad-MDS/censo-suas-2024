@@ -1,7 +1,12 @@
 ```{r}
 source("_setup.R")
-source("_carregamento.R")
 source("_funcoes.R")
+source("_gerh.R")
+source("_gmrh.R")
+source("_crasrh.R")
+source("_creasrh.R")
+source("_cpoprh.R")
+source("_gm.R")
 ```
 
 # Gestão do Trabalho e Recursos Humanos no SUAS

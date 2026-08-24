@@ -18,14 +18,13 @@ Esta pasta contém os arquivos específicos para a versão da publicação do an
 
 As configurações gerais do projeto, conforme o padrão do Quarto, ficam no arquivo \_quarto.yml. Maiores informações podem ser vistas no Guia do Quarto, e mais especificamente sobre projeto do tipo Book na respectiva seção do Guia: <https://quarto.org/docs/books/>
 
-Esta pasta contém também 3 arquivos de código R utilizados em todos os arquivos com o conteúdo da publicação, que são os arquivos com extensão .qmd, um para cada capítulo da publicação.
-
-Os 3 arquivos de código R são os arquivos \_setup.R, \_funcoes.R e \_carregamento.R, e estão inseridos no início dos arquivos .qmd que contém código R da seguinte forma:
+Esta pasta contém também arquivos de código R feitos para serem incluídos nos arquivos de conteúdo da publicação. Os arquivos de conteúdo da publicação são os arquivos com extensão .qmd, e existe um para cada página ou capítulo da publicação. Os arquivos de código R são que podem ser incluídos nos arquivos de conteúdo .qmd são os arquivos que começam com "_", e são os arquivos \_setup.R, \_funcoes.R e diversos arquivos para carregamento das bases de dados do Censo SUAS, um para cada formulário do Censo SUAS. Eles são inseridos no início dos arquivos .qmd conforme são necessários em cada arquivo, da seguinte forma:
 
 ```{r}
 source("_setup.R")
-source("_carregamento.R")
 source("_funcoes.R")
+source("_cras.R")
+source("_creas.R")
 ```
 
 Estes arquivos iniciam com "_" por esta ser uma sintaxe do Quarto para indicar que esses arquivos não são arquivos principais do projeto para serem renderizados, mas sim arquivos que serão incluídos nos arquivos principais a serem renderizados.
@@ -36,11 +35,13 @@ O conteúdo desses arquivos é o seguinte:
 
 - _setup.R: Este arquivo contém código de inicialização do ambiente para execução do código R nos arquivos .qmd, principalmente o carregamento dos pacotes do R utilizados no projeto. Está neste arquivo também a configuração da variável utilizada no código R dos gráficos para determinação do padrão de cores utilizado nos gráficos (variável color.map.option).
 
-- _carregamento.R: Este arquivo contém o código para carregamento das bases de dados do Censo SUAS, além de outros dados utilizados em gráficos da publicação, como número de municípios brasileiros e estimativa de população em cada município em cada ano. Contém ainda alguma funções de ajustes e preparação desses dados. 
-
 - _funcoes.R: Este arquivo contém as funções em R que são utilizadas em várias partes do projeto. Essas funções podem ser divididas em 2 grupos principais, as funções para seleção e preparação dos dados, e as funções para geração dos gráficos, sendo estas últimas as que começam com o nome "f_grafico..." 
 
-Os arquivos de extensão .qmd são os arquivos Quarto Markdown com o conteúdo da publicação propriamente dita. Cada arquivo é um capítulo da publicação, sendo o arquivo index.qmd o capítulo inicial que, no caso, contém o prefácio e a figura da capa, que está em um arquivo de imagem nesta mesma pasta da Publicação.
+- _municipios.R: Este arquivo contém o código para carregamento de informações sobre os municípios brasileiros, informações que são utilizadas na construção de alguns gráficos, como número de municípios brasileiros e estimativa de população em cada município em cada ano. 
 
-O arquivo de configuração geral do projeto, _quarto.yml, contém a lista de capítulos, na ordem desejada, ou seja, a lista dos arquivos de extensão .qmd que fazem parte da publicação, na ordem em que eles devem ficar na publicação.
+- _cras.R, _creas.R, _cpop.R, crasrh.R, etc.: Estes arquivos contém o código para carregamento das bases de dados do Censo SUAS para o respectivo formulário/base de dados, já fazendo algum ajuste necessário e incluindo uma coluna com a variável Ano, que contém o ano da respectiva base de dados e pode ser utilizada nos códigos para geração dos gráficos.
+
+Os arquivos de extensão .qmd são os arquivos Quarto Markdown com o conteúdo da publicação propriamente dita. Cada arquivo é uma página ou um capítulo da publicação, sendo o arquivo index.qmd a página inicial.
+
+O arquivo de configuração geral do projeto, _quarto.yml, contém a lista de capítulos, na ordem desejada, ou seja, a lista dos arquivos de extensão .qmd que fazem parte da publicação, na ordem em que eles devem ficar na publicação, além de outras configurações gerais do projeto, como a imagem de capa que aparece na página inicial e a imagem que aparece como ícone da aba/página no navegador de internet.
 

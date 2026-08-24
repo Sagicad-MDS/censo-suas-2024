@@ -1,7 +1,14 @@
 ```{r}
 source("_setup.R")
-source("_carregamento.R")
 source("_funcoes.R")
+source("_municipios.R")
+source("_cras.R")
+source("_ceconv.R")
+source("_creas.R")
+source("_cpop.R")
+source("_cedia.R")
+source("_unac.R")
+source("_posto_cadunico.R")
 ```
 
 # Unidades do SUAS

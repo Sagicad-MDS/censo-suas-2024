@@ -1,7 +1,14 @@
 ```{r}
 source("_setup.R")
-source("_carregamento.R")
 source("_funcoes.R")
+source("_ge.R")
+source("_gm.R")
+source("_feas.R")
+source("_fmas.R")
+source("_cras.R")
+source("_creas.R")
+source("_cpop.R")
+source("_posto_cadunico.R")
 ```
 
 # Gestão e Financiamento
