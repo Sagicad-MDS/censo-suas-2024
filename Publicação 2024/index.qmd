@@ -7,16 +7,40 @@ source("_cpop.R")
 source("_unac.R")
 source("_ceconv.R")
 source("_cedia.R")
+source("_famacol.R")
 source("_posto_cadunico.R")
+source("_crasrh.R")
+source("_creasrh.R")
+source("_cpoprh.R")
+source("_unacrh.R")
+source("_ceconvrh.R")
+source("_cediarh.R")
+source("_famacolrh.R")
+source("_posto_cadunicorh.R")
+source("_gmrh.R")
+source("_gerh.R")
+source("_fmasrh.R")
+source("_feasrh.R")
+source("_cmunrh.R")
+source("_cestrh.R")
 ```
 
 # Apresentação {.unnumbered}
 
 Integrante do tripé da Seguridade Social, ao lado das políticas de Saúde e de Previdência Social, a Assistência Social constitui-se como um direito do cidadão e um dever do Estado. Como toda política pública, o SUAS encontra-se em permanente processo de aprimoramento, exigindo atualizações e adequações contínuas diante das transformações sociais e das novas demandas da conjuntura.
 
-O Censo SUAS constitui o retrato mais abrangente, consistente e sistemático da Assistência Social no Brasil. Previsto no Decreto nº 7.334/2010, consolida-se como instrumento essencial de monitoramento e avaliação da política. A publicação anual de seus resultados busca oferecer um conjunto qualificado de análises e reflexões que contribuam para o aprimoramento contínuo e o fortalecimento histórico do SUAS, além de evidenciar avanços, identificar desafios e apontar caminhos para os rumos e pactos que orientam a política de Assistência Social em todo o país.
+O Censo SUAS constitui o retrato mais abrangente, consistente e sistemático da Assistência Social no Brasil. Previsto no [Decreto nº 7.334/2010](https://www.planalto.gov.br/ccivil_03/_ato2007-2010/2010/decreto/d7334.htm), consolida-se como instrumento essencial de monitoramento e avaliação da política. A publicação anual de seus resultados busca oferecer um conjunto qualificado de análises e reflexões que contribuam para o aprimoramento contínuo e o fortalecimento histórico do SUAS, além de evidenciar avanços, identificar desafios e apontar caminhos para os rumos e pactos que orientam a política de Assistência Social em todo o país.
 
-Chegamos a mais de 30 anos da LOAS (Lei Orgânica da Assistência Social) com uma rede que ultrapassa 31 mil unidades públicas e conta também com a atuação de Organizações da Sociedade Civil (OSCs), reunindo **mais de 410 mil trabalhadores e trabalhadoras**. Trata-se de um sistema federativo e participativo, no qual as responsabilidades são compartilhadas entre os três entes federados, sob a direção e deliberação do controle social. A @tbl-marcos apresenta o marco normativo que institucionaliza e orienta a conformação desta política pública.
+O Censo SUAS 2024 registrou uma rede com **31.920 unidades públicas** (@fig-unidades), incluindo unidades governamentais e Organizações da Sociedade Civil (OSCs), rede que é composta por:
+
+1.  CRAS (Centro de Referência em Assistência Social),
+2.  CREAS (Centro de Referência Especializado em Assistência Social),
+3.  Centro POP (Centro de Referência Especializado para Pessoas em Situação de Rua),
+4.  Unidades de Acolhimento,
+5.  Centro de Convivência (unidades que executam Serviço de Convivência e Fortalecimento de Vínculos, exceto CRAS),
+6.  Centro Dia e similares,
+7.  Unidades executoras do Serviço de Acolhimento em Família Acolhedora e
+8.  Posto de Cadastro Único (locais com a finalidade central de realizar inclusão ou atualização cadastral do Cadastro Único e procedimentos afins).
 
 ```{r fig-unidades, fig.cap = "Quantidade de unidades públicas registradas no Censo SUAS - Brasil e grandes regiões, 2020 a 2024", fig.footer = "Fonte: MDS, Censo SUAS."}
 
@@ -27,6 +51,7 @@ tabela <-
   bind_rows(f_quantitativo_regiao(unac_2020, IBGE)) |>
   bind_rows(f_quantitativo_regiao(ceconv_2020, IBGE)) |>
   bind_rows(f_quantitativo_regiao(cedia_2020, IBGE)) |>
+  bind_rows(f_quantitativo_regiao(famacol_2020, codigo_ibge)) |>
   bind_rows(f_quantitativo_regiao(posto_cadunico_2020, IBGE)) |>
 
   bind_rows(f_quantitativo_regiao(cras_2021, IBGE)) |>
@@ -35,6 +60,7 @@ tabela <-
   bind_rows(f_quantitativo_regiao(unac_2021, IBGE)) |>
   bind_rows(f_quantitativo_regiao(ceconv_2021, IBGE)) |>
   bind_rows(f_quantitativo_regiao(cedia_2021, IBGE)) |>
+  bind_rows(f_quantitativo_regiao(famacol_2021, codigo_ibge)) |>
   bind_rows(f_quantitativo_regiao(posto_cadunico_2021, IBGE)) |>
 
   bind_rows(f_quantitativo_regiao(cras_2022, IBGE)) |>
@@ -43,6 +69,7 @@ tabela <-
   bind_rows(f_quantitativo_regiao(unac_2022, IBGE)) |>
   bind_rows(f_quantitativo_regiao(ceconv_2022, IBGE)) |>
   bind_rows(f_quantitativo_regiao(cedia_2022, IBGE)) |>
+  bind_rows(f_quantitativo_regiao(famacol_2022, kkkk)) |>
   bind_rows(f_quantitativo_regiao(posto_cadunico_2022, IBGE)) |>
 
   bind_rows(f_quantitativo_regiao(cras_2023, IBGE)) |>
@@ -51,6 +78,7 @@ tabela <-
   bind_rows(f_quantitativo_regiao(unac_2023, IBGE)) |>
   bind_rows(f_quantitativo_regiao(ceconv_2023, IBGE)) |>
   bind_rows(f_quantitativo_regiao(cedia_2023, IBGE)) |>
+  bind_rows(f_quantitativo_regiao(famacol_2023, IBGE)) |>
   bind_rows(f_quantitativo_regiao(posto_cadunico_2023, IBGE)) |>
 
   bind_rows(f_quantitativo_regiao(cras_2024, IBGE)) |>
@@ -59,6 +87,7 @@ tabela <-
   bind_rows(f_quantitativo_regiao(unac_2024, IBGE)) |>
   bind_rows(f_quantitativo_regiao(ceconv_2024, IBGE)) |>
   bind_rows(f_quantitativo_regiao(cedia_2024, IBGE)) |>
+  bind_rows(f_quantitativo_regiao(famacol_2024, IBGE)) |>
   bind_rows(f_quantitativo_regiao(posto_cadunico_2024, IBGE)) |>
 
   summarise(n=sum(n), .by = c(Ano, Região))
@@ -69,11 +98,230 @@ grafico<-tabela |>
 grafico
 ```
 
-| 1988 | 1993 | 2001 | 2003 | 2004 | 2005 | 2006 | 2009 | 2011 | 2012 | 2016 |
-|--------|:------:|:------:|--------|:------:|:------:|:------:|:------:|:------:|:------:|--------|
-| CF | LOAS     | Cadastro Único     | Programa Bolsa Família | PNAS     | NOB/ SUAS | NOB/ RH   | Tipificação dos Serviços | Lei 12.435 SUAS | NOB/ SUAS | II Plano Decenal |
+O Censo SUAS 2024 registrou também **553.971 trabalhadoras e trabalhadores** (@fig-trabalhadoras), quantidade formada pelas trabalhadoras e trabalhadores nas unidades públicas listadas acima, mais as trabalhadoras e trabalhadores:
+
+1.  da Gestão Municipal (Secretaria Municipal de Assistência Social ou congênere) e da Gestão Estadual (Secretaria Estadual de Assistência Social ou congênere),
+2.  do Fundo Municipal de Assistência Social e do Fundo Estadual de Assistência Social e
+3.  dos Conselhos Municipais e Estaduais de Assistência Social e CAS/DF.
+
+Trata-se de um sistema federativo e participativo, no qual as responsabilidades são compartilhadas entre os três entes federados, sob a direção e deliberação do controle social.
+
+```{r fig-trabalhadoras, fig.cap = "Quantidade de trabalhadoras e trabalhadores registrados no Censo SUAS - Brasil e grandes regiões, 2020 a 2024", fig.footer = "Fonte: MDS, Censo SUAS."}
+tabela <- 
+  f_quantitativo_regiao(crasrh_2020, IBGE) |>
+  bind_rows(f_quantitativo_regiao(creasrh_2020, IBGE)) |>
+  bind_rows(f_quantitativo_regiao(cpoprh_2020, IBGE)) |>
+  bind_rows(f_quantitativo_regiao(unacrh_2020, IBGE)) |>
+  bind_rows(f_quantitativo_regiao(ceconvrh_2020, Regiao)) |>
+  bind_rows(f_quantitativo_regiao(cediarh_2020, IBGE)) |>
+  bind_rows(f_quantitativo_regiao(famacolrh_2020, IBGE)) |>
+  bind_rows(f_quantitativo_regiao(posto_cadunicorh_2020, IBGE)) |>
+  bind_rows(f_quantitativo_regiao(gmrh_2020, IBGE)) |>
+  bind_rows(f_quantitativo_regiao(gerh_2020, IBGE)) |>
+  bind_rows(f_quantitativo_regiao(fmasrh_2020, IBGE)) |>
+  bind_rows(f_quantitativo_regiao(feasrh_2020, IBGE)) |>
+  bind_rows(f_quantitativo_regiao(cmunrh_2020, IBGE)) |>
+  bind_rows(f_quantitativo_regiao(cestrh_2020, IBGE)) |>
+
+  bind_rows(f_quantitativo_regiao(crasrh_2021, IBGE)) |>
+  bind_rows(f_quantitativo_regiao(creasrh_2021, IBGE)) |>
+  bind_rows(f_quantitativo_regiao(cpoprh_2021, IBGE)) |>
+  bind_rows(f_quantitativo_regiao(unacrh_2021, IBGE)) |>
+  bind_rows(f_quantitativo_regiao(ceconvrh_2021, IBGE)) |>
+  bind_rows(f_quantitativo_regiao(cediarh_2021, IBGE)) |>
+  bind_rows(f_quantitativo_regiao(famacolrh_2021, IBGE)) |>
+  bind_rows(f_quantitativo_regiao(posto_cadunicorh_2021, IBGE)) |>
+  bind_rows(f_quantitativo_regiao(gmrh_2021, IBGE)) |>
+  bind_rows(f_quantitativo_regiao(gerh_2021, IBGE)) |>
+  bind_rows(f_quantitativo_regiao(fmasrh_2021, IBGE)) |>
+  bind_rows(f_quantitativo_regiao(feasrh_2021, IBGE)) |>
+  bind_rows(f_quantitativo_regiao(cmunrh_2021, IBGE)) |>
+  bind_rows(f_quantitativo_regiao(cestrh_2021, IBGE)) |>
+
+  bind_rows(f_quantitativo_regiao(crasrh_2022, IBGE)) |>
+  bind_rows(f_quantitativo_regiao(creasrh_2022, IBGE)) |>
+  bind_rows(f_quantitativo_regiao(cpoprh_2022, IBGE)) |>
+  bind_rows(f_quantitativo_regiao(unacrh_2022, IBGE)) |>
+  bind_rows(f_quantitativo_regiao(ceconvrh_2022, IBGE)) |>
+  bind_rows(f_quantitativo_regiao(cediarh_2022, IBGE)) |>
+  bind_rows(f_quantitativo_regiao(famacolrh_2022, IBGE)) |>
+  bind_rows(f_quantitativo_regiao(posto_cadunicorh_2022, IBGE)) |>
+  bind_rows(f_quantitativo_regiao(gmrh_2022, IBGE)) |>
+  bind_rows(f_quantitativo_regiao(gerh_2022, IBGE)) |>
+  bind_rows(f_quantitativo_regiao(fmasrh_2022, IBGE)) |>
+  bind_rows(f_quantitativo_regiao(feasrh_2022, IBGE)) |>
+  bind_rows(f_quantitativo_regiao(cmunrh_2022, IBGE)) |>
+  bind_rows(f_quantitativo_regiao(cestrh_2022, IBGE)) |>
+
+  bind_rows(f_quantitativo_regiao(crasrh_2023, IBGE)) |>
+  bind_rows(f_quantitativo_regiao(creasrh_2023, IBGE)) |>
+  bind_rows(f_quantitativo_regiao(cpoprh_2023, IBGE)) |>
+  bind_rows(f_quantitativo_regiao(unacrh_2023, IBGE)) |>
+  bind_rows(f_quantitativo_regiao(ceconvrh_2023, IBGE)) |>
+  bind_rows(f_quantitativo_regiao(cediarh_2023, IBGE)) |>
+  bind_rows(f_quantitativo_regiao(famacolrh_2023, IBGE)) |>
+  bind_rows(f_quantitativo_regiao(posto_cadunicorh_2023, IBGE)) |>
+  bind_rows(f_quantitativo_regiao(gmrh_2023, IBGE)) |>
+  bind_rows(f_quantitativo_regiao(gerh_2023, IBGE)) |>
+  bind_rows(f_quantitativo_regiao(fmasrh_2023, IBGE)) |>
+  bind_rows(f_quantitativo_regiao(feasrh_2023, IBGE)) |>
+  bind_rows(f_quantitativo_regiao(cmunrh_2023, IBGE)) |>
+  bind_rows(f_quantitativo_regiao(cestrh_2023, IBGE)) |>
+
+  bind_rows(f_quantitativo_regiao(crasrh_2024, IBGE)) |>
+  bind_rows(f_quantitativo_regiao(creasrh_2024, IBGE)) |>
+  bind_rows(f_quantitativo_regiao(cpoprh_2024, IBGE)) |>
+  bind_rows(f_quantitativo_regiao(unacrh_2024, IBGE)) |>
+  bind_rows(f_quantitativo_regiao(ceconvrh_2024, IBGE)) |>
+  bind_rows(f_quantitativo_regiao(cediarh_2024, IBGE)) |>
+  bind_rows(f_quantitativo_regiao(famacolrh_2024, IBGE)) |>
+  bind_rows(f_quantitativo_regiao(posto_cadunicorh_2024, IBGE)) |>
+  bind_rows(f_quantitativo_regiao(gmrh_2024, IBGE)) |>
+  bind_rows(f_quantitativo_regiao(gerh_2024, IBGE)) |>
+  bind_rows(f_quantitativo_regiao(fmasrh_2024, IBGE)) |>
+  bind_rows(f_quantitativo_regiao(feasrh_2024, IBGE)) |>
+  bind_rows(f_quantitativo_regiao(cmunrh_2024, IBGE)) |>
+  bind_rows(f_quantitativo_regiao(cestrh_2024, IBGE)) |>
+
+  summarise(n=sum(n), .by = c(Ano, Região))
+
+grafico<-tabela |>
+  f_grafico_col_group_numero(Região, n, Ano, 1)
+
+grafico
+```
+
+A @tbl-marcos apresenta o marco normativo que institucionaliza e orienta a conformação desta política pública.
+
+<!-- Tabela original, na horizontal, fica apertada demais e texto quebrado: -->
+
+<!-- | 1988 | 1993 | 2001 | 2003 | 2004 | 2005 | 2006 | 2009 | 2011 | 2012 | 2016 | -->
+<!-- |:-----:|:-----:|:-----:|:-----:|:-----:|:-----:|:-----:|:-----:|:-----:|:-----:|:-----:| -->
+<!-- | [CF, Art. 203](https://www.planalto.gov.br/ccivil_03/constituicao/constituicao.htm#art203) | [LOAS](https://www.planalto.gov.br/ccivil_03/leis/l8742.htm) | [Cadastro Único](https://www.planalto.gov.br/ccivil_03/leis/l8742.htm#art6f) | [Programa Bolsa Família](https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2023/lei/l14601.htm) | [PNAS](https://bibliotecadigital.dth.api.gov.br/bitstream/123456789/1034/1/PNAS2004.pdf) | NOB/ SUAS | [NOB-RH/ SUAS](https://www.mds.gov.br/webarquivos/publicacao/assistencia_social/Normativas/NOB-RH_SUAS_Anotada_Comentada.pdf) | [Tipificação dos Serviços](https://www.mds.gov.br/webarquivos/publicacao/assistencia_social/Normativas/tipificacao.pdf) | [Lei 12.435 SUAS](https://www.planalto.gov.br/ccivil_03/_ato2011-2014/2011/lei/l12435.htm) | [NOB/ SUAS](https://www.mds.gov.br/webarquivos/public/NOBSUAS_2012.pdf) | [II Plano Decenal](https://blog.mds.gov.br/redesuas/resolucao-no-7-de-18-de-maio-de-2016-2/) | -->
+
+<!-- : Marcos legais da Assistência Social no Brasil. {#tbl-marcos} -->
+
+
+<!-- Tabela na vertical, para caber melhor: -->
+
+|          |         |
+|:--------:|:--------
+| **1988** | [Constituição Federal (Art. 203)](https://www.planalto.gov.br/ccivil_03/constituicao/constituicao.htm#art203) |
+| **1993** | [LOAS](https://www.planalto.gov.br/ccivil_03/leis/l8742.htm) |
+| **2001** | [Cadastro Único](https://www.planalto.gov.br/ccivil_03/leis/l8742.htm#art6f) |
+| **2003** | [Programa Bolsa Família](https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2023/lei/l14601.htm) |
+| **2004** | [PNAS](https://bibliotecadigital.dth.api.gov.br/bitstream/123456789/1034/1/PNAS2004.pdf) |
+| **2005** | NOB/SUAS |
+| **2006** | [NOB-RH/SUAS](https://www.mds.gov.br/webarquivos/publicacao/assistencia_social/Normativas/NOB-RH_SUAS_Anotada_Comentada.pdf) |
+| **2009** | [Tipificação dos Serviços](https://www.mds.gov.br/webarquivos/publicacao/assistencia_social/Normativas/tipificacao.pdf) |
+| **2011** | [Lei 12.435 SUAS](https://www.planalto.gov.br/ccivil_03/_ato2011-2014/2011/lei/l12435.htm) |
+| **2012** | [NOB/SUAS](https://www.mds.gov.br/webarquivos/public/NOBSUAS_2012.pdf) |
+| **2016** | [II Plano Decenal](https://blog.mds.gov.br/redesuas/resolucao-no-7-de-18-de-maio-de-2016-2/) |
 
 : Marcos legais da Assistência Social no Brasil. {#tbl-marcos}
+
+
+<!-- Em formato de lista: -->
+
+<!-- A conformação da política pública de Assistência Social no Brasil é institucionalizada e orientada pelos seguintes marcos legais: -->
+
+<!-- * **1988** — [Constituição Federal (Art. 203)](https://www.planalto.gov.br/ccivil_03/constituicao/constituicao.htm#art203) -->
+<!-- * **1993** — [LOAS](https://www.planalto.gov.br/ccivil_03/leis/l8742.htm) -->
+<!-- * **2001** — [Cadastro Único](https://www.planalto.gov.br/ccivil_03/leis/l8742.htm#art6f) -->
+<!-- * **2003** — [Programa Bolsa Família](https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2023/lei/l14601.htm) -->
+<!-- * **2004** — [PNAS](https://bibliotecadigital.dth.api.gov.br/bitstream/123456789/1034/1/PNAS2004.pdf) -->
+<!-- * **2005** — NOB/SUAS -->
+<!-- * **2006** — [NOB-RH/SUAS](https://www.mds.gov.br/webarquivos/publicacao/assistencia_social/Normativas/NOB-RH_SUAS_Anotada_Comentada.pdf) -->
+<!-- * **2009** — [Tipificação dos Serviços](https://www.mds.gov.br/webarquivos/publicacao/assistencia_social/Normativas/tipificacao.pdf) -->
+<!-- * **2011** — [Lei 12.435 SUAS](https://www.planalto.gov.br/ccivil_03/_ato2011-2014/2011/lei/l12435.htm) -->
+<!-- * **2012** — [NOB/SUAS](https://www.mds.gov.br/webarquivos/public/NOBSUAS_2012.pdf) -->
+<!-- * **2016** — [II Plano Decenal](https://blog.mds.gov.br/redesuas/resolucao-no-7-de-18-de-maio-de-2016-2/) -->
+
+
+```{r, eval = FALSE}
+# #| label: tbl-timeline-gt
+# #| tbl-cap: "Marcos legais da Assistência Social no Brasil."
+
+# Outro formato de tabela
+
+library(gt)
+
+dados <- data.frame(
+  Ano = c("1988", "1993", "2001", "2003"),
+  Marco = c("[Constituição Federal (Art. 203)](https://www.planalto.gov.br/ccivil_03/constituicao/constituicao.htm#art203)", "[LOAS](https://www.planalto.gov.br/ccivil_03/leis/l8742.htm)", "[Cadastro Único](https://www.planalto.gov.br/ccivil_03/leis/l8742.htm#art6f)", "[Programa Bolsa Família](https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2023/lei/l14601.htm)")
+)
+
+gt(dados) |>
+  fmt_markdown(columns = c(Ano, Marco)) |>
+  tab_options(table.width = pct(100)) |>
+  opt_row_striping()
+```
+
+<!-- Em formato de lista de definições clean (sem tabelas): -->
+
+<!-- **1988** -->
+<!-- : [Constituição Federal (Art. 203)](https://www.planalto.gov.br/ccivil_03/constituicao/constituicao.htm#art203) -->
+
+<!-- **1993** -->
+<!-- : [LOAS](https://www.planalto.gov.br/ccivil_03/leis/l8742.htm) -->
+
+<!-- **2001** -->
+<!-- : [Cadastro Único](https://www.planalto.gov.br/ccivil_03/leis/l8742.htm#art6f) -->
+
+
+<!-- Em formato de painéis de abas (tabsets): -->
+
+<!-- ::: {.panel-tabset} -->
+
+<!-- ### 1988 -->
+<!-- [Constituição Federal (Art. 203)](https://www.planalto.gov.br/ccivil_03/constituicao/constituicao.htm#art203) -->
+
+<!-- ### 1993 -->
+<!-- [LOAS](https://www.planalto.gov.br/ccivil_03/leis/l8742.htm) -->
+
+<!-- ### 2001 -->
+<!-- [Cadastro Único](https://www.planalto.gov.br/ccivil_03/leis/l8742.htm#art6f) -->
+
+<!-- ::: -->
+
+
+<!-- Em formato de blocos de destaque emilhados (visual de cards): -->
+
+<!-- ::: {.callout-note icon=false} -->
+<!-- ## 1988 -->
+<!-- [Constituição Federal (Art. 203)](https://www.planalto.gov.br/ccivil_03/constituicao/constituicao.htm#art203) -->
+<!-- ::: -->
+
+<!-- ::: {.callout-note icon=false} -->
+<!-- ## 1993 -->
+<!-- [LOAS](https://www.planalto.gov.br/ccivil_03/leis/l8742.htm) -->
+<!-- ::: -->
+
+<!-- ::: {.callout-note icon=false} -->
+<!-- ## 2001 -->
+<!-- [Cadastro Único](https://www.planalto.gov.br/ccivil_03/leis/l8742.htm#art6f) -->
+<!-- ::: -->
+
+
+<!-- Em formato de layout de grade em duas colunas (lado a lado): -->
+
+<!-- :::: {layout="[15, 85]"} -->
+
+<!-- ::: {#ano1} -->
+<!-- **1988** -->
+<!-- ::: -->
+<!-- ::: {#texto1} -->
+<!-- [Constituição Federal (Art. 203)](https://www.planalto.gov.br/ccivil_03/constituicao/constituicao.htm#art203) -->
+<!-- ::: -->
+
+<!-- ::: {#ano2} -->
+<!-- **1993** -->
+<!-- ::: -->
+<!-- ::: {#texto2} -->
+<!-- [LOAS](https://www.planalto.gov.br/ccivil_03/leis/l8742.htm) -->
+<!-- ::: -->
+
+<!-- :::: -->
 
 São referências essenciais que sustentam o debate apresentado nesta edição. O conteúdo desta publicação traz uma linha histórica — em grande parte a partir de 2012 — que evidencia aspectos relacionados à gestão, às unidades do SUAS, aos serviços e benefícios, à gestão do trabalho, ao controle social e à participação. Além disso, inclui elementos metodológicos que demonstram os avanços na construção dessa linha histórica de forma cada vez mais qualificada, com modernização nos processos de análise e tratamento de dados.
 
