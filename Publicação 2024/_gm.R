@@ -39,10 +39,6 @@ gm_2022 <- read_excel("../Censo SUAS 2022/9 - GESTÃO MUNICIPAL/Censo_SUAS_2022_
 
 gm_2023 <- read_csv2("../Censo SUAS 2023/9 - GESTÃO MUNICIPAL/Censo_SUAS_2023_Gestão_Municipal_Dados_Gerais.csv", locale = locale(encoding = "latin1")) %>%
   mutate("Ano" = "2023")
-names(gm_2023)[grep("Regiao", names(gm_2023))] = "Região"
-gm_2023$Região = factor(gm_2023$Região,
-                        labels = c("Região Norte", "Região Nordeste", "Região Centro-Oeste", "Região Sudeste", "Região Sul"),
-                        levels = c("Região Norte", "Região Nordeste", "Região Centro Oeste", "Região Sudeste", "Região Sul"))
 
 gm_2024 <- read_excel("../Censo SUAS 2024/9_GESTÃO MUNICIPAL/Censo_SUAS_2024_Gestão_Municipal_Dados_Gerais.xlsx") %>%
   mutate("Ano" = "2024")
