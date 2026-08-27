@@ -4,7 +4,7 @@ source("_funcoes.R")
 source("_municipios.R")
 source("_cras.R")
 source("_creas.R")
-source("_famacolfam.R")
+source("_famacol.R")
 source("_gm.R")
 ```
 
@@ -1063,14 +1063,14 @@ O @fig-fam_acolhedora mostra um crescimento contínuo do percentual de municípi
 # #| fig-height: 6.5
 
 grafico <- 
-  f_percentual_municipios_regiao_ano(famacolfam_2017, IBGE, "2017") %>%
-#  bind_rows(f_percentual_municipios_regiao_ano(famacolfam_2018, IBGE, "2018")) %>%
-#  bind_rows(f_percentual_municipios_regiao_ano(famacolfam_2019, IBGE, "2019")) %>%
-  bind_rows(f_percentual_municipios_regiao_ano(famacolfam_2020, codigo_ibge, "2020")) %>%
-#  bind_rows(f_percentual_municipios_regiao_ano(famacolfam_2021, codigo_ibge, "2021")) %>%
-#  bind_rows(f_percentual_municipios_regiao_ano(famacolfam_2022, IBGE7, "2022")) %>%
-  bind_rows(f_percentual_municipios_regiao_ano(famacolfam_2023, IBGE, "2023")) %>%
-  bind_rows(f_percentual_municipios_regiao_ano(famacolfam_2024, IBGE, "2024")) %>%
+  f_percentual_municipios_regiao_ano(famacol_2017, IBGE, "2017") %>%
+#  bind_rows(f_percentual_municipios_regiao_ano(famacol_2018, IBGE, "2018")) %>%
+#  bind_rows(f_percentual_municipios_regiao_ano(famacol_2019, IBGE, "2019")) %>%
+  bind_rows(f_percentual_municipios_regiao_ano(famacol_2020, codigo_ibge, "2020")) %>%
+#  bind_rows(f_percentual_municipios_regiao_ano(famacol_2021, codigo_ibge, "2021")) %>%
+#  bind_rows(f_percentual_municipios_regiao_ano(famacol_2022, IBGE7, "2022")) %>%
+  bind_rows(f_percentual_municipios_regiao_ano(famacol_2023, IBGE, "2023")) %>%
+  bind_rows(f_percentual_municipios_regiao_ano(famacol_2024, IBGE, "2024")) %>%
   
   f_grafico_col_group_percent(Região, Percentual, Ano, 1)
 
