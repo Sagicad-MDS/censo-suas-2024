@@ -25,8 +25,8 @@ creasrh_2019 <- read_excel("../Censo SUAS 2019/CREAS/Censo_SUAS_2019_RH_CREAS_di
 creasrh_2020 <- read_excel("../Censo SUAS 2020/Censo_SUAS_CREAS_2020_Divulgação_revisado_Dados_Gerais/Censo_SUAS_CREAS_2020_RH_divulgacao.xlsx") %>%
   mutate("Ano" = "2020")
 
-#creasrh_2021 <- read_excel("../Censo SUAS 2021/2 - CREAS/Censo_SUAS_2021_CREAS_RH.xlsx") %>%
-#  mutate("Ano" = "2021")
+creasrh_2021 <- read_excel("../Censo SUAS 2021/2 - CREAS/Censo_SUAS_2021_CREAS_RH.xlsx") %>%
+  mutate("Ano" = "2021")
 
 creasrh_2022 <- read_excel("../Censo SUAS 2022/2 - CREAS/Censo_SUAS_ 2022_CREAS_RH.xlsx") %>%
   mutate("Ano" = "2022")
