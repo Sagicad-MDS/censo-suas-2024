@@ -19,11 +19,11 @@ cediarh_2020 <- read_excel("../Censo SUAS 2020/6_CENTRO_DIA/Censo_SUAS_2020_Cent
 cediarh_2021 <- read_excel("../Censo SUAS 2021/6 - CENTRO DIA/Censo_SUAS_2021_Centro_Dia_RH.xls") %>%
   mutate("Ano" = "2021")
 
-cediarh2022<- read_excel("../Censo SUAS 2022/6 - CENTRO DIA/Censo_SUAS_2022_Centro_Dia_RH.xlsx") %>%
+cediarh_2022<- read_excel("../Censo SUAS 2022/6 - CENTRO DIA/Censo_SUAS_2022_Centro_Dia_RH.xlsx") %>%
   mutate("Ano" = "2022")
 
-cediarh2023<- read_csv2("../Censo SUAS 2023/6 - CENTRO DIA/Censo_SUAS_2023_Centro_Dia_RH.csv", locale = locale(encoding = "latin1")) %>%
+cediarh_2023<- read_csv2("../Censo SUAS 2023/6 - CENTRO DIA/Censo_SUAS_2023_Centro_Dia_RH.csv", locale = locale(encoding = "latin1")) %>%
   mutate("Ano" = "2023")
 
-cediarh2024<- read_excel("../Censo SUAS 2024/6_CENTRO DIA/Censo_SUAS_2024_Centro_Dia_RH.xlsx") %>%
+cediarh_2024<- read_excel("../Censo SUAS 2024/6_CENTRO DIA/Censo_SUAS_2024_Centro_Dia_RH.xlsx") %>%
   mutate("Ano" = "2024")

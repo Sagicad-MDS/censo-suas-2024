@@ -8,16 +8,17 @@ ceconvrh_2017 <- read_excel("../Censo SUAS 2017/Censo_SUAS_2017_Centro_Convivenc
   mutate("Ano" = "2017")
 
 ceconvrh_2020 <- read_excel("../Censo SUAS 2020/5_CENTRO_CONVIVENCIA/Censo_SUAS_2020_Centro_Convivencia_RH.xlsx") %>%
-  mutate("Ano" = "2020")
-
+  mutate("Ano" = "2020") %>%
+  mutate(Regiao := case_when(Regiao == "Região Centro Oeste"~"Região Centro-Oeste", TRUE~Regiao))
+  
 ceconvrh_2021 <- read_excel("../Censo SUAS 2021/5 - CENTRO DE CONVIVENCIA/Censo_SUAS_2021_Centro_Convivencia_Dados_Gerais_Divulgação.xls") %>%
   mutate("Ano" = "2021")
 
 ceconvrh_2022 <- read_excel("../Censo SUAS 2022/5 - CENTRO DE CONVIVENCIA/Censo_SUAS_ 2022_ Centros_de_Convivência_RH.xlsx") %>%
   mutate("Ano" = "2022")
 
-ceconvrh2023 <- read_csv2("../Censo SUAS 2023/5 - CENTRO DE CONVIVENCIA/Censo_SUAS_2023_Centro_Convivencia_RH.csv", locale = locale(encoding = "latin1")) %>%
+ceconvrh_2023 <- read_csv2("../Censo SUAS 2023/5 - CENTRO DE CONVIVENCIA/Censo_SUAS_2023_Centro_Convivencia_RH.csv", locale = locale(encoding = "latin1")) %>%
   mutate("Ano" = "2023")
 
-ceconvrh2024 <- read_csv2("../Censo SUAS 2024/5 - CENTRO DE CONVIVENCIA/Censo_SUAS_2024_Centro_Convivencia_RH.csv", locale = locale(encoding = "latin1")) %>%
+ceconvrh_2024 <- read_csv2("../Censo SUAS 2024/5 - CENTRO DE CONVIVENCIA/Censo_SUAS_2024_Centro_Convivencia_RH.csv", locale = locale(encoding = "latin1")) %>%
   mutate("Ano" = "2024")
