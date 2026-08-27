@@ -91,7 +91,7 @@ f_quantitativo_regiao = function(df, regiao){
                                   substr(!! regiao,1,1) == "5"~"Centro-Oeste",
                                   TRUE ~ str_replace(!! regiao, "Região ", ""))) %>%
 #    group_by(!! regiao, Ano) %>%
-    summarise(n=n(), .by = c(IBGE, Ano)) %>%
+    summarise(n=n(), .by = c(!! regiao, Ano)) %>%
     spread(!! regiao, n, fill = 0) %>%
     mutate("Brasil" = rowSums(.[2:6])) %>%
     pivot_longer(-Ano, names_to = "Região", values_to = "n")
