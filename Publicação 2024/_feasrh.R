@@ -1,3 +1,6 @@
+feasrh_2020 <- read_excel("../Censo SUAS 2020/12_FUNDO_ESTADUAL/Censo_SUAS_2020_Fundo_Estadual_RH.xlsx") %>%
+  mutate("Ano" = "2020")
+
 feasrh_2021 <- read_excel("../Censo SUAS 2021/12 - FUNDO ESTADUAL/Censo_SUAS_2021_Fundo_Estadual_RH.xlsx") %>%
   mutate("Ano" = "2021")
 
