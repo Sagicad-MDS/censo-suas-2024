@@ -5,11 +5,7 @@ project:
 
 book:
   title: "CENSO SUAS 2024"
-  subtitle: ANÁLISE DOS COMPONENTES DA POLÍTICA NACIONAL DE ASSISTÊNCIA SOCIAL
-#  author:
-#    - Secretaria de Avaliação, Gestão da Informação e Cadastro Único
-#    - Secretaria Nacional de Assistência Social
-#    - Ministério do Desenvolvimento e Assistência Social, Família e Combate à Fome
+  subtitle: Análise dos componentes sistêmicos da Política Nacional de Assistência Social
 #  date: "21/06/2024"
 #  search: false
   cover-image: "CapaCensoSUAS2024imagem.png"
@@ -21,6 +17,7 @@ book:
   repo-link-target: "_blank"
   chapters:
     - index.qmd
+    - creditos.qmd
 #    - apresentacao.qmd
     - metodologia.qmd
     - gestao.qmd
@@ -28,10 +25,24 @@ book:
     - servicos.qmd
     - rh.qmd
     - participacao.qmd
-    - references.qmd
-    - creditos.qmd
+#    - references.qmd
 
-# bibliography: references.bib
+# Esta linha oculta o bloco visual de "Como Citar" automático do rodapé do Quarto
+#appendix-cite-as: false 
+
+# Insere tags invisíveis diretamente no código HTML da página. Ajuda o Google e os indexadores de bibliotecas a entender o título, autor e ano da publicação.
+# ATENÇÃO: Esses parâmetros não estão funcionando (o Quarto não está inserindo no código HTML como esperado), então usamos a inserção direta das tags pelo parâmetro mais abaixo "include-in-header"
+citation:
+  type: book
+  title: "CENSO SUAS 2024: Análise dos componentes sistêmicos da Política Nacional de Assistência Social"
+  author:
+    - Secretaria de Avaliação, Gestão da Informação e Cadastro Único
+    - Secretaria Nacional de Assistência Social
+    - Ministério do Desenvolvimento e Assistência Social, Família e Combate à Fome
+  issued: 2026
+  isbn: "978-65-01-01956-7"     # Quado tiver o e-ISSN, usar a linha de baixo
+  # issn: "XXXX-XXXX"           # Campo para quando migrarmos para o ISSN
+  url: https://www.gov.br/mds/pt-br/orgaos/SAGICAD/estudos-e-pesquisas/censo-suas-2024
 
 toc: true
 toc-title: Sumário
@@ -55,6 +66,7 @@ fig-cap-location: top
 
 format:
   html: 
+    citation: true # <- ESTA LINHA FORÇA A GERAÇÃO DAS TAGS OCULTAS NO HEAD
 #    css: 
 #      - "govbr/core.min.css"
 #      - "govbr/fontawesome/css/fontawesome.min.css"
@@ -82,4 +94,25 @@ format:
           <link href="https://fonts.cdnfonts.com/css/rawline" rel="stylesheet">
           <script src="responsive-height.js"></script>
 
-editor: visual
+          <!-- Metadados Ocultos para Indexação Acadêmica (Google Scholar / Zotero) -->
+          <meta name="citation_title" content="CENSO SUAS 2024: Análise dos componentes sistêmicos da Política Nacional de Assistência Social">
+          
+          <!-- Autores declarados individualmente (um por linha) -->
+          <meta name="citation_author" content="Brasil. Ministério do Desenvolvimento e Assistência Social, Família e Combate à Fome (MDS)">
+          <meta name="citation_author" content="Brasil. Secretaria Nacional de Assistência Social (SNAS)">
+          <meta name="citation_author" content="Brasil. Secretaria Nacional de Avaliação, Gestão da Informação e Cadastro Único (SAGICAD)">
+          
+          <meta name="citation_publication_date" content="2026">
+
+          <meta name="citation_isbn" content="978-65-01-01956-7">
+
+          <!-- TAGS RESERVADAS PARA USO FUTURO (migração para o ISSN e inclusão do DOI Oficial da Edição)
+          <meta name="citation_issn" content="XXXX-XXXX">
+          <meta name="citation_doi" content="10.XXXX/censo-suas.2024">
+          -->
+          
+          <meta name="citation_language" content="pt">
+          <meta name="citation_publisher" content="Ministério do Desenvolvimento e Assistência Social, Família e Combate à Fome (MDS)">
+          
+          <!-- Indica onde o HTML está hospedado -->
+          <meta name="citation_abstract_html_url" content="https://www.gov.br/mds/pt-br/orgaos/SAGICAD/estudos-e-pesquisas/censo-suas-2024">
