@@ -1,9 +1,0 @@
-
-DELETE VARIABLES
-q31_1
-q31_4
-q31_5
-q31_6
-q31_7
-q31_8.
-Execute.

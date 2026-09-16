@@ -1,9 +1,0 @@
-
-DELETE VARIABLES  
-q86_1
-q86_2
-q86_3
-q86_4
-q86_5
-q86_6 .
-
