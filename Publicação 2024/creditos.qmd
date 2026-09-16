@@ -11,17 +11,14 @@ Ministro de Estado do Desenvolvimento e Assistência Social, Família e Combate 
 Secretário-Executivo\
 **Osmar Ribeiro de Almeida Júnior**
 
+Secretária Extraordinária de Combate à Pobreza e à Fome\
+**Valéria Torres Amaral Burity**
+
 Secretário de Avaliação, Gestão da Informação e Cadastro Único\
 **Rafael Guerreiro Osório**
 
 Secretária Nacional de Renda de Cidadania\
 **Eliane Aquino Custodio**
-
-Secretário Nacional de Assistência Social\
-**André Quintão Silva**
-
-Secretária Extraordinária de Combate à Pobreza e à Fome\
-**Valéria Torres Amaral Burity**
 
 Secretária Nacional de Segurança Alimentar e Nutricional\
 **Lilian dos Santos Rahal**
@@ -29,44 +26,93 @@ Secretária Nacional de Segurança Alimentar e Nutricional\
 Secretário de Inclusão Socioeconômica\
 **Luiz Carlos Everton de Farias**
 
-Secretária Nacional de Cuidados e Família\
+Secretária Nacional da Política de Cuidados e Família\
 **Laís Wendel Abramo**
 
-Secretário Nacional de Benefícios Assistenciais
+Secretária Nacional de Assistência Social\
+**Rosilene Cristina Rocha **
 
+Secretário Nacional de Benefícios Assistenciais\
 **Amarildo Baesso**
+
+Secretária Nacional de Integração e Articulação de Plataformas Sociais Eletrônicas\
+**Analúcia Faggion Alonso **
+
+---
 
 ## Ficha Técnica {.unnumbered}
 
-### Coordenação-Geral da Publicação do Censo SUAS 2023 {.unnumbered}
+### Coordenação-Geral da Publicação do Censo SUAS 2024 {.unnumbered}
 
-**Diretoria de Monitoramento e Avaliação - DMA/SAGICAD:**
+**Diretoria de Monitoramento e Avaliação - DMA/SAGICAD:**\
+- Cecília Piva: Coordenadora-Geral
 
--   Geraldo Andrade Filho: Diretor de Monitoramento e Avaliação
+**Diretoria de Gestão do SUAS -- DGSUAS/SNAS**\
+- Clara Carolina de Sá: Diretora de Gestão do SUAS
 
-**Diretoria de Gestão do SUAS -- DGSUAS/SNAS**
-
--   Clara Carolina de Sá: Diretora de Gestão do SUAS
-
-### Coordenação-Geral do Censo SUAS / 2023 {.unnumbered}
+### Coordenação-Geral do Censo SUAS 2024 {.unnumbered}
 
 Paulo Clemente - Coordenador-Geral de Planejamento e Vigilância Socioassistencial.
 
-### Desenvolvimento de projeto de programação, análise de dados e produção da publicação {.unnumbered}
+### Desenvolvimento de projeto de programação, análise de dados e produção da publicação; coordenação, elaboração e revisão dos textos  {.unnumbered}
 
-Valdson Silva Cleto, Shirley Samico, Lucas Abrantes e Cecília Piva.
+Cecília Piva, Isabela Joanol Dias da Silva, Lucas Abrantes, Shirley Samico e Valdson Silva Cleto
 
-### Desenvolvimento de aplicativos informatizados, coleta e tratamento de dados dos Censos SUAS 2018 a 2023 {.unnumbered}
+### Desenvolvimento de aplicativos informatizados, coleta e tratamento de dados do Censo SUAS 2024 {.unnumbered}
 
-André Saraiva, Caio Nakashima, Carlos Henrique Santana, Carlos Brasileiro, Caroline Sampaio, Cinthia Miranda, Cristiane Silva de Moura, Danilo Galvão da Cunha, Davi Lopes Carvalho, Daniela Ramos, Débora Macedo, Dionara Borges, Érika Paes Latim Castro, Frederico Palma, João Sobrinho, Lana Barbosa, Letícia Fonseca, Luis Otavio Farias, Marcelo do Nascimento Saraiva, Marcelo Gadelha, Marcos Coimbra, Marco Rodrigo Carvalho, Marcos Maia Antunes, Marina Brito, Murilo da Silva Mascarenhas de Morais, Paulo Clemente, Pedro Henrique Ribeiro Ferreira, Ricardo Carvalho, Roberto Wagner, Sabrina Borges,Tássio Fialho, Tiago Hackbarth.
+André Saraiva, Caio Nakashima, Carlos Henrique Santana, Carlos Brasileiro, Caroline Sampaio, Cinthia Miranda, Cristiane Silva de Moura, Danilo Galvão da Cunha, Davi Lopes Carvalho, Daniela Ramos, Débora Macedo, Dionara Borges, Érika Paes Latim Castro, Frederico Palma, João Sobrinho, Lana Barbosa, Letícia Fonseca, Luis Otavio Farias, Marcelo do Nascimento Saraiva, Marcelo Gadelha, Marcos Coimbra, Marco Rodrigo Carvalho, Marcos Maia Antunes, Marina Brito, Murilo da Silva Mascarenhas de Morais, Paulo Clemente, Pedro Henrique Ribeiro Ferreira, Ricardo Carvalho, Roberto Wagner, Sabrina Borges, Tássio Fialho, Tiago Hackbarth.
 
-### Coordenação, elaboração e revisão dos textos {.unnumbered}
+---
 
-Shirley Samico, Valdson Silva Cleto, Lucas Abrantes.
+## Como Citar esta Publicação
 
-## Ficha Catalográfica {.unnumbered}
+Para fins de citação bibliográfica e consistência metodológica em pesquisas científicas, recomenda-se a utilização dos formatos padronizados abaixo:
 
-```{=html}
+::: {.callout-note appearance="simple" icon=false}
+**Padrão ABNT (Para a Edição Específica de 2024)**  
+BRASIL. Ministério do Desenvolvimento e Assistência Social, Família e Combate à Fome. **Censo SUAS 2024: análise dos componentes sistêmicos da Política Nacional de Assistência Social**. Brasília, DF: MDS, 2026. e-ISSN [INSERIR-ISSN-AQUI]. Disponível em: <https://www.gov.br/mds/pt-br/orgaos/SAGICAD/estudos-e-pesquisas/censo-suas-2024>. Acesso em: `r format(Sys.Date(), "%d %b. %Y")`. DOI: [INSERIR-LINK-DO-DOI-AQUI].
+
+<br>
+
+**Padrão ABNT (Coleção / Série Geral)**  
+BRASIL. Ministério do Desenvolvimento e Assistência Social, Família e Combate à Fome. **Censo SUAS: análise dos componentes sistêmicos da Política Nacional de Assistência Social**. Brasília, DF: MDS, 2010-. Publicação impressa e eletrônica (2010-2022); exclusivamente eletrônica a partir de 2023. e-ISSN [INSERIR-ISSN-AQUI]. Disponível em: <https://www.gov.br/mds/pt-br/orgaos/SAGICAD/estudos-e-pesquisas/censo-suas>. Acesso em: `r format(Sys.Date(), "%d %b. %Y")`.
+:::
+
+---
+
+## Dados Internacionais de Catalogação na Publicação (CIP)
+
+Informações de registro geradas em conformidade com as diretrizes internacionais de catalogação para recursos contínuos eletrônicos:
+
+| Atributo | Detalhes da Publicação |
+| :--- | :--- |
+| **Entidade Responsável** | Brasil. Ministério do Desenvolvimento e Assistência Social, Família e Combate à Fome. Secretaria Nacional de Assistência Social. Secretaria de Avaliação, Gestão da Informação e Cadastro Único. |
+| **Título Oficial** | Censo SUAS 2024: análise dos componentes sistêmicos da Política Nacional de Assistência Social |
+| **Local de Publicação** | Brasília, DF |
+| **Ano de Publicação** | 2026 |
+| **Identificador Periódico**| e-ISSN [INSERIR-ISSN-AQUI] (Versão Online) |
+| **Periodicidade** | Anual |
+| **Assuntos / Palavras-chave** | 1. Assistência Social — Brasil.<br>2. Censo – Aspectos sociais.<br>3. Políticas públicas sociais.<br>4. Sistema Único de Assistência Social (SUAS). |
+| **Classificação Temática** | CDD: 362.0981 |
+| **Responsabilidade Técnica** | Catalogação elaborada por Aline Graziele Benitez – Bibliotecária - CRB-1/3129 |
+
+: { .hover .tbl-colwidths="" }
+
+---
+
+::: {.column-screen-inset-right}
+<small>
+*Última atualização deste documento: `r format(Sys.Date(), "%d/%m/%Y")`.*  
+*O Censo SUAS é uma publicação oficial de acesso aberto. Textos e dados podem ser reproduzidos livremente, desde que citada a fonte.*
+</small>
+:::
+
+<!-- ## Ficha Catalográfica {.unnumbered} -->
+
+```{r}
+#| include: false
+
+htmltools::HTML('
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:epub="http://www.idpf.org/2007/ops">
 <head>
     <link href="../Styles/idGeneratedStyles.css" rel="stylesheet" type="text/css"/>
@@ -317,4 +363,5 @@ table.ficha {
         </div>
     </div>
 </body>
+')
 ```
