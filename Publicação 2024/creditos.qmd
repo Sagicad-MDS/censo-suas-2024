@@ -70,7 +70,7 @@ Para fins de citação bibliográfica e consistência metodológica em pesquisas
 
 ::: {.callout-note appearance="simple" icon=false}
 **Padrão ABNT (Para a Edição Específica de 2024)**  
-BRASIL. Ministério do Desenvolvimento e Assistência Social, Família e Combate à Fome. **Censo SUAS 2024: análise dos componentes sistêmicos da Política Nacional de Assistência Social**. Brasília, DF: MDS, 2026. e-ISSN [INSERIR-ISSN-AQUI]. Disponível em: <https://www.gov.br/mds/pt-br/orgaos/SAGICAD/estudos-e-pesquisas/censo-suas-2024>. Acesso em: `r format(Sys.Date(), "%d %b. %Y")`. DOI: [INSERIR-LINK-DO-DOI-AQUI].
+BRASIL. Ministério do Desenvolvimento e Assistência Social, Família e Combate à Fome. **Censo SUAS 2024: análise dos componentes sistêmicos da Política Nacional de Assistência Social**. Brasília, DF: MDS, 2026. e-ISSN [INSERIR-ISSN-AQUI]. Disponível em: <https://www.gov.br/mds/pt-br/orgaos/SAGICAD/estudos-e-pesquisas/censo-suas-2024>. Acesso em: `r format(Sys.Date(), "%d %b. %Y")`. DOI: 10.5281/zenodo.23221004.
 
 <br>
 

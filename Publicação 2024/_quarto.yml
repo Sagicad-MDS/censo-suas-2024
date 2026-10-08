@@ -108,7 +108,7 @@ format:
 
           <!-- TAGS RESERVADAS PARA USO FUTURO (migração para o ISSN e inclusão do DOI Oficial da Edição)
           <meta name="citation_issn" content="XXXX-XXXX">
-          <meta name="citation_doi" content="10.XXXX/censo-suas.2024">
+          <meta name="citation_doi" content="10.5281/zenodo.23221004">
           -->
           
           <meta name="citation_language" content="pt">
